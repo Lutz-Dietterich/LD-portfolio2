@@ -1,6 +1,7 @@
-import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+
+import HeroMenu from "../HeroMenu";
 
 export default function Hero() {
   return (
@@ -21,13 +22,7 @@ export default function Hero() {
         <h2>Frontend Developer</h2>
       </StyledHeroText>
 
-      <StyledHeroMenu>
-        <StyledHeroMenuList>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </StyledHeroMenuList>
-      </StyledHeroMenu>
+      <HeroMenu />
 
       <StyledHeroPortrait
         src="/img/hero_portrait.png"

@@ -14,17 +14,17 @@ export default function MainMenu() {
         <StyledListItem>
           <StyledLink href="/portfolio">Portfolio</StyledLink>
         </StyledListItem>
-        <StyledListItem>
-          <StyledLink href="#footer">CONTACT ME</StyledLink>
-        </StyledListItem>
       </StyledList>
     </StyledNav>
   );
 }
 
 const StyledNav = styled.nav`
+  position: absolute;
+  top: 70%;
+  left: 60px;
   display: flex;
-  width: 50%;
+  width: 20%;
   z-index: 1000;
 `;
 
@@ -38,9 +38,9 @@ const StyledList = styled.ul`
 `;
 
 const StyledListItem = styled.li`
+  background-color: #1a1a1a;
   font-size: 1rem;
   font-weight: 700;
-  text-transform: uppercase;
   color: #e2e6f2;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
