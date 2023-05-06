@@ -2,16 +2,25 @@ import Image from "next/image";
 import styled from "styled-components";
 
 import MainMenu from "../MainMenu";
+import MenuIconComponent from "../MenuIconComponent";
 
 export default function Header() {
   return (
     <StyledHeader>
-      <StyledLogo
+      <StyledLogoLarge
         src="/img/logo_large.png"
         width={380}
         height={112}
-      ></StyledLogo>
+      ></StyledLogoLarge>
+
+      <StyledLogoSmall
+        src="/img/logo_small.png"
+        width={380}
+        height={112}
+      ></StyledLogoSmall>
+
       <MainMenu />
+      <MenuIconComponent />
     </StyledHeader>
   );
 }
@@ -27,10 +36,30 @@ const StyledHeader = styled.header`
   max-height: 180px;
 `;
 
-const StyledLogo = styled(Image)`
+const StyledLogoLarge = styled(Image)`
   width: 30vw;
   height: 10vw;
   max-width: 380px;
   max-height: 112px;
-  margin-left: 60px;
+  margin-left: 100px;
+
+  @media (max-width: 1400px) {
+    margin-left: 55px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const StyledLogoSmall = styled(Image)`
+  width: 30vw;
+  height: 10vw;
+  max-width: 380px;
+  max-height: 112px;
+  margin-left: 100px;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
 `;
