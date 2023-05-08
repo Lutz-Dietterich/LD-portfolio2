@@ -15,4 +15,8 @@ const StyledMain = styled.main`
   flex-direction: column;
   width: 100%;
   height: 100%;
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
 `;

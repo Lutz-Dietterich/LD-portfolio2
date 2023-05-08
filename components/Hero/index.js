@@ -1,6 +1,7 @@
-import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+
+import HeroMenu from "../HeroMenu";
 
 export default function Hero() {
   return (
@@ -18,16 +19,10 @@ export default function Hero() {
       <StyledHeroText>
         <p>Hi I'm</p>
         <h1>Lutz Dietterich</h1>
-        <h2>Frontend Developer</h2>
+        <h2>Front-end Developer</h2>
       </StyledHeroText>
 
-      <StyledHeroMenu>
-        <StyledHeroMenuList>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </StyledHeroMenuList>
-      </StyledHeroMenu>
+      <HeroMenu />
 
       <StyledHeroPortrait
         src="/img/hero_portrait.png"
@@ -49,22 +44,23 @@ const StyledHero = styled.section`
 const StyledHeroImage = styled(Image)`
   position: absolute;
   top: 0;
-  left: 0;
+  left: -40%;
   z-index: -200;
-  width: 100%;
-  height: 100%;
+  width: 150%;
+  height: 150%;
   object-fit: cover;
   object-position: center;
+  filter: blur(5px);
 `;
 
 const StyledHeroImageOverlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -50;
+  z-index: -110;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.5);
 `;
 
 const StyledRectangle = styled.div`
@@ -79,20 +75,37 @@ const StyledRectangle = styled.div`
 
   background: #e2e6f2;
   transform: rotate(13.3deg);
+
+  @media (max-width: 768px) {
+    position: absolute;
+    width: 80vw;
+    height: 160vh;
+    left: 0;
+    top: 40vh;
+
+    background: rgba(226, 230, 242, 0.85);
+    transform: rotate(-99.21deg);
+
+    @media (min-height: 700px) {
+      top: 35vh;
+
+  }
 `;
 
 const StyledHeroText = styled.article`
   position: absolute;
-  top: 40%;
-  left: 60px;
-  z-index: 100;
-  width: 30%;
-  height: 10%;
   display: flex;
   flex-direction: column;
+  top: 40%;
+  left: 120px;
+  width: 30%;
+  height: 10%;
+  z-index: 100;
+
+  line-height: 1.2;
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     font-weight: 400;
     color: #252326;
     margin: 0;
@@ -116,33 +129,52 @@ const StyledHeroText = styled.article`
     color: #a6806a;
     margin: 0;
   }
-`;
 
-const StyledHeroMenu = styled.nav`
-  position: absolute;
-  top: 70%;
-  left: 60px;
-  z-index: 100;
-  width: 30%;
-  height: 10%;
-  display: flex;
-`;
+  @media (max-width: 1400px) {
+    left: 75px;
+  }
 
-const StyledHeroMenuList = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  @media (max-width: 768px) {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    top: 84%;
+    left: 10%;
+    width: 80%;
+    height: 10%;
+    z-index: 100;
+
+    line-height: 1.2;
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #252326;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #252326;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #a6806a;
+      margin: 0;
+    }
+  }
 `;
 
 const StyledHeroPortrait = styled(Image)`
   max-width: 786px;
   max-height: 741px;
-  margin-left: auto;
   margin-top: auto;
-  margin-right: 10px;
+  margin-left: 50vw;
 
   @media (max-height: 1100px) {
     width: 66vw;
@@ -152,10 +184,23 @@ const StyledHeroPortrait = styled(Image)`
   @media (max-height: 900px) {
     width: 45vw;
     height: 42vw;
+
   }
 
   @media (max-height: 560px) {
     width: 35vw;
     height: 33vw;
+
+  }
+
+  @media (max-width: 768px) {
+    position: absolute;
+    min-width: 592px;
+    min-height: 585px;
+    margin auto;
+    bottom: 0;
+    right: -144px;
+
+    z-index: -105;
   }
 `;
