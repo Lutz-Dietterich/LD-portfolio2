@@ -20,12 +20,11 @@ const MenuIconComponent = () => {
 export default MenuIconComponent;
 
 const MenuIcon = styled.div`
-  position: relative;
-  top: 20px;
-  right: 20px;
   cursor: pointer;
   font-size: 2rem;
   color: #fff;
 
-  transition: all 0.3s ease-in-out;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;

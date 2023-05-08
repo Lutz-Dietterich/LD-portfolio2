@@ -19,7 +19,7 @@ export default function Hero() {
       <StyledHeroText>
         <p>Hi I'm</p>
         <h1>Lutz Dietterich</h1>
-        <h2>Frontend Developer</h2>
+        <h2>Front-end Developer</h2>
       </StyledHeroText>
 
       <HeroMenu />
