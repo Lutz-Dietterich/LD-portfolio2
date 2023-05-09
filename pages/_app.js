@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <title>PawfectMatch</title>
+        <title>Lutz Dietterich</title>
       </Head>
       <Component {...pageProps} />
     </>
