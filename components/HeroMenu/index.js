@@ -44,9 +44,14 @@ const StyledNav = styled.nav`
     left: 75px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 912px) {
     top: 75vh;
     left: 85vw;
+
+    @media (min-height: 800px) {
+      top: 80%;
+
+    
   }
 `;
 
@@ -58,7 +63,7 @@ const StyledList = styled.ul`
   margin-right: 60px;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 912px) {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -84,7 +89,7 @@ const StyledListItem = styled.li`
     transform: scale(1.1);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 912px) {
     width: 40px;
     height: 40px;
     background: none;
@@ -98,7 +103,7 @@ const StyledLink = styled(Link)`
   font-size: 3rem;
   line-height: 0;
 
-  @media (max-width: 768px) {
+  @media (max-width: 912px) {
     color: #a6806a;
     font-size: 2rem;
   }

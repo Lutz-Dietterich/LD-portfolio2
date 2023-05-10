@@ -34,11 +34,12 @@ export default function Hero() {
 }
 
 const StyledHero = styled.section`
+  position: relative;
   display: flex;
   height: 100vh;
-  max-height: 1024px;
-  width: 100%;
+  width: 100vw;
   top: 0;
+  overflow: hidden;
 `;
 
 const StyledHeroImage = styled(Image)`
@@ -76,7 +77,7 @@ const StyledRectangle = styled.div`
   background: #e2e6f2;
   transform: rotate(13.3deg);
 
-  @media (max-width: 768px) {
+  @media (max-width: 912px) {
     position: absolute;
     width: 80vw;
     height: 160vh;
@@ -88,6 +89,17 @@ const StyledRectangle = styled.div`
 
     @media (min-height: 700px) {
       top: 35vh;
+
+      @media (min-height: 800px) {
+        top: 32vh;
+
+        @media (min-height: 900px) {
+          top: 30vh;
+
+          @media (min-height: 1000px) {
+            top: 28vh;
+
+
 
   }
 `;
@@ -134,7 +146,7 @@ const StyledHeroText = styled.article`
     left: 75px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 912px) {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -171,7 +183,7 @@ const StyledHeroText = styled.article`
 `;
 
 const StyledHeroPortrait = styled(Image)`
-  max-width: 786px;
+  max-width: 912px;
   max-height: 741px;
   margin-top: auto;
   margin-left: 50vw;
@@ -193,7 +205,7 @@ const StyledHeroPortrait = styled(Image)`
 
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 912px) {
     position: absolute;
     min-width: 592px;
     min-height: 585px;
