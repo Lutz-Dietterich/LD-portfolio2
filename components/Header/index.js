@@ -33,7 +33,7 @@ const StyledHeader = styled.header`
   height: 20vw;
   max-height: 180px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 912px) {
     justify-content: space-between;
     padding: 0 40px;
     width: 100%;
@@ -53,7 +53,7 @@ const StyledLogoLarge = styled(Image)`
     margin-left: 55px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 912px) {
     display: none;
   }
 `;
@@ -65,7 +65,7 @@ const StyledLogoSmall = styled(Image)`
   max-height: 98px;
   z-index: 2000;
 
-  @media (min-width: 769px) {
+  @media (min-width: 913px) {
     display: none;
   }
 `;

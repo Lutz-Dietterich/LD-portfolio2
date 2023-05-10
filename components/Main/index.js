@@ -16,7 +16,7 @@ const StyledMain = styled.main`
   width: 100%;
   height: 100%;
 
-  @media (min-width: 768px) {
-    max-width: 768px;
+  @media (min-width: 912px) {
+    max-width: 912px;
   }
 `;

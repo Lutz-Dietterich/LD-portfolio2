@@ -24,7 +24,7 @@ const MenuIcon = styled.div`
   font-size: 2rem;
   color: #fff;
 
-  @media (min-width: 768px) {
+  @media (min-width: 912px) {
     display: none;
   }
 `;
