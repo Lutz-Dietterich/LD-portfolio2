@@ -29,8 +29,6 @@ export default function Hero() {
         width={786}
         height={741}
       />
-
-      <StyledSpacer />
     </StyledHero>
   );
 }
@@ -153,7 +151,7 @@ const StyledHeroText = styled.article`
     display: flex;
     flex-direction: column;
 
-    top: 80%;
+    top: 78%;
     left: 10%;
     width: 80%;
     height: 10%;
@@ -180,6 +178,10 @@ const StyledHeroText = styled.article`
       font-weight: 400;
       color: #a6806a;
       margin: 0;
+    }
+
+    @media (min-height: 760px) {
+      top: 82%;
     }
   }
 `;
@@ -216,15 +218,5 @@ const StyledHeroPortrait = styled(Image)`
     right: -144px;
 
     z-index: -105;
-  }
-`;
-
-const StyledSpacer = styled.div`
-  position: absolute;
-  bottom: 0;
-  background: linear-gradient(0deg, rgba(37,35,38,0.8995973389355743) 36%, rgba(255,255,255,0.008841036414565795) 100%);
-  height: 100px;
-  z-index: -100;
-
   }
 `;
