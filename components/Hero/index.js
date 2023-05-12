@@ -183,7 +183,8 @@ const StyledHeroText = styled.article`
 `;
 
 const StyledHeroPortrait = styled(Image)`
-  max-width: 912px;
+width: 786px;
+  max-width: 790px;
   max-height: 741px;
   margin-top: auto;
   margin-left: 50vw;
