@@ -45,11 +45,11 @@ const StyledNav = styled.nav`
   }
 
   @media (max-width: 912px) {
-    top: 75vh;
+    top: 70vh;
     left: 85vw;
 
     @media (min-height: 800px) {
-      top: 80%;
+      top: 73%;
 
     
   }

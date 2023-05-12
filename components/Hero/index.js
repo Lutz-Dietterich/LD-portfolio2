@@ -29,6 +29,8 @@ export default function Hero() {
         width={786}
         height={741}
       />
+
+      <StyledSpacer />
     </StyledHero>
   );
 }
@@ -81,23 +83,23 @@ const StyledRectangle = styled.div`
     position: absolute;
     width: 80vw;
     height: 160vh;
-    left: 0;
-    top: 40vh;
+    left: 90px;
+    top: 30vh;
 
     background: rgba(226, 230, 242, 0.85);
     transform: rotate(-99.21deg);
 
     @media (min-height: 700px) {
-      top: 35vh;
+      top: 33vh;
 
       @media (min-height: 800px) {
-        top: 32vh;
+        top: 30vh;
 
         @media (min-height: 900px) {
-          top: 30vh;
+          top: 28vh;
 
           @media (min-height: 1000px) {
-            top: 28vh;
+            top: 26vh;
 
 
 
@@ -151,7 +153,7 @@ const StyledHeroText = styled.article`
     display: flex;
     flex-direction: column;
 
-    top: 84%;
+    top: 80%;
     left: 10%;
     width: 80%;
     height: 10%;
@@ -183,7 +185,6 @@ const StyledHeroText = styled.article`
 `;
 
 const StyledHeroPortrait = styled(Image)`
-width: 786px;
   max-width: 790px;
   max-height: 741px;
   margin-top: auto;
@@ -211,9 +212,19 @@ width: 786px;
     min-width: 592px;
     min-height: 585px;
     margin auto;
-    bottom: 0;
+    bottom: 50px;
     right: -144px;
 
     z-index: -105;
+  }
+`;
+
+const StyledSpacer = styled.div`
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(37,35,38,0.8995973389355743) 36%, rgba(255,255,255,0.008841036414565795) 100%);
+  height: 100px;
+  z-index: -100;
+
   }
 `;
