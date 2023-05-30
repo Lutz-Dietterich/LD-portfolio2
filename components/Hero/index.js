@@ -17,7 +17,7 @@ export default function Hero() {
       <StyledRectangle />
 
       <StyledHeroText>
-        <p>Hi {"I'm"}</p>
+        <p>Hi ich bin</p>
         <h1>Lutz Dietterich</h1>
         <h2>Front-end Developer</h2>
       </StyledHeroText>
@@ -74,7 +74,7 @@ const StyledRectangle = styled.div`
   min-width: 600px;
   min-height: 300px;
 
-  background: #e2e6f2;
+  background: var(--color-primary);
   transform: rotate(13.3deg);
 
   @media (max-width: 912px) {
@@ -88,16 +88,16 @@ const StyledRectangle = styled.div`
     transform: rotate(-99.21deg);
 
     @media (min-height: 700px) {
-      top: 33vh;
+      top: 31vh;
 
       @media (min-height: 800px) {
-        top: 30vh;
+        top: 28vh;
 
         @media (min-height: 900px) {
-          top: 28vh;
+          top: 26vh;
 
           @media (min-height: 1000px) {
-            top: 26vh;
+            top: 24vh;
 
 
 
@@ -138,7 +138,7 @@ const StyledHeroText = styled.article`
   h2 {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #a6806a;
+    color: var(--color-secondary);
     margin: 0;
   }
 
@@ -176,7 +176,7 @@ const StyledHeroText = styled.article`
     h2 {
       font-size: 1.2rem;
       font-weight: 400;
-      color: #a6806a;
+      color: var(--color-secondary);
       margin: 0;
     }
 

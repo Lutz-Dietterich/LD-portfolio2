@@ -74,13 +74,13 @@ const StyledListItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #c4c4c4;
+  background-color: var(--color-button);
   width: 60px;
   height: 60px;
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 
-  color: #e2e6f2;
+  color: var(--color-primary);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
@@ -104,7 +104,7 @@ const StyledLink = styled(Link)`
   line-height: 0;
 
   @media (max-width: 912px) {
-    color: #a6806a;
+    color: var(--color-secondary);
     font-size: 2rem;
   }
 `;

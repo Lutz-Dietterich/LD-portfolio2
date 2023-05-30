@@ -144,18 +144,18 @@ const StyledListItem = styled.li`
   padding: 5px 10px;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #e2e6f2;
+  color: var(--color-primary);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover {
-    background-color: #e2e6f2;
+    background-color: var(--color-primary);
     color: #252326;
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
   }
 
   &:last-child {
-    background-color: #e2e6f2;
+    background-color: var(--color-primary);
     font-size: 1.1rem;
     color: #252326;
     padding: 6px 11px;
