@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 import Hero from "../Hero";
+import About from "../About";
 
 export default function Main() {
   return (
     <StyledMain>
       <Hero />
+      <About />
     </StyledMain>
   );
 }
