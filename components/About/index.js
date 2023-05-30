@@ -1,5 +1,5 @@
-import Teaser from "../Teaser";
-import Skills from "../Skills";
+import Teaser from "../About/Teaser";
+import Skills from "../About/Skills";
 
 export default function About() {
   return (

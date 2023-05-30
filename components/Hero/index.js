@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-import HeroMenu from "../HeroMenu";
+import SocialMenu from "../SocialMenu";
 
 export default function Hero() {
   return (
@@ -22,7 +22,7 @@ export default function Hero() {
         <h2>Front-end Developer</h2>
       </StyledHeroText>
 
-      <HeroMenu />
+      <SocialMenu />
 
       <StyledHeroPortrait
         src="/img/hero_portrait.png"
