@@ -8,12 +8,14 @@ export default function Header() {
     <StyledHeader>
       <StyledLogoLarge
         src="/img/logo_large.png"
+        alt="Lutz Dietterich"
         width={380}
         height={112}
       ></StyledLogoLarge>
 
       <StyledLogoSmall
         src="/img/logo_small.png"
+        alt="Lutz Dietterich"
         width={380}
         height={112}
       ></StyledLogoSmall>

@@ -10,6 +10,7 @@ export default function Hero() {
 
       <StyledHeroImage
         src="/img/hero_background.png"
+        alt="Lutz Dietterich"
         width={1440}
         height={1024}
       />
@@ -26,6 +27,7 @@ export default function Hero() {
 
       <StyledHeroPortrait
         src="/img/hero_portrait.png"
+        alt="Lutz Dietterich"
         width={786}
         height={741}
       />

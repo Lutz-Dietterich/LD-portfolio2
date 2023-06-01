@@ -1,19 +1,17 @@
 import styled from "styled-components";
 
-import SkillListNow from "../SkillListNow";
-import SkillListLearning from "../SkillListLearning";
-import SkillListOther from "../SkillListOther";
+import SkillList from "../SkillList";
 
 export default function Skills() {
   return (
     <StyledSkills>
       <h2>Skills</h2>
       <h3>Using Now</h3>
-      <SkillListNow />
-      <h3>Lerning</h3>
-      <SkillListLearning />
+      <SkillList status="now" />
+      <h3>Learning</h3>
+      <SkillList status="learning" />
       <h3>Other Skills</h3>
-      <SkillListOther />
+      <SkillList status="other" />
     </StyledSkills>
   );
 }
@@ -21,7 +19,9 @@ export default function Skills() {
 const StyledSkills = styled.article`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 50%;
+  background-color: var(--color-secondary);
 
   h2 {
     margin-bottom: 1rem;
@@ -30,7 +30,7 @@ const StyledSkills = styled.article`
   }
 
   h3 {
-    margin-bottom: 0.5rem;
-    text-alingn: left;
+    align-self: flex-start;
+    margin: 0 0 1rem 1rem;
     padding-left: 1rem;
 `;

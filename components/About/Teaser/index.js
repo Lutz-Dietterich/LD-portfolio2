@@ -31,12 +31,14 @@ const StyledTeaser = styled.article`
   flex-direction: column;
   justify-content: center;
   hyphens: auto;
-  width: 60%;
+  width: 50%;
   padding: 3rem;
   margin: 2rem 0;
 
   letter-spacing: 0.1354em;
   text-align: center;
+
+  word-spacing: 0.16em;
 
   h2 {
     margin-bottom: 1rem;
