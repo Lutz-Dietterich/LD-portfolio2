@@ -18,7 +18,7 @@ export default function Hero() {
       <StyledRectangle />
 
       <StyledHeroText>
-        <p>Hi ich bin</p>
+        <p>Hi, ich bin</p>
         <h1>Lutz Dietterich</h1>
         <h2>Front-end Developer</h2>
       </StyledHeroText>

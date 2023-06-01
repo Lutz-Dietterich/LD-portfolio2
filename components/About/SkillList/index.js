@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Image from "next/image";
+import { CldImage } from "next-cloudinary";
+
 import { skillsData } from "../../../utils/data/skillsData";
 
 export default function SkillList({ status }) {
@@ -9,7 +10,12 @@ export default function SkillList({ status }) {
     <StyledSkillListNow>
       {nowSkills.map((skill) => (
         <StyledSkill key={skill.id}>
-          <Image src={skill.img} alt={skill.name} width={50} height={50} />
+          <StyledCldImage
+            width={skill.imgWidth}
+            height={skill.imgHeight}
+            src={skill.img}
+            alt={skill.name}
+          />
           <h4>{skill.name}</h4>
         </StyledSkill>
       ))}
@@ -20,8 +26,10 @@ export default function SkillList({ status }) {
 const StyledSkillListNow = styled.section`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   background-color: var(--color-primary);
   width: 80%;
+  gap: 2rem;
 `;
 
 const StyledSkill = styled.div`
@@ -29,4 +37,9 @@ const StyledSkill = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+const StyledCldImage = styled(CldImage)`
+  width: 1/2;
+  height: 1/2;
 `;
