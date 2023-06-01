@@ -5,10 +5,13 @@ export default function Teaser() {
     <StyledTeaser>
       <h2>Über Mich</h2>
       <p>
-        Ich bin Technik- und Designbegeistert mit umfangreichen Erfahrungen im
-        technischen Handwerk und im Kaufmännischen Bereich. Meine berufliche
-        Reise führte mich von der Heizungs- und Kältetechnik zur Leidenschaft
-        für Marketing und Webentwicklung.
+        Ich bin ein Technik-Enthusiast, der Freude daran hat, neues zu lernen um
+        dabei optisch ansprechende sowie funktionale Dinge zu erschaffen.
+        Webentwicklung ist, für mich, die perfekte Möglichkeit, meine
+        Leidenschaft für Technik und Design auszuleben.
+        <br />
+        Meine berufliche Reise führte mich von der Heizungs- und Kältetechnik
+        zur Leidenschaft für Marketing und Webentwicklung.
         <br />
         In meiner Freizeit tauche ich als Maker in die Welt des 3D-Drucks, der
         Konstruktionen und der Hausautomation ein. Mit meinen umfangreichen

@@ -74,9 +74,8 @@ const StyledRectangle = styled.div`
   min-width: 600px;
   min-height: 300px;
 
-  background: linear-gradient(172.31deg, #FFFFFF -27.37%, #e2e6f2 0%);
+  background: linear-gradient(172.31deg, #fff 10%, #e2e6f2 50%);
   transform: rotate(13.3deg);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   @media (max-width: 912px) {
     position: absolute;
