@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import SkillList from "../SkillList";
+import { CldImage } from "next-cloudinary";
 
 export default function Skills() {
   return (
@@ -12,6 +13,11 @@ export default function Skills() {
       <SkillList status="learning" />
       <h3>Other Skills</h3>
       <SkillList status="other" />
+      <CldImage
+        width="100"
+        height="100"
+        src="https://res.cloudinary.com/dnojoo4vt/image/upload/v1685635010/skills/ac4dawskdqf0yohu5jix.png"
+      />
     </StyledSkills>
   );
 }
