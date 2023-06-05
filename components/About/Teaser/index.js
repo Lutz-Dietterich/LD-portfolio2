@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function Teaser() {
   return (
-    <StyledTeaser>
+    <StyledTeaser id="about">
       <h2>Über Mich</h2>
       <p>
         Als Technik-Enthusiast habe ich eine große Leidenschaft für die

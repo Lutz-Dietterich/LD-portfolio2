@@ -1,26 +1,32 @@
 import Image from "next/image";
 import styled from "styled-components";
+import Link from "next/link";
 
 import MainMenu from "../MainMenu";
 
 export default function Header() {
   return (
     <StyledHeader>
+      {/* <StyledLink href="#top"> */}
       <StyledLogoLarge
+        href="#top"
         src="/img/logo_large.png"
         alt="Lutz Dietterich"
         width={380}
         height={112}
       ></StyledLogoLarge>
+      {/* </StyledLink> */}
 
-      <StyledLogoSmall
-        src="/img/logo_small.png"
-        alt="Lutz Dietterich"
-        width={380}
-        height={112}
-      ></StyledLogoSmall>
+      <StyledLink href="/">
+        <StyledLogoSmall
+          src="/img/logo_small.png"
+          alt="Lutz Dietterich"
+          width={380}
+          height={112}
+        ></StyledLogoSmall>
+      </StyledLink>
 
-      {/* <MainMenu /> */}
+      <MainMenu />
     </StyledHeader>
   );
 }
@@ -34,6 +40,11 @@ const StyledHeader = styled.header`
   width: 100%;
   height: 20vw;
   max-height: 180px;
+  z-index: 2000;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @media (max-width: 912px) {
     justify-content: space-between;
@@ -41,6 +52,13 @@ const StyledHeader = styled.header`
     width: 100%;
     height: 25vw;
     max-height: 180px;
+  }
+`;
+
+const StyledLink = styled(Link)`
+  z-index: 2000;
+  &:hover: {
+    cursor: pointer;
   }
 `;
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { smoothScroll } from "../../utils/smoothScroll";
 
 export default function MainMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,11 @@ export default function MainMenu() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleClick = (event, targetId) => {
+    event.preventDefault();
+    smoothScroll(targetId);
+  };
+
   return (
     <StyledWrapper>
       <MenuIcon onClick={toggleMenu}>
@@ -31,16 +37,36 @@ export default function MainMenu() {
       <StyledNav isOpen={isOpen} className={isOpen ? "open" : ""}>
         <StyledList className={isOpen ? "open" : ""}>
           <StyledListItem>
-            <StyledLink href="/">About me</StyledLink>
+            <StyledLink
+              href="#about"
+              onClick={(event) => handleClick(event, "#about")}
+            >
+              About me
+            </StyledLink>
           </StyledListItem>
           <StyledListItem>
-            <StyledLink href="/about">Skills</StyledLink>
+            <StyledLink
+              href="#skills"
+              onClick={(event) => handleClick(event, "#skills")}
+            >
+              Skills
+            </StyledLink>
           </StyledListItem>
           <StyledListItem>
-            <StyledLink href="/portfolio">Portfolio</StyledLink>
+            <StyledLink
+              href="/portfolio"
+              onClick={(event) => handleClick(event, "/portfolio")}
+            >
+              Portfolio
+            </StyledLink>
           </StyledListItem>
           <StyledListItem>
-            <StyledLink href="#footer">CONTACT ME</StyledLink>
+            <StyledLink
+              href="#footer"
+              onClick={(event) => handleClick(event, "#footer")}
+            >
+              CONTACT ME
+            </StyledLink>
           </StyledListItem>
         </StyledList>
       </StyledNav>

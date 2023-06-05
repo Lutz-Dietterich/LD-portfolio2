@@ -4,7 +4,7 @@ import SkillList from "../SkillList";
 
 export default function Skills() {
   return (
-    <StyledSkills>
+    <StyledSkills id="skills">
       <h2>Skills</h2>
       <h3>Using Now</h3>
       <SkillList status="now" />
