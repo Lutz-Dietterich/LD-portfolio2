@@ -1,30 +1,31 @@
 import Image from "next/image";
 import styled from "styled-components";
-import Link from "next/link";
 
 import MainMenu from "../MainMenu";
 
 export default function Header() {
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <StyledHeader>
-      {/* <StyledLink href="#top"> */}
       <StyledLogoLarge
-        href="#top"
+        onClick={handleScrollToTop}
         src="/img/logo_large.png"
         alt="Lutz Dietterich"
         width={380}
         height={112}
       ></StyledLogoLarge>
-      {/* </StyledLink> */}
 
-      <StyledLink href="/">
-        <StyledLogoSmall
-          src="/img/logo_small.png"
-          alt="Lutz Dietterich"
-          width={380}
-          height={112}
-        ></StyledLogoSmall>
-      </StyledLink>
+      <StyledLogoSmall
+        src="/img/logo_small.png"
+        alt="Lutz Dietterich"
+        width={380}
+        height={112}
+      ></StyledLogoSmall>
 
       <MainMenu />
     </StyledHeader>
@@ -52,13 +53,6 @@ const StyledHeader = styled.header`
     width: 100%;
     height: 25vw;
     max-height: 180px;
-  }
-`;
-
-const StyledLink = styled(Link)`
-  z-index: 2000;
-  &:hover: {
-    cursor: pointer;
   }
 `;
 
