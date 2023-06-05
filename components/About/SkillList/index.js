@@ -7,29 +7,34 @@ export default function SkillList({ status }) {
   const nowSkills = skillsData.filter((skill) => skill.status === status);
 
   return (
-    <StyledSkillListNow>
+    <StyledSkills>
       {nowSkills.map((skill) => (
         <StyledSkill key={skill.id}>
           <StyledCldImage
-            width={skill.imgWidth}
-            height={skill.imgHeight}
+            width={skill.imgWidth * 0.8}
+            height={skill.imgHeight * 0.8}
             src={skill.img}
             alt={skill.name}
           />
           <h4>{skill.name}</h4>
         </StyledSkill>
       ))}
-    </StyledSkillListNow>
+    </StyledSkills>
   );
 }
 
-const StyledSkillListNow = styled.section`
+const StyledSkills = styled.section`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  background-color: var(--color-primary);
+  margin-top: 3rem;
   width: 80%;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const StyledSkill = styled.div`

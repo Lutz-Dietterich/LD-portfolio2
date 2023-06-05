@@ -48,15 +48,19 @@ const StyledButton = styled.button`
   color: white;
   font-weight: 700;
   transition: all 0.3s ease-in-out;
-  background-color: rgba(55, 66, 250, 0.7);
+  background-color: var(--color-button);
+  opacity: 0.7;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
 
   &:hover {
-    background-color: rgba(55, 66, 250, 1);
+    background-color: var(--color-button);
+    opacity: 1;
     transform: scale(1.1);
   }
 
   @media (max-width: 600px) {
     background-color: transparent;
+    box-shadow: none;
     width: 20%;
     color: black;
     left: 50%;

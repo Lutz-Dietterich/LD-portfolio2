@@ -18,6 +18,8 @@ export default createGlobalStyle`
 
   --color-button: #c4c4c4;
 
+  --h2-margin: 2rem 0 3rem 0;
+
   }
 
 

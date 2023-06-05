@@ -41,8 +41,16 @@ const StyledTeaser = styled.article`
   word-spacing: 0.16em;
 
   h2 {
-    margin-bottom: 1rem;
+    margin: var(--h2-margin);
     text-transform: uppercase;
+  }
+
+  @media (max-width: 1440px) {
+    width: 60%;
+  }
+
+  @media (max-width: 1024px) {
+    width: 80%;
   }
 
   @media (max-width: 768px) {

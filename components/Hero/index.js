@@ -193,6 +193,8 @@ const StyledHeroPortrait = styled(Image)`
   max-height: 741px;
   margin-top: auto;
   margin-left: 50vw;
+  -webkit-filter: brightness(80%);
+    filter: brightness(80%);
 
   @media (max-height: 1100px) {
     width: 66vw;

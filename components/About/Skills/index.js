@@ -21,10 +21,17 @@ const StyledSkills = styled.article`
   flex-direction: column;
   align-items: center;
   width: 50%;
-  background-color: var(--color-secondary);
+
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
   h2 {
-    margin-bottom: 1rem;
+    margin: var(--h2-margin);
     text-transform: uppercase;
     text-align: center;
   }
@@ -33,4 +40,5 @@ const StyledSkills = styled.article`
     align-self: flex-start;
     margin: 0 0 1rem 1rem;
     padding-left: 1rem;
+  }
 `;
