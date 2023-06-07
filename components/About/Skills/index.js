@@ -7,7 +7,7 @@ export default function Skills() {
     <StyledSkills id="skills">
       <h2>Skills</h2>
       <StyledHR />
-      <h3>Verwende ich aktuell</h3>
+      <h3>Vorhanden</h3>
       <SkillList status="now" />
       <StyledHR />
       <h3>Lerne ich gerade</h3>
@@ -43,6 +43,10 @@ const StyledSkills = styled.article`
     align-self: flex-start;
     margin: 1rem 0 1rem 1rem;
     padding-left: 1rem;
+
+    @media (max-width: 768px) {
+      align-self: center;
+    }
   }
 `;
 
