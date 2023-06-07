@@ -53,7 +53,7 @@ const StyledHeroImage = styled(Image)`
   height: 150%;
   object-fit: cover;
   object-position: center;
-  filter: blur(5px);
+  filter: blur(3px) brightness(1.1);
 `;
 
 const StyledHeroImageOverlay = styled.div`
