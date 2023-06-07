@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-import HeroMenu from "../HeroMenu";
+import SocialMenu from "../SocialMenu";
 
 export default function Hero() {
   return (
@@ -10,6 +10,7 @@ export default function Hero() {
 
       <StyledHeroImage
         src="/img/hero_background.png"
+        alt="Lutz Dietterich"
         width={1440}
         height={1024}
       />
@@ -17,15 +18,16 @@ export default function Hero() {
       <StyledRectangle />
 
       <StyledHeroText>
-        <p>Hi {"I'm"}</p>
+        <p>Hi, ich bin</p>
         <h1>Lutz Dietterich</h1>
         <h2>Front-end Developer</h2>
       </StyledHeroText>
 
-      <HeroMenu />
+      <SocialMenu />
 
       <StyledHeroPortrait
         src="/img/hero_portrait.png"
+        alt="Lutz Dietterich"
         width={786}
         height={741}
       />
@@ -51,7 +53,7 @@ const StyledHeroImage = styled(Image)`
   height: 150%;
   object-fit: cover;
   object-position: center;
-  filter: blur(5px);
+  filter: blur(3px) brightness(1.1);
 `;
 
 const StyledHeroImageOverlay = styled.div`
@@ -74,7 +76,7 @@ const StyledRectangle = styled.div`
   min-width: 600px;
   min-height: 300px;
 
-  background: #e2e6f2;
+  background: linear-gradient(172.31deg, #fff 10%, #e2e6f2 50%);
   transform: rotate(13.3deg);
 
   @media (max-width: 912px) {
@@ -88,16 +90,16 @@ const StyledRectangle = styled.div`
     transform: rotate(-99.21deg);
 
     @media (min-height: 700px) {
-      top: 33vh;
+      top: 31vh;
 
       @media (min-height: 800px) {
-        top: 30vh;
+        top: 28vh;
 
         @media (min-height: 900px) {
-          top: 28vh;
+          top: 26vh;
 
           @media (min-height: 1000px) {
-            top: 26vh;
+            top: 24vh;
 
 
 
@@ -138,7 +140,7 @@ const StyledHeroText = styled.article`
   h2 {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #a6806a;
+    color: var(--color-secondary);
     margin: 0;
   }
 
@@ -176,7 +178,7 @@ const StyledHeroText = styled.article`
     h2 {
       font-size: 1.2rem;
       font-weight: 400;
-      color: #a6806a;
+      color: var(--color-secondary);
       margin: 0;
     }
 
@@ -191,6 +193,8 @@ const StyledHeroPortrait = styled(Image)`
   max-height: 741px;
   margin-top: auto;
   margin-left: 50vw;
+  -webkit-filter: brightness(80%);
+    filter: brightness(80%);
 
   @media (max-height: 1100px) {
     width: 66vw;

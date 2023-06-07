@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { smoothScroll } from "../../utils/smoothScroll";
 
 export default function MainMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,11 @@ export default function MainMenu() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const handleClick = (event, targetId) => {
+    event.preventDefault();
+    smoothScroll(targetId);
+  };
+
   return (
     <StyledWrapper>
       <MenuIcon onClick={toggleMenu}>
@@ -31,17 +37,37 @@ export default function MainMenu() {
       <StyledNav isOpen={isOpen} className={isOpen ? "open" : ""}>
         <StyledList className={isOpen ? "open" : ""}>
           <StyledListItem>
-            <StyledLink href="/">About me</StyledLink>
+            <StyledLink
+              href="#about"
+              onClick={(event) => handleClick(event, "#about")}
+            >
+              About me
+            </StyledLink>
           </StyledListItem>
           <StyledListItem>
-            <StyledLink href="/about">Skills</StyledLink>
+            <StyledLink
+              href="#skills"
+              onClick={(event) => handleClick(event, "#skills")}
+            >
+              Skills
+            </StyledLink>
+          </StyledListItem>
+          {/* <StyledListItem>
+            <StyledLink
+              href="/portfolio"
+              onClick={(event) => handleClick(event, "/portfolio")}
+            >
+              Portfolio
+            </StyledLink>
           </StyledListItem>
           <StyledListItem>
-            <StyledLink href="/portfolio">Portfolio</StyledLink>
-          </StyledListItem>
-          <StyledListItem>
-            <StyledLink href="#footer">CONTACT ME</StyledLink>
-          </StyledListItem>
+            <StyledLink
+              href="#footer"
+              onClick={(event) => handleClick(event, "#footer")}
+            >
+              CONTACT ME
+            </StyledLink>
+          </StyledListItem> */}
         </StyledList>
       </StyledNav>
     </StyledWrapper>
@@ -57,7 +83,6 @@ const StyledWrapper = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
     width: 50%;
-    justify-content: ;
   }
 `;
 
@@ -76,6 +101,7 @@ const MenuIcon = styled.div`
 const StyledNav = styled.nav`
   display: flex;
   width: 100%;
+
   z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
   top: ${({ isOpen }) => (isOpen ? "0" : "-100vh")};
 
@@ -113,9 +139,16 @@ const StyledNav = styled.nav`
   }
 `;
 
+//TODO: Main Menu wieder ändern wenn portfolio und contact me wieder da sind
+// justify-content: flex-end;
+// gap: 20px;  löschen
+
 const StyledList = styled.ul`
   display: flex;
-  justify-content: space-between;
+
+  justify-content: flex-end;
+  gap: 20px;
+
   align-items: center;
   list-style: none;
   margin-right: 60px;
@@ -144,18 +177,18 @@ const StyledListItem = styled.li`
   padding: 5px 10px;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #e2e6f2;
+  color: var(--color-primary);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover {
-    background-color: #e2e6f2;
+    background-color: var(--color-primary);
     color: #252326;
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
   }
 
   &:last-child {
-    background-color: #e2e6f2;
+    background-color: var(--color-primary);
     font-size: 1.1rem;
     color: #252326;
     padding: 6px 11px;
