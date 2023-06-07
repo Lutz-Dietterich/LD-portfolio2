@@ -52,7 +52,7 @@ export default function MainMenu() {
               Skills
             </StyledLink>
           </StyledListItem>
-          <StyledListItem>
+          {/* <StyledListItem>
             <StyledLink
               href="/portfolio"
               onClick={(event) => handleClick(event, "/portfolio")}
@@ -67,7 +67,7 @@ export default function MainMenu() {
             >
               CONTACT ME
             </StyledLink>
-          </StyledListItem>
+          </StyledListItem> */}
         </StyledList>
       </StyledNav>
     </StyledWrapper>
@@ -83,7 +83,6 @@ const StyledWrapper = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
     width: 50%;
-    justify-content: ;
   }
 `;
 
@@ -102,6 +101,7 @@ const MenuIcon = styled.div`
 const StyledNav = styled.nav`
   display: flex;
   width: 100%;
+
   z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
   top: ${({ isOpen }) => (isOpen ? "0" : "-100vh")};
 
@@ -139,9 +139,16 @@ const StyledNav = styled.nav`
   }
 `;
 
+//TODO: Main Menu wieder ändern wenn portfolio und contact me wieder da sind
+// justify-content: flex-end;
+// gap: 20px;  löschen
+
 const StyledList = styled.ul`
   display: flex;
-  justify-content: space-between;
+
+  justify-content: flex-end;
+  gap: 20px;
+
   align-items: center;
   list-style: none;
   margin-right: 60px;

@@ -7,13 +7,13 @@ export default function Skills() {
     <StyledSkills id="skills">
       <h2>Skills</h2>
       <StyledHR />
-      <h3>Using Now</h3>
+      <h3>Verwende ich aktuell</h3>
       <SkillList status="now" />
       <StyledHR />
-      <h3>Learning</h3>
+      <h3>Lerne ich gerade</h3>
       <SkillList status="learning" />
       <StyledHR />
-      <h3>Other Skills</h3>
+      <h3>Weitere Skills</h3>
       <SkillList status="other" />
     </StyledSkills>
   );
