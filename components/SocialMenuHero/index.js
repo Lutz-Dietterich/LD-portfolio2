@@ -4,7 +4,7 @@ import Link from "next/link";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
-export default function HeroMenu() {
+export default function SocialMenuHero() {
   return (
     <StyledNav>
       <StyledList>
@@ -32,6 +32,7 @@ export default function HeroMenu() {
 }
 
 const StyledNav = styled.nav`
+
   position: absolute;
   top: 74%;
   left: 120px;
@@ -53,6 +54,7 @@ const StyledNav = styled.nav`
 
     
   }
+
 `;
 
 const StyledList = styled.ul`

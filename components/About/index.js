@@ -26,5 +26,6 @@ const StyledSection = styled.section`
 
   @media (max-width: 768px) {
     margin-top: -50px;
+    margin-bottom: -20vw;
   }
 `;
