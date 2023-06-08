@@ -43,8 +43,10 @@ const StyledNav = styled.nav`
 const StyledList = styled.ul`
   display: flex;
   justify-content: space-around;
+  gap: 10px;
+
   list-style: none;
-  width: 15%;
+  width: 15vw;
   padding: 0;
 
   @media (max-width: 768px) {

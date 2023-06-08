@@ -31,8 +31,28 @@ export default function Footer() {
               <AiOutlineClose />
             </CloseButton>
             <h2>Impressum</h2>
-            <p>Name: Lutz Dietterich</p>
-            <p>Adresse: Beispielstraße 123, 12345 Beispielstadt</p>
+
+            <h3>Angaben gem&auml;&szlig; &sect; 5 TMG</h3>
+            <p>
+              Lutz Dietterich
+              <br />
+              Gl&uuml;singer Weg 2<br />
+              21481 Lauenburg/Elbe
+            </p>
+
+            <h3>Kontakt</h3>
+            <p>
+              Telefon: 015780992549
+              <br />
+              E-Mail: job@lutz-dietterich.de
+            </p>
+
+            <p>
+              Quelle:{" "}
+              <a href="https://www.e-recht24.de/impressum-generator.html">
+                https://www.e-recht24.de/impressum-generator.html
+              </a>
+            </p>
           </StyledImpressumContent>
         </StyledImpressumPopup>
       )}
@@ -62,6 +82,7 @@ const StyledCopy = styled.p`
 `;
 
 const StyledImpressumButton = styled.button`
+  cursor: pointer;
   display: flex;
   justify-content: flex-start;
   width: 100%;
@@ -71,11 +92,16 @@ const StyledImpressumButton = styled.button`
   font-size: 1.2rem;
   text-align: center;
   padding: 20px;
+  z-index: 1000;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 const fadeIn = keyframes`
   from {
-    width: 0;
+    height: 0;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.0);
   }
@@ -85,7 +111,7 @@ const fadeIn = keyframes`
   }
 
   to {
-    width: 100%;
+    height: 100%;
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.5);
   }
@@ -108,15 +134,26 @@ const StyledImpressumPopup = styled.div`
 const StyledImpressumContent = styled.div`
   display: flex;
   flex-direction: column;
+  min-width: 500px;
   align-items: center;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
   color: var(--color-text);
   line-height: 1;
+
+  p {
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    min-width: 300px;
+    margin: 10px;
+  }
 `;
 
 const CloseButton = styled.button`
+  cursor: pointer;
   margin-top: 10px;
   align-self: flex-end;
   background-color: transparent;
