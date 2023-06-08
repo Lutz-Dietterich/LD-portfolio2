@@ -50,10 +50,10 @@ export const skillsData = [
   },
   {
     id: 7,
-    name: "Englisch C2",
+    name: "Englisch B2",
     status: "other",
     img: "https://res.cloudinary.com/dnojoo4vt/image/upload/v1685635009/skills/vxp8oc4q46xpinqql0pc.png",
-    imgWidth: "81",
+    imgWidth: "80",
     imgHeight: "80",
   },
   {

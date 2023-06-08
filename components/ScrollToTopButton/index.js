@@ -59,13 +59,14 @@ const StyledButton = styled.button`
   }
 
   @media (max-width: 600px) {
+    position: relative;
     background-color: transparent;
     box-shadow: none;
     width: 20%;
     color: black;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 50px;
+    bottom: -80px;
 
     &:hover {
       background-color: transparent;

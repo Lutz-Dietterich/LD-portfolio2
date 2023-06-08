@@ -41,7 +41,7 @@ export default function MainMenu() {
               href="#about"
               onClick={(event) => handleClick(event, "#about")}
             >
-              About me
+              Über mich
             </StyledLink>
           </StyledListItem>
           <StyledListItem>
@@ -65,7 +65,7 @@ export default function MainMenu() {
               href="#footer"
               onClick={(event) => handleClick(event, "#footer")}
             >
-              CONTACT ME
+              Kontakt
             </StyledLink>
           </StyledListItem> */}
         </StyledList>

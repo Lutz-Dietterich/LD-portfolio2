@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-import SocialMenu from "../SocialMenu";
+import SocialMenuHero from "../SocialMenuHero";
 
 export default function Hero() {
   return (
@@ -23,7 +23,7 @@ export default function Hero() {
         <h2>Front-end Developer</h2>
       </StyledHeroText>
 
-      <SocialMenu />
+      <SocialMenuHero />
 
       <StyledHeroPortrait
         src="/img/hero_portrait.png"
@@ -193,8 +193,8 @@ const StyledHeroPortrait = styled(Image)`
   max-height: 741px;
   margin-top: auto;
   margin-left: 50vw;
-  -webkit-filter: brightness(80%);
-    filter: brightness(80%);
+  -webkit-filter: brightness(90%);
+    filter: brightness(90%);
 
   @media (max-height: 1100px) {
     width: 66vw;
