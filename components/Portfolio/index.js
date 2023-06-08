@@ -17,7 +17,7 @@ const StyledPortfolio = styled.section`
   justify-content: center;
   hyphens: auto;
   width: 100%;
-  padding: 3rem;
+  padding: var(--main-section-padding);
   background-color: var(--color-primary);
 
   letter-spacing: 0.1354em;
@@ -27,18 +27,5 @@ const StyledPortfolio = styled.section`
   h2 {
     margin: var(--h2-margin);
     text-transform: uppercase;
-  }
-
-  @media (max-width: 1440px) {
-    width: 60%;
-  }
-
-  @media (max-width: 1024px) {
-    width: 80%;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    padding: 0;
   }
 `;

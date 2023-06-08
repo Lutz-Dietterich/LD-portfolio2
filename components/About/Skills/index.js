@@ -24,6 +24,7 @@ const StyledSkills = styled.article`
   flex-direction: column;
   align-items: center;
   width: 50%;
+  padding: var(--main-section-padding);
 
   @media (max-width: 1024px) {
     width: 80%;
@@ -51,6 +52,7 @@ const StyledSkills = styled.article`
 `;
 
 const StyledHR = styled.hr`
+  display: none;
   width: 95%;
   border: none;
   height: 1px;

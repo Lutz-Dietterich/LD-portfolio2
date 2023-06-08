@@ -20,6 +20,8 @@ export default createGlobalStyle`
 
   --h2-margin: 2rem 0 3rem 0;
 
+  --main-section-padding: 5rem 0 5rem 0;
+
   }
 
 

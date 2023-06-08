@@ -32,7 +32,7 @@ const StyledTeaser = styled.article`
   justify-content: center;
   hyphens: auto;
   width: 50%;
-  padding: 3rem;
+  padding: var(--main-section-padding);
   margin: 2rem 0;
 
   letter-spacing: 0.1354em;

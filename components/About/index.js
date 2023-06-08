@@ -17,7 +17,6 @@ const StyledSection = styled.section`
   width: 100%;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
   background: radial-gradient(
     50% 50% at 50% 50%,
     rgba(226, 230, 242, 0) 22.22%,
