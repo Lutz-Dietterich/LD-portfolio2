@@ -11,7 +11,7 @@ const data = [
     id: 1,
     title: "PawfectMatch App",
     imageUrl:
-      "https://res.cloudinary.com/dnojoo4vt/image/upload/v1685634486/samples/animals/kitten-playing.gif",
+      "https://res.cloudinary.com/dnojoo4vt/image/upload/v1686326912/Portfolio/pawfectMatch_Teaser_zs6uqz.png",
     link: "https://pawfect-match.de/",
     linkText: "Zur App",
   },
@@ -19,13 +19,19 @@ const data = [
     id: 2,
     title: "Bild 2",
     imageUrl:
-      "https://res.cloudinary.com/dnojoo4vt/image/upload/v1685634485/samples/landscapes/nature-mountains.jpg",
+      "https://res.cloudinary.com/dnojoo4vt/image/upload/v1686322616/Portfolio/signed-certificate-Lutz_Dietterich3_qskozv.png",
   },
   {
     id: 3,
     title: "Bild 3",
     imageUrl:
-      "https://res.cloudinary.com/dnojoo4vt/image/upload/v1685634480/samples/people/bicycle.jpg",
+      "https://res.cloudinary.com/dnojoo4vt/image/upload/v1686322616/Portfolio/signed-certificate-Lutz_Dietterich2_hyybsw.png",
+  },
+  {
+    id: 4,
+    title: "Bild 4",
+    imageUrl:
+      "https://res.cloudinary.com/dnojoo4vt/image/upload/v1686322616/Portfolio/signed-certificate-Lutz_Dietterich1_mbyygi.png",
   },
 ];
 
@@ -60,68 +66,63 @@ export default function PortfolioCarousel() {
   };
 
   return (
-    <SliderContainer>
-      <Slide
-        onMouseEnter={() => handleLinkHover(true)}
-        onMouseLeave={() => handleLinkHover(false)}
-      >
-        <SliderArrow onClick={goToPreviousSlide}>
-          <BsChevronLeft />
-        </SliderArrow>
-
-        <SlideImageContainer currentIndex={currentIndex}>
-          {data.map((item, index) => (
-            <SlideImage
-              key={item.id}
-              src={item.imageUrl}
-              alt={item.title}
-              active={index === currentIndex}
-              link={item.link}
-              linkText={item.linkText}
-            />
-          ))}
-          {data[currentIndex].link && (
-            <StyledLink href={data[currentIndex].link} target="blank">
-              {data[currentIndex].linkText}
-            </StyledLink>
-          )}
-        </SlideImageContainer>
-        <SliderArrow onClick={goToNextSlide}>
-          <BsChevronRight />
-        </SliderArrow>
-      </Slide>
+    <SliderContainer
+      onMouseEnter={() => handleLinkHover(true)}
+      onMouseLeave={() => handleLinkHover(false)}
+    >
+      <SliderArrow onClick={goToPreviousSlide}>
+        <BsChevronLeft />
+      </SliderArrow>
+      <SlideImageContainer currentIndex={currentIndex}>
+        {data.map((item, index) => (
+          <SlideImage
+            width={900}
+            height={600}
+            key={item.id}
+            src={item.imageUrl}
+            alt={item.title}
+            active={index === currentIndex}
+            link={item.link}
+            linkText={item.linkText}
+          />
+        ))}
+        {data[currentIndex].link && (
+          <StyledLink href={data[currentIndex].link} target="blank">
+            {data[currentIndex].linkText}
+          </StyledLink>
+        )}
+      </SlideImageContainer>
+      <SliderArrow onClick={goToNextSlide}>
+        <BsChevronRight />
+      </SliderArrow>
     </SliderContainer>
   );
 }
 
 const SliderContainer = styled.div`
   position: relative;
-  margin-top: 5rem;
-`;
-
-const Slide = styled.div`
-  position: relative;
-
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
+  margin: 5rem auto;
+  width: 53vw;
+  height: 500px;
   background-color: var(--color-primary);
-  height: 600px;
 `;
 
 const SlideImageContainer = styled.div`
+  position: relative;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
 `;
 
 const SlideImage = styled.img`
   position: absolute;
-  top: 0;
-
-  width: 53%;
-  height: 100%;
-  overflow: hidden;
+  display: flex;
+  width: 50vw;
+  height: 32vw;
 
   visibility: ${(props) => (props.active ? "visible" : "hidden")};
   opacity: ${(props) => (props.active ? 1 : 0)};
@@ -162,7 +163,6 @@ const SliderArrow = styled.div`
   justify-content: center;
   font-size: 24px;
   cursor: pointer;
-  margin: 19.5vw;
   z-index: 1000;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 
