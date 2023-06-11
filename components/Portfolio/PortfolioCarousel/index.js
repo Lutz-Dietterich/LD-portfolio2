@@ -6,34 +6,7 @@ import { useEffect } from "react";
 import { BsChevronLeft } from "react-icons/bs";
 import { BsChevronRight } from "react-icons/bs";
 
-const data = [
-  {
-    id: 1,
-    title: "PawfectMatch App",
-    imageUrl:
-      "https://res.cloudinary.com/dnojoo4vt/image/upload/v1686326912/Portfolio/pawfectMatch_Teaser_zs6uqz.png",
-    link: "https://pawfect-match.de/",
-    linkText: "Zur App",
-  },
-  {
-    id: 2,
-    title: "Bild 2",
-    imageUrl:
-      "https://res.cloudinary.com/dnojoo4vt/image/upload/v1686322616/Portfolio/signed-certificate-Lutz_Dietterich3_qskozv.png",
-  },
-  {
-    id: 3,
-    title: "Bild 3",
-    imageUrl:
-      "https://res.cloudinary.com/dnojoo4vt/image/upload/v1686322616/Portfolio/signed-certificate-Lutz_Dietterich2_hyybsw.png",
-  },
-  {
-    id: 4,
-    title: "Bild 4",
-    imageUrl:
-      "https://res.cloudinary.com/dnojoo4vt/image/upload/v1686322616/Portfolio/signed-certificate-Lutz_Dietterich1_mbyygi.png",
-  },
-];
+import { sliderData } from "../../../utils/data/sliderData";
 
 export default function PortfolioCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,7 +15,7 @@ export default function PortfolioCarousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovered) {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % sliderData.length);
       }
     }, 5000);
 
@@ -55,13 +28,13 @@ export default function PortfolioCarousel() {
 
   const goToPreviousSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? data.length - 1 : prevIndex - 1
+      prevIndex === 0 ? sliderData.length - 1 : prevIndex - 1
     );
   };
 
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === data.length - 1 ? 0 : prevIndex + 1
+      prevIndex === sliderData.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -74,7 +47,7 @@ export default function PortfolioCarousel() {
         <BsChevronLeft />
       </SliderArrow>
       <SlideImageContainer currentIndex={currentIndex}>
-        {data.map((item, index) => (
+        {sliderData.map((item, index) => (
           <SlideImage
             width={900}
             height={600}
@@ -87,8 +60,8 @@ export default function PortfolioCarousel() {
           />
         ))}
         {data[currentIndex].link && (
-          <StyledLink href={data[currentIndex].link} target="blank">
-            {data[currentIndex].linkText}
+          <StyledLink href={sliderData[currentIndex].link} target="blank">
+            {sliderData[currentIndex].linkText}
           </StyledLink>
         )}
       </SlideImageContainer>

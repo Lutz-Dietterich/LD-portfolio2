@@ -9,6 +9,9 @@ import Impressum from "../Impressum";
 export default function Footer() {
   const [showImpressum, setShowImpressum] = useState(false);
 
+  const date = new Date();
+  const year = date.getFullYear();
+
   const handleImpressumClick = () => {
     setShowImpressum(!showImpressum);
   };
@@ -16,7 +19,7 @@ export default function Footer() {
   return (
     <StyledFooter id="footer">
       <SocialMenuFooter />
-      <StyledCopy>© 2023 Lutz Dietterich</StyledCopy>
+      <StyledCopy>© {year} Lutz Dietterich</StyledCopy>
       <StyledImpressumButton onClick={handleImpressumClick}>
         Impressum
       </StyledImpressumButton>

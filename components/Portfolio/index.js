@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 import PortfolioCarousel from "./PortfolioCarousel";
+import Slider from "./Slider";
 
 export default function Portfolio() {
   return (
     <StyledPortfolio id="portfolio">
       <h2>Portfolio</h2>
-      <PortfolioCarousel />
+      {/* <PortfolioCarousel /> */}
+      <Slider />
     </StyledPortfolio>
   );
 }
