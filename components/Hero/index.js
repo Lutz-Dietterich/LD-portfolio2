@@ -89,6 +89,12 @@ const StyledRectangle = styled.div`
     background: rgba(226, 230, 242, 0.85);
     transform: rotate(-99.21deg);
 
+    @media (max-height: 600px) {
+      top: 59vh;
+      width: 92vw;
+      height: 230vh;
+    }
+
     @media (min-height: 700px) {
       top: 31vh;
 
@@ -196,6 +202,19 @@ const StyledHeroPortrait = styled(Image)`
   -webkit-filter: brightness(90%);
     filter: brightness(90%);
 
+
+    @media (max-width: 912px) {
+      position: absolute;
+      min-width: 592px;
+      min-height: 585px;
+      margin auto;
+      bottom: 50px;
+      right: -144px;
+  
+      z-index: -105;
+    }
+  
+
   @media (max-height: 1100px) {
     width: 66vw;
     height: 62vw;
@@ -208,19 +227,10 @@ const StyledHeroPortrait = styled(Image)`
   }
 
   @media (max-height: 560px) {
-    width: 35vw;
-    height: 33vw;
+    min-width: 45vw;
+    min-height: 43vw;
+    bottom: -27px;
+    right: 57px;
 
   }
-
-  @media (max-width: 912px) {
-    position: absolute;
-    min-width: 592px;
-    min-height: 585px;
-    margin auto;
-    bottom: 50px;
-    right: -144px;
-
-    z-index: -105;
-  }
-`;
+  `;

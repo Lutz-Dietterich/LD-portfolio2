@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import PortfolioCarousel from "./PortfolioCarousel";
 import Slider from "./Slider";
+import ScrollButton from "../ScrollButton";
 
 export default function Portfolio() {
   return (
@@ -9,6 +10,7 @@ export default function Portfolio() {
       <h2>Portfolio</h2>
       {/* <PortfolioCarousel /> */}
       <Slider />
+      {/* <ScrollButton /> */}
     </StyledPortfolio>
   );
 }
