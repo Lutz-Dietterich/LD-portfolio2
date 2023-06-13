@@ -87,7 +87,7 @@ const StyledImpressumContent = styled.div`
 
   @media (max-width: 768px) {
     min-width: 300px;
-    margin: 10px;
+    margin: 0 10px 10px 10px;
   }
 `;
 

@@ -34,7 +34,6 @@ const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 35vh;
   background-color: var(--color-text);
 
   z-index: -2000;
@@ -49,6 +48,10 @@ const StyledCopy = styled.p`
   color: var(--color-text-light);
   font-size: 1.2rem;
   text-align: center;
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `;
 
 const StyledImpressumButton = styled.button`

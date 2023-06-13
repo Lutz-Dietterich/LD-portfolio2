@@ -38,6 +38,10 @@ const StyledSkills = styled.article`
     margin: var(--h2-margin);
     text-transform: uppercase;
     text-align: center;
+
+    @media (max-width: 768px) {
+      margin: var(--h2margin-mobile);
+    }
   }
 
   h3 {
@@ -47,6 +51,8 @@ const StyledSkills = styled.article`
 
     @media (max-width: 768px) {
       align-self: center;
+      margin: 0;
+      padding-left: 0;
     }
   }
 `;

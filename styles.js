@@ -19,6 +19,7 @@ export default createGlobalStyle`
   --color-button: #c4c4c4;
 
   --h2-margin: 2rem 0 5rem 0;
+  --h2margin-mobile: 2rem 0 2rem 0;
 
   --main-section-padding: 5rem 0 4rem 0;
 

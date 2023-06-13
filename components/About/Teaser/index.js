@@ -43,6 +43,10 @@ const StyledTeaser = styled.article`
   h2 {
     margin: var(--h2-margin);
     text-transform: uppercase;
+
+    @media (max-width: 768px) {
+      margin: var(--h2margin-mobile);
+    }
   }
 
   @media (max-width: 1440px) {

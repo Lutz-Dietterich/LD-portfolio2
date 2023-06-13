@@ -64,15 +64,12 @@ const StyledButton = styled.button`
     box-shadow: none;
     width: 20%;
     color: black;
-    transform: translateX(-50%);
     bottom: 10px;
-    margin: 0 auto;
+    right: 0;
 
     &:hover {
       background-color: transparent;
       transform: scale(1.1);
-      left: 50%;
-      transform: translateX(-50%);
     }
   }
 `;

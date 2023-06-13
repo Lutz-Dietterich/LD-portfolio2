@@ -86,6 +86,10 @@ const StyledSwiper = styled(Swiper)`
   @media (max-width: 1024px) {
     width: 90%;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
@@ -117,7 +121,7 @@ const StyledLink = styled(Link)`
   // margin: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 10px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-button);
   color: var(--color-primary);
   font-size: 1.2rem;
   text-decoration: none;
@@ -127,5 +131,10 @@ const StyledLink = styled(Link)`
   &:hover {
     background-color: var(--color-primary);
     color: var(--color-secondary);
+  }
+
+  @media (max-width: 768px) {
+    bottom: -5%;
+    left: 5%;
   }
 `;
