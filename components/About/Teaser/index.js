@@ -30,9 +30,9 @@ const StyledTeaser = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  hyphens: auto;
+  text-wrap: balance;
   width: 50%;
-  padding: 3rem;
+  padding: var(--main-section-padding);
   margin: 2rem 0;
 
   letter-spacing: 0.1354em;
@@ -43,6 +43,10 @@ const StyledTeaser = styled.article`
   h2 {
     margin: var(--h2-margin);
     text-transform: uppercase;
+
+    @media (max-width: 768px) {
+      margin: var(--h2margin-mobile);
+    }
   }
 
   @media (max-width: 1440px) {

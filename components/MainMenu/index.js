@@ -52,14 +52,15 @@ export default function MainMenu() {
               Skills
             </StyledLink>
           </StyledListItem>
-          {/* <StyledListItem>
+          <StyledListItem>
             <StyledLink
               href="/portfolio"
-              onClick={(event) => handleClick(event, "/portfolio")}
+              onClick={(event) => handleClick(event, "#portfolio")}
             >
               Portfolio
             </StyledLink>
           </StyledListItem>
+          {/*
           <StyledListItem>
             <StyledLink
               href="#footer"

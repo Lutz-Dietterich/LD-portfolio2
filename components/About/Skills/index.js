@@ -24,6 +24,7 @@ const StyledSkills = styled.article`
   flex-direction: column;
   align-items: center;
   width: 50%;
+  padding: var(--main-section-padding);
 
   @media (max-width: 1024px) {
     width: 80%;
@@ -37,6 +38,10 @@ const StyledSkills = styled.article`
     margin: var(--h2-margin);
     text-transform: uppercase;
     text-align: center;
+
+    @media (max-width: 768px) {
+      margin: var(--h2margin-mobile);
+    }
   }
 
   h3 {
@@ -46,11 +51,14 @@ const StyledSkills = styled.article`
 
     @media (max-width: 768px) {
       align-self: center;
+      margin: 0;
+      padding-left: 0;
     }
   }
 `;
 
 const StyledHR = styled.hr`
+  display: none;
   width: 95%;
   border: none;
   height: 1px;
