@@ -64,9 +64,9 @@ const StyledButton = styled.button`
     box-shadow: none;
     width: 20%;
     color: black;
-    left: 50%;
     transform: translateX(-50%);
-    bottom: -80px;
+    bottom: 10px;
+    margin: 0 auto;
 
     &:hover {
       background-color: transparent;

@@ -5,13 +5,15 @@ export const sliderData = [
     imageUrl:
       "https://res.cloudinary.com/dnojoo4vt/image/upload/v1686326912/Portfolio/pawfectMatch_Teaser_zs6uqz.png",
     link: "https://pawfect-match.de/",
-    linkText: "Zur App",
+    linkText: "Zur App pieeepp",
   },
   {
     id: 2,
     title: "Bild 2",
     imageUrl:
       "https://res.cloudinary.com/dnojoo4vt/image/upload/v1686322616/Portfolio/signed-certificate-Lutz_Dietterich3_qskozv.png",
+    link: "https://pawfect-match.de/",
+    linkText: "Zur App pieeepp",
   },
   {
     id: 3,

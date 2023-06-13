@@ -74,6 +74,18 @@ const StyledSwiper = styled(Swiper)`
       scale: 1.1;
     }
   }
+
+  @media (max-width: 1600px) {
+    width: 70%;
+  }
+
+  @media (max-width: 1440px) {
+    width: 80%;
+  }
+
+  @media (max-width: 1024px) {
+    width: 90%;
+  }
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
@@ -101,8 +113,8 @@ const StyledImage = styled(Image)`
 const StyledLink = styled(Link)`
   position: absolute;
   bottom: 10%;
-  left: 20%;
-  margin: 1rem;
+  // left: 20%;
+  // margin: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 10px;
   background-color: var(--color-secondary);
@@ -110,7 +122,8 @@ const StyledLink = styled(Link)`
   font-size: 1.2rem;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
-
+  transform: translate(0 -50%);
+}
   &:hover {
     background-color: var(--color-primary);
     color: var(--color-secondary);

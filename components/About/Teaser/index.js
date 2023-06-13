@@ -30,7 +30,7 @@ const StyledTeaser = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  hyphens: auto;
+  text-wrap: balance;
   width: 50%;
   padding: var(--main-section-padding);
   margin: 2rem 0;
