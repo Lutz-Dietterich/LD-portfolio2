@@ -68,6 +68,7 @@ const StyledImpressumPopup = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
   animation: ${fadeIn} 0.5s ease-in-out;
+  overflow: scroll;
 `;
 
 const StyledImpressumContent = styled.div`
