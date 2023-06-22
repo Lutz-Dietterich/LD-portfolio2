@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Hero from "../Hero";
 import About from "../About";
 import Portfolio from "../Portfolio";
+import ContactForm from "../Contact";
 import ScrollToTopButton from "../ScrollToTopButton";
 
 export default function Main() {
@@ -11,6 +12,7 @@ export default function Main() {
       <Hero />
       <About />
       <Portfolio />
+      <ContactForm />
       <ScrollToTopButton />
     </StyledMain>
   );
