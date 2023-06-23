@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import NodemailerForm from "../NodemailerForm";
+import EmailTemplate from "../EmailTemplate";
 
 export default function ContactForm() {
   return (
@@ -8,6 +9,7 @@ export default function ContactForm() {
       <h2>Kontakt</h2>
 
       <NodemailerForm />
+      <EmailTemplate />
     </StyledContact>
   );
 }
