@@ -39,7 +39,6 @@ export default function EmailTemplate({ firstName, message }) {
       <div style={contentStyles}>
         <p>Hallo {firstName},</p>
         <p>Vielen Dank für deine Nachricht:</p>
-        <p>{message}</p>
         <p>Viele Grüße</p>
       </div>
       <div style={footerStyles}>
