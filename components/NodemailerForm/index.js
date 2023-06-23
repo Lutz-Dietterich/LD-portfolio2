@@ -12,6 +12,11 @@ export default function NodemailerForm() {
   const [isSent, setIsSent] = useState(false);
   const [captchaToken, setCaptchaToken] = useState("");
 
+  const siteKey = process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY;
+  const secretKey = process.env.NEXT_PUBLIC_CAPTCHA_SECRET_KEY;
+  console.log("siteKey", siteKey);
+  console.log("secretKey", secretKey);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "companyName") {
@@ -34,6 +39,14 @@ export default function NodemailerForm() {
       return;
     }
 
+    const handleReset = () => {
+      setCompanyName("");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setMessage("");
+    };
+
     try {
       const response = await fetch("../api/sendEmail", {
         method: "POST",
@@ -48,6 +61,7 @@ export default function NodemailerForm() {
         setTimeout(() => {
           setIsSent(false);
         }, 3500);
+        handleReset();
       } else {
         console.log("E-Mail konnte nicht gesendet werden");
       }
@@ -158,8 +172,7 @@ export default function NodemailerForm() {
           </StyledFormGroup>
           <StyledFormGroup>
             <ReCAPTCHA
-              sitekey={"process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY"}
-              secretkey={"process.env.NEXT_PUBLIC_CAPTCHA_SECRET_KEY"}
+              sitekey={"6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
               onChange={(token) => setCaptchaToken(token)}
             />
           </StyledFormGroup>
