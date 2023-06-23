@@ -12,11 +12,6 @@ export default function NodemailerForm() {
   const [isSent, setIsSent] = useState(false);
   const [captchaToken, setCaptchaToken] = useState("");
 
-  const siteKey = process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY;
-  const secretKey = process.env.NEXT_PUBLIC_CAPTCHA_SECRET_KEY;
-  console.log("siteKey", siteKey);
-  console.log("secretKey", secretKey);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "companyName") {
