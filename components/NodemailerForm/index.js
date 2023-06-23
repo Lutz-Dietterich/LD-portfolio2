@@ -60,8 +60,7 @@ export default function NodemailerForm() {
   useEffect(() => {
     // Laden der reCAPTCHA Bibliothek
     const script = document.createElement("script");
-    script.src =
-      "https://www.google.com/recaptcha/api.js?render=process.env.CAPCHA_SECRET_KEY";
+    script.src = "https://www.google.com/recaptcha/api.js";
     script.async = true;
     document.body.appendChild(script);
 
