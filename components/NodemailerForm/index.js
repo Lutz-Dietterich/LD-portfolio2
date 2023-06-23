@@ -61,16 +61,19 @@ export default function NodemailerForm() {
     // Laden der reCAPTCHA Bibliothek
     const script = document.createElement("script");
     script.src =
-      "https://www.google.com/recaptcha/api.js?render=process.env.Captcha_Site_Key";
+      "https://www.google.com/recaptcha/api.js?render=process.env.CAPCHA_SECRET_KEY";
     script.async = true;
     document.body.appendChild(script);
 
     // Generieren des Captcha-Tokens
     const generateCaptchaToken = async () => {
       try {
-        const token = await grecaptcha.execute("process.env.Captcha_Site_Key", {
-          action: "submit",
-        });
+        const token = await grecaptcha.execute(
+          "process.env.CAPCHA_SECRET_KEY",
+          {
+            action: "submit",
+          }
+        );
         setCaptchaToken(token);
       } catch (error) {
         console.log("Fehler beim Generieren des Captcha-Tokens");
