@@ -60,15 +60,15 @@ export default function MainMenu() {
               Portfolio
             </StyledLink>
           </StyledListItem>
-          {/*
+
           <StyledListItem>
             <StyledLink
-              href="#footer"
-              onClick={(event) => handleClick(event, "#footer")}
+              href="#contact"
+              onClick={(event) => handleClick(event, "#contact")}
             >
               Kontakt
             </StyledLink>
-          </StyledListItem> */}
+          </StyledListItem>
         </StyledList>
       </StyledNav>
     </StyledWrapper>
