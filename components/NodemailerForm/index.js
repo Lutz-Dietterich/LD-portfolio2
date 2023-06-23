@@ -188,7 +188,7 @@ export default function NodemailerForm() {
           <StyledFormGroup>
             <div
               className="g-recaptcha"
-              data-sitekey="6LcwDMMmAAAAAP6kmbVVs5rL7pHYYn7n3lNvSPup"
+              data-sitekey="process.env.CAPCHA_SITE_KEY"
               data-callback="onCaptchaSubmit"
             ></div>
           </StyledFormGroup>
