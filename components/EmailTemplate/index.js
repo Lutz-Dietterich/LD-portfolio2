@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function EmailTemplate({ name, message }) {
+export default function EmailTemplate({ firstName, message }) {
   const containerStyles = {
     maxWidth: "600px",
     margin: "0 auto",
@@ -37,7 +37,7 @@ export default function EmailTemplate({ name, message }) {
         <h1>Willkommen!</h1>
       </div>
       <div style={contentStyles}>
-        <p>Hallo {name},</p>
+        <p>Hallo {firstName},</p>
         <p>Vielen Dank für deine Nachricht:</p>
         <p>{message}</p>
         <p>Viele Grüße</p>

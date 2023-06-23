@@ -51,6 +51,7 @@ const StyledButton = styled.button`
   background-color: var(--color-button);
   opacity: 0.7;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
 
   &:hover {
     background-color: var(--color-button);

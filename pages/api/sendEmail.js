@@ -5,7 +5,7 @@ import EmailTemplate from "../../components/EmailTemplate";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { name, email, message } = req.body;
+    const { firstName, email, message } = req.body;
 
     // Erstelle den Nodemailer Transporter für Strato
     let transporter = nodemailer.createTransport({
@@ -19,14 +19,14 @@ export default async function handler(req, res) {
     });
 
     const emailContent = ReactDOMServer.renderToString(
-      <EmailTemplate name={name} message={message} />
+      <EmailTemplate firstName={firstName} message={message} />
     );
 
     // Konfiguriere die E-Mail-Daten
     let mailOptions = {
       from: "job@lutz-dietterich.de",
       to: email, // Empfänger-E-Mail-Adresse eintragen
-      subject: "Neue Nachricht von " + name,
+      subject: "Neue Nachricht von " + firstName,
       text: message,
       html: emailContent,
     };
