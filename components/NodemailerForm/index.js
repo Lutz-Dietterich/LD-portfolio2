@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import { router } from "next/router";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function NodemailerForm() {
   const [companyName, setCompanyName] = useState("");
@@ -11,7 +11,6 @@ export default function NodemailerForm() {
   const [message, setMessage] = useState("");
   const [isSent, setIsSent] = useState(false);
   const [captchaToken, setCaptchaToken] = useState("");
-  //   const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,34 +55,6 @@ export default function NodemailerForm() {
       console.log("Fehler beim Senden der E-Mail");
     }
   };
-
-  useEffect(() => {
-    // Laden der reCAPTCHA Bibliothek
-    const script = document.createElement("script");
-    script.src = "https://www.google.com/recaptcha/api.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    // Generieren des Captcha-Tokens
-    const generateCaptchaToken = async () => {
-      try {
-        const token = await grecaptcha.execute(
-          "process.env.CAPCHA_SECRET_KEY",
-          {
-            action: "submit",
-          }
-        );
-        setCaptchaToken(token);
-      } catch (error) {
-        console.log("Fehler beim Generieren des Captcha-Tokens");
-      }
-    };
-
-    // Überprüfen, ob die reCAPTCHA-Bibliothek geladen wurde
-    if (typeof window !== "undefined" && typeof grecaptcha !== "undefined") {
-      generateCaptchaToken();
-    }
-  }, []);
 
   return (
     <StyledFormSection>
@@ -186,11 +157,10 @@ export default function NodemailerForm() {
             </label>
           </StyledFormGroup>
           <StyledFormGroup>
-            <div
-              className="g-recaptcha"
-              data-sitekey="process.env.CAPCHA_SITE_KEY"
-              data-callback="onCaptchaSubmit"
-            ></div>
+            <ReCAPTCHA
+              sitekey={"process.env.CAPCHA_SITE_KEY"}
+              onChange={(token) => setCaptchaToken(token)}
+            />
           </StyledFormGroup>
           <button type="submit">Senden</button>
         </StyledForm>
