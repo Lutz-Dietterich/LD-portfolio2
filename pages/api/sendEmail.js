@@ -26,7 +26,7 @@ export default async function handler(req, res) {
     let mailOptions = {
       from: "job@lutz-dietterich.de",
       to: email, // Empfänger-E-Mail-Adresse eintragen
-      subject: "Neue Nachricht von " + firstName,
+      subject: "Neue Nachricht von Lutz Dietterich",
       text: message,
       html: emailContent,
     };

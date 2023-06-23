@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import ReCAPTCHA from "react-google-recaptcha";
+import LoadingSpinner from "../LoadingSpinner";
+import { CLIENT_STATIC_FILES_RUNTIME_MAIN } from "next/dist/shared/lib/constants";
 
 export default function NodemailerForm() {
   const [companyName, setCompanyName] = useState("");
@@ -10,6 +12,7 @@ export default function NodemailerForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSent, setIsSent] = useState(false);
+  const [sendEmail, setSendEmail] = useState(false);
   //   const [captchaToken, setCaptchaToken] = useState("");
 
   const handleChange = (e) => {
@@ -34,6 +37,8 @@ export default function NodemailerForm() {
     //   return;
     // }
 
+    setSendEmail(true);
+
     const handleReset = () => {
       setCompanyName("");
       setFirstName("");
@@ -53,6 +58,8 @@ export default function NodemailerForm() {
 
       if (response.ok) {
         setIsSent(true);
+        setSendEmail(false);
+
         setTimeout(() => {
           setIsSent(false);
         }, 3500);
@@ -65,116 +72,122 @@ export default function NodemailerForm() {
     }
   };
 
+  console.log("sendEmail", sendEmail);
+
   return (
-    <StyledFormSection>
-      {isSent && (
-        <div>
-          <p>E-Mail wurde gesendet!</p>
-          <Image
-            src="/img/techny-receiving-a-letter-or-email.gif"
-            width={500}
-            height={500}
-            alt="Checkmark"
-          />
-          <p style={{ fontSize: "0.8rem" }}>
-            Illustration by
-            <a href="https://icons8.com/illustrations/author/627444">
-              Julia G
-            </a>{" "}
-            from <a href="https://icons8.com/illustrations">Ouch!</a>
-          </p>
-        </div>
-      )}
+    <>
+      {sendEmail && <StyledLoadingSpinner />}
 
-      {!isSent && (
-        <StyledForm onSubmit={handleSubmit}>
-          <StyledFormGroup>
-            <label htmlFor="firstName">Firma</label>
-            <input
-              type="text"
-              name="companyName"
-              value={companyName}
-              onChange={handleChange}
-              placeholder="Gib hier den Namen Deiner Firma ein"
+      <StyledFormSection>
+        {isSent && (
+          <div>
+            <p>E-Mail wurde gesendet!</p>
+            <Image
+              src="/img/techny-receiving-a-letter-or-email.gif"
+              width={500}
+              height={500}
+              alt="Checkmark"
             />
-          </StyledFormGroup>
+            <p style={{ fontSize: "0.8rem" }}>
+              Illustration by
+              <a href="https://icons8.com/illustrations/author/627444">
+                Julia G
+              </a>{" "}
+              from <a href="https://icons8.com/illustrations">Ouch!</a>
+            </p>
+          </div>
+        )}
 
-          <StyledNameGroup>
+        {!isSent && !sendEmail && (
+          <StyledForm onSubmit={handleSubmit}>
             <StyledFormGroup>
-              <label htmlFor="firstName">
-                Vorname <span>(Pflichtfeld)</span>
-              </label>
+              <label htmlFor="firstName">Firma</label>
               <input
                 type="text"
-                name="firstName"
-                value={firstName}
+                name="companyName"
+                value={companyName}
                 onChange={handleChange}
-                placeholder="Gib hier Deinen Vornamen ein"
+                placeholder="Gib hier den Namen Deiner Firma ein"
+              />
+            </StyledFormGroup>
+
+            <StyledNameGroup>
+              <StyledFormGroup>
+                <label htmlFor="firstName">
+                  Vorname <span>(Pflichtfeld)</span>
+                </label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={firstName}
+                  onChange={handleChange}
+                  placeholder="Gib hier Deinen Vornamen ein"
+                  required
+                />
+              </StyledFormGroup>
+              <StyledFormGroup>
+                <label htmlFor="lastName">
+                  Nachname <span>(Pflichtfeld)</span>
+                </label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={lastName}
+                  onChange={handleChange}
+                  placeholder="Gib hier Deinen Nachnamen ein"
+                  required
+                />
+              </StyledFormGroup>
+            </StyledNameGroup>
+            <StyledFormGroup>
+              <label htmlFor="email">
+                E-Mail <span>(Pflichtfeld)</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+                placeholder="Gib hier Deine E-Mail-Adresse ein"
                 required
               />
             </StyledFormGroup>
             <StyledFormGroup>
-              <label htmlFor="lastName">
-                Nachname <span>(Pflichtfeld)</span>
+              <label htmlFor="message">
+                Nachricht <span>(Pflichtfeld)</span>
               </label>
-              <input
-                type="text"
-                name="lastName"
-                value={lastName}
+              <textarea
+                name="message"
+                value={message}
                 onChange={handleChange}
-                placeholder="Gib hier Deinen Nachnamen ein"
+                placeholder="Gib hier Deine Nachricht ein"
                 required
-              />
+                type="text"
+              ></textarea>
             </StyledFormGroup>
-          </StyledNameGroup>
-          <StyledFormGroup>
-            <label htmlFor="email">
-              E-Mail <span>(Pflichtfeld)</span>
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleChange}
-              placeholder="Gib hier Deine E-Mail-Adresse ein"
-              required
-            />
-          </StyledFormGroup>
-          <StyledFormGroup>
-            <label htmlFor="message">
-              Nachricht <span>(Pflichtfeld)</span>
-            </label>
-            <textarea
-              name="message"
-              value={message}
-              onChange={handleChange}
-              placeholder="Gib hier Deine Nachricht ein"
-              required
-              type="text"
-            ></textarea>
-          </StyledFormGroup>
-          <StyledFormGroup>
-            <label htmlFor="dataProtection">
-              <input
-                type="checkbox"
-                name="dataProtection"
-                value="dataProtection"
-                required
-              />
-              Ich habe die Datenschutzerklärung gelesen und bin damit
-              einverstanden.
-            </label>
-          </StyledFormGroup>
-          {/* <StyledFormGroup>
+            <StyledFormGroup>
+              <label htmlFor="dataProtection">
+                <input
+                  type="checkbox"
+                  name="dataProtection"
+                  value="dataProtection"
+                  required
+                />
+                Ich habe die Datenschutzerklärung gelesen und bin damit
+                einverstanden.
+              </label>
+            </StyledFormGroup>
+            {/* <StyledFormGroup>
             <ReCAPTCHA
               sitekey={"process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY"}
               onChange={(token) => setCaptchaToken(token)}
             />
           </StyledFormGroup> */}
-          <button type="submit">Senden</button>
-        </StyledForm>
-      )}
-    </StyledFormSection>
+            <button type="submit">Senden</button>
+          </StyledForm>
+        )}
+      </StyledFormSection>
+    </>
   );
 }
 
@@ -186,6 +199,10 @@ const StyledFormSection = styled.section`
   background-color: var(--color-primary);
   margin: 0 0 4rem 0;
   border-radius: 8px;
+`;
+
+const StyledLoadingSpinner = styled(LoadingSpinner)`
+  background-color: transparent;
 `;
 
 const StyledForm = styled.form`
