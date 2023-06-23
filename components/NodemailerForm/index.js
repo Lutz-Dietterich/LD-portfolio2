@@ -167,7 +167,7 @@ export default function NodemailerForm() {
           </StyledFormGroup>
           <StyledFormGroup>
             <ReCAPTCHA
-              sitekey={"6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+              sitekey={"process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY"}
               onChange={(token) => setCaptchaToken(token)}
             />
           </StyledFormGroup>
