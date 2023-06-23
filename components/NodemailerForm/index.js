@@ -10,7 +10,7 @@ export default function NodemailerForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSent, setIsSent] = useState(false);
-  const [captchaToken, setCaptchaToken] = useState("");
+  //   const [captchaToken, setCaptchaToken] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,9 +30,9 @@ export default function NodemailerForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!captchaToken) {
-      return;
-    }
+    // if (!captchaToken) {
+    //   return;
+    // }
 
     const handleReset = () => {
       setCompanyName("");
@@ -48,7 +48,7 @@ export default function NodemailerForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ firstName, email, message, captchaToken }),
+        body: JSON.stringify({ firstName, email, message }),
       });
 
       if (response.ok) {
@@ -165,12 +165,12 @@ export default function NodemailerForm() {
               einverstanden.
             </label>
           </StyledFormGroup>
-          <StyledFormGroup>
+          {/* <StyledFormGroup>
             <ReCAPTCHA
               sitekey={"process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY"}
               onChange={(token) => setCaptchaToken(token)}
             />
-          </StyledFormGroup>
+          </StyledFormGroup> */}
           <button type="submit">Senden</button>
         </StyledForm>
       )}
