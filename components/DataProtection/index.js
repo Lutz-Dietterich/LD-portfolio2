@@ -3,14 +3,14 @@ import { keyframes } from "styled-components";
 
 import { AiOutlineClose } from "react-icons/ai";
 
-export default function Impressum({ handleImpressumClick }) {
+export default function DataProtection({ handleDataProtectionClick }) {
   return (
-    <StyledDataPopup>
-      <StyledDataContent>
-        <CloseButton onClick={handleImpressumClick}>
+    <StyledImpressumPopup>
+      <StyledImpressumContent>
+        <CloseButton onClick={handleDataProtectionClick}>
           <AiOutlineClose />
         </CloseButton>
-        <h2>Impressum</h2>
+        <h2>Datenschutz</h2>
 
         <h3>Angaben gem&auml;&szlig; &sect; 5 TMG</h3>
         <p>
@@ -33,8 +33,8 @@ export default function Impressum({ handleImpressumClick }) {
             https://www.e-recht24.de/impressum-generator.html
           </a>
         </p>
-      </StyledDataContent>
-    </StyledDataPopup>
+      </StyledImpressumContent>
+    </StyledImpressumPopup>
   );
 }
 
@@ -56,7 +56,7 @@ const fadeIn = keyframes`
   }
 `;
 
-const StyledDataPopup = styled.div`
+const StyledImpressumPopup = styled.div`
   position: fixed;
   display: flex;
   top: 0;
@@ -70,7 +70,7 @@ const StyledDataPopup = styled.div`
   animation: ${fadeIn} 0.5s ease-in-out;
 `;
 
-const StyledDataContent = styled.div`
+const StyledImpressumContent = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 500px;
@@ -80,6 +80,11 @@ const StyledDataContent = styled.div`
   border-radius: 5px;
   color: var(--color-text);
   line-height: 1;
+
+  h2 {
+    text-align: center;
+    color: var(--color-text);
+  }
 
   p {
     text-align: center;

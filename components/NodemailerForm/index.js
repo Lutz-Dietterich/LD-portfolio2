@@ -5,6 +5,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import LoadingSpinner from "../LoadingSpinner";
 import { CLIENT_STATIC_FILES_RUNTIME_MAIN } from "next/dist/shared/lib/constants";
 
+import DataProtection from "../DataProtection";
+
 export default function NodemailerForm() {
   const [companyName, setCompanyName] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -13,6 +15,7 @@ export default function NodemailerForm() {
   const [message, setMessage] = useState("");
   const [isSent, setIsSent] = useState(false);
   const [sendEmail, setSendEmail] = useState(false);
+  const [showDataProtection, setShowDataProtection] = useState(false);
   //   const [captchaToken, setCaptchaToken] = useState("");
 
   const handleChange = (e) => {
@@ -72,7 +75,9 @@ export default function NodemailerForm() {
     }
   };
 
-  console.log("sendEmail", sendEmail);
+  const handleDataProtectionClick = () => {
+    setShowDataProtection(!showDataProtection);
+  };
 
   return (
     <>
@@ -107,7 +112,7 @@ export default function NodemailerForm() {
                 name="companyName"
                 value={companyName}
                 onChange={handleChange}
-                placeholder="Gib hier den Namen Deiner Firma ein"
+                placeholder="Deine Firma"
               />
             </StyledFormGroup>
 
@@ -121,7 +126,7 @@ export default function NodemailerForm() {
                   name="firstName"
                   value={firstName}
                   onChange={handleChange}
-                  placeholder="Gib hier Deinen Vornamen ein"
+                  placeholder="Dein Vorname"
                   required
                 />
               </StyledFormGroup>
@@ -134,7 +139,7 @@ export default function NodemailerForm() {
                   name="lastName"
                   value={lastName}
                   onChange={handleChange}
-                  placeholder="Gib hier Deinen Nachnamen ein"
+                  placeholder="Dein Nachname"
                   required
                 />
               </StyledFormGroup>
@@ -148,7 +153,7 @@ export default function NodemailerForm() {
                 name="email"
                 value={email}
                 onChange={handleChange}
-                placeholder="Gib hier Deine E-Mail-Adresse ein"
+                placeholder="Deine E-Mail-Adresse"
                 required
               />
             </StyledFormGroup>
@@ -173,8 +178,11 @@ export default function NodemailerForm() {
                   value="dataProtection"
                   required
                 />
-                Ich habe die Datenschutzerklärung gelesen und bin damit
-                einverstanden.
+                Ich habe die
+                <button type="button" onClick={handleDataProtectionClick}>
+                  Datenschutzerklärung
+                </button>
+                gelesen und bin damit einverstanden.
               </label>
             </StyledFormGroup>
             {/* <StyledFormGroup>
@@ -186,6 +194,12 @@ export default function NodemailerForm() {
             <button type="submit">Senden</button>
           </StyledForm>
         )}
+
+        {showDataProtection && (
+          <DataProtection
+            handleDataProtectionClick={handleDataProtectionClick}
+          />
+        )}
       </StyledFormSection>
     </>
   );
@@ -196,9 +210,15 @@ const StyledFormSection = styled.section`
   flex-direction: column;
   align-items: center;
   width: 30%;
+  min-width: 600px;
   background-color: var(--color-primary);
   margin: 0 0 4rem 0;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    min-width: 0;
+  }
 `;
 
 const StyledLoadingSpinner = styled(LoadingSpinner)`
@@ -252,11 +272,28 @@ const StyledFormGroup = styled.div`
     resize: none;
     height: 200px;
   }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: underline;
+    padding: 3.5px;
+  }
 `;
 
 const StyledNameGroup = styled.div`
   display: flex;
+  justify-content: space-between;
+  overflow: hidden;
   flex-direction: row;
   width: 100%;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0;
+  }
 `;
