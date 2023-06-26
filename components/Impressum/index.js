@@ -5,8 +5,8 @@ import { AiOutlineClose } from "react-icons/ai";
 
 export default function Impressum({ handleImpressumClick }) {
   return (
-    <StyledDataPopup>
-      <StyledDataContent>
+    <StyledImpressumPopup>
+      <StyledImpressumContent>
         <CloseButton onClick={handleImpressumClick}>
           <AiOutlineClose />
         </CloseButton>
@@ -33,8 +33,8 @@ export default function Impressum({ handleImpressumClick }) {
             https://www.e-recht24.de/impressum-generator.html
           </a>
         </p>
-      </StyledDataContent>
-    </StyledDataPopup>
+      </StyledImpressumContent>
+    </StyledImpressumPopup>
   );
 }
 
@@ -56,7 +56,7 @@ const fadeIn = keyframes`
   }
 `;
 
-const StyledDataPopup = styled.div`
+const StyledImpressumPopup = styled.div`
   position: fixed;
   display: flex;
   top: 0;
@@ -70,7 +70,7 @@ const StyledDataPopup = styled.div`
   animation: ${fadeIn} 0.5s ease-in-out;
 `;
 
-const StyledDataContent = styled.div`
+const StyledImpressumContent = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 500px;

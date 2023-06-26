@@ -16,6 +16,7 @@ export default function NodemailerForm() {
   const [isSent, setIsSent] = useState(false);
   const [sendEmail, setSendEmail] = useState(false);
   const [showDataProtection, setShowDataProtection] = useState(false);
+  const [isDataProtectionChecked, setIsDataProtectionChecked] = useState(false);
   //   const [captchaToken, setCaptchaToken] = useState("");
 
   const handleChange = (e) => {
@@ -77,6 +78,10 @@ export default function NodemailerForm() {
 
   const handleDataProtectionClick = () => {
     setShowDataProtection(!showDataProtection);
+  };
+
+  const handleCheckBoxClick = () => {
+    setIsDataProtectionChecked(!isDataProtectionChecked);
   };
 
   return (
@@ -177,6 +182,8 @@ export default function NodemailerForm() {
                   name="dataProtection"
                   value="dataProtection"
                   required
+                  checked={isDataProtectionChecked}
+                  onChange={handleCheckBoxClick}
                 />
                 Ich habe die
                 <button type="button" onClick={handleDataProtectionClick}>
@@ -198,6 +205,7 @@ export default function NodemailerForm() {
         {showDataProtection && (
           <DataProtection
             handleDataProtectionClick={handleDataProtectionClick}
+            handleCheckBox={handleCheckBoxClick}
           />
         )}
       </StyledFormSection>
