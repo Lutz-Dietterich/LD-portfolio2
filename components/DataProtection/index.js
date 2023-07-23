@@ -16,7 +16,7 @@ export default function DataProtection({
           </CloseButton>
           <h1>Datenschutz&shy;erkl&auml;rung</h1>
           <h2>1. Datenschutz auf einen Blick</h2>
-          <h3>Allgemeine Hinweise</h3>{" "}
+          <h3>Allgemeine Hinweise</h3>
           <p>
             Die folgenden Hinweise geben einen einfachen &Uuml;berblick
             dar&uuml;ber, was mit Ihren personenbezogenen Daten passiert, wenn
@@ -26,37 +26,37 @@ export default function DataProtection({
             unserer unter diesem Text aufgef&uuml;hrten
             Datenschutzerkl&auml;rung.
           </p>
-          <h3>Datenerfassung auf dieser Website</h3>{" "}
+          <h3>Datenerfassung auf dieser Website</h3>
           <h4>
             Wer ist verantwortlich f&uuml;r die Datenerfassung auf dieser
             Website?
-          </h4>{" "}
+          </h4>
           <p>
             Die Datenverarbeitung auf dieser Website erfolgt durch den
             Websitebetreiber. Dessen Kontaktdaten k&ouml;nnen Sie dem Abschnitt
             &bdquo;Hinweis zur Verantwortlichen Stelle&ldquo; in dieser
             Datenschutzerkl&auml;rung entnehmen.
-          </p>{" "}
-          <h4>Wie erfassen wir Ihre Daten?</h4>{" "}
+          </p>
+          <h4>Wie erfassen wir Ihre Daten?</h4>
           <p>
             Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese
             mitteilen. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die Sie
             in ein Kontaktformular eingeben.
-          </p>{" "}
+          </p>
           <p>
             Andere Daten werden automatisch oder nach Ihrer Einwilligung beim
             Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor
             allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem
             oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt
             automatisch, sobald Sie diese Website betreten.
-          </p>{" "}
-          <h4>Wof&uuml;r nutzen wir Ihre Daten?</h4>{" "}
+          </p>
+          <h4>Wof&uuml;r nutzen wir Ihre Daten?</h4>
           <p>
             Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung
             der Website zu gew&auml;hrleisten. Andere Daten k&ouml;nnen zur
             Analyse Ihres Nutzerverhaltens verwendet werden.
-          </p>{" "}
-          <h4>Welche Rechte haben Sie bez&uuml;glich Ihrer Daten?</h4>{" "}
+          </p>
+          <h4>Welche Rechte haben Sie bez&uuml;glich Ihrer Daten?</h4>
           <p>
             Sie haben jederzeit das Recht, unentgeltlich Auskunft &uuml;ber
             Herkunft, Empf&auml;nger und Zweck Ihrer gespeicherten
@@ -69,23 +69,23 @@ export default function DataProtection({
             Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen
             ein Beschwerderecht bei der zust&auml;ndigen Aufsichtsbeh&ouml;rde
             zu.
-          </p>{" "}
+          </p>
           <p>
             Hierzu sowie zu weiteren Fragen zum Thema Datenschutz k&ouml;nnen
             Sie sich jederzeit an uns wenden.
           </p>
           <h2>2. Hosting</h2>
           <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
-          <h3>Strato</h3>{" "}
+          <h3>Strato</h3>
           <p>
             Anbieter ist die Strato AG, Otto-Ostrowski-Stra&szlig;e 7, 10249
             Berlin (nachfolgend &bdquo;Strato&ldquo;). Wenn Sie unsere Website
             besuchen, erfasst Strato verschiedene Logfiles inklusive Ihrer
             IP-Adressen.
-          </p>{" "}
+          </p>
           <p>
             Weitere Informationen entnehmen Sie der Datenschutzerkl&auml;rung
-            von Strato:{" "}
+            von Strato:
             <a
               href="https://www.strato.de/datenschutz/"
               target="_blank"
@@ -94,7 +94,7 @@ export default function DataProtection({
               https://www.strato.de/datenschutz/
             </a>
             .
-          </p>{" "}
+          </p>
           <p>
             Die Verwendung von Strato erfolgt auf Grundlage von Art. 6 Abs. 1
             lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer
@@ -106,7 +106,7 @@ export default function DataProtection({
             Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im
             Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.
           </p>
-          <h4>Auftragsverarbeitung</h4>{" "}
+          <h4>Auftragsverarbeitung</h4>
           <p>
             Wir haben einen Vertrag &uuml;ber Auftragsverarbeitung (AVV) zur
             Nutzung des oben genannten Dienstes geschlossen. Hierbei handelt es
@@ -116,14 +116,14 @@ export default function DataProtection({
             DSGVO verarbeitet.
           </p>
           <h2>3. Allgemeine Hinweise und Pflicht&shy;informationen</h2>
-          <h3>Datenschutz</h3>{" "}
+          <h3>Datenschutz</h3>
           <p>
             Die Betreiber dieser Seiten nehmen den Schutz Ihrer
             pers&ouml;nlichen Daten sehr ernst. Wir behandeln Ihre
             personenbezogenen Daten vertraulich und entsprechend den
             gesetzlichen Datenschutzvorschriften sowie dieser
             Datenschutzerkl&auml;rung.
-          </p>{" "}
+          </p>
           <p>
             Wenn Sie diese Website benutzen, werden verschiedene
             personenbezogene Daten erhoben. Personenbezogene Daten sind Daten,
@@ -131,18 +131,18 @@ export default function DataProtection({
             vorliegende Datenschutzerkl&auml;rung erl&auml;utert, welche Daten
             wir erheben und wof&uuml;r wir sie nutzen. Sie erl&auml;utert auch,
             wie und zu welchem Zweck das geschieht.
-          </p>{" "}
+          </p>
           <p>
             Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet
             (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken
             aufweisen kann. Ein l&uuml;ckenloser Schutz der Daten vor dem
             Zugriff durch Dritte ist nicht m&ouml;glich.
           </p>
-          <h3>Hinweis zur verantwortlichen Stelle</h3>{" "}
+          <h3>Hinweis zur verantwortlichen Stelle</h3>
           <p>
             Die verantwortliche Stelle f&uuml;r die Datenverarbeitung auf dieser
             Website ist:
-          </p>{" "}
+          </p>
           <p>
             Lutz Dietterich
             <br />
@@ -160,7 +160,7 @@ export default function DataProtection({
             und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B.
             Namen, E-Mail-Adressen o. &Auml;.) entscheidet.
           </p>
-          <h3>Speicherdauer</h3>{" "}
+          <h3>Speicherdauer</h3>
           <p>
             Soweit innerhalb dieser Datenschutzerkl&auml;rung keine speziellere
             Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten
@@ -176,7 +176,7 @@ export default function DataProtection({
           <h3>
             Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung
             auf dieser Website
-          </h3>{" "}
+          </h3>
           <p>
             Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten
             wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1
@@ -203,7 +203,7 @@ export default function DataProtection({
           </p>
           <h3>
             Hinweis zur Datenweitergabe in die USA und sonstige Drittstaaten
-          </h3>{" "}
+          </h3>
           <p>
             Wir verwenden unter anderem Tools von Unternehmen mit Sitz in den
             USA oder sonstigen datenschutzrechtlich nicht sicheren Drittstaaten.
@@ -220,7 +220,7 @@ export default function DataProtection({
             auswerten und dauerhaft speichern. Wir haben auf diese
             Verarbeitungst&auml;tigkeiten keinen Einfluss.
           </p>
-          <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>{" "}
+          <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
           <p>
             Viele Datenverarbeitungsvorg&auml;nge sind nur mit Ihrer
             ausdr&uuml;cklichen Einwilligung m&ouml;glich. Sie k&ouml;nnen eine
@@ -231,7 +231,7 @@ export default function DataProtection({
           <h3>
             Widerspruchsrecht gegen die Datenerhebung in besonderen F&auml;llen
             sowie gegen Direktwerbung (Art. 21 DSGVO)
-          </h3>{" "}
+          </h3>
           <p>
             WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E
             ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS
@@ -247,7 +247,7 @@ export default function DataProtection({
             UND FREIHEITEN &Uuml;BERWIEGEN ODER DIE VERARBEITUNG DIENT DER
             GELTENDMACHUNG, AUS&Uuml;BUNG ODER VERTEIDIGUNG VON
             RECHTSANSPR&Uuml;CHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).
-          </p>{" "}
+          </p>
           <p>
             WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU
             BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE
@@ -261,7 +261,7 @@ export default function DataProtection({
           <h3>
             Beschwerde&shy;recht bei der zust&auml;ndigen
             Aufsichts&shy;beh&ouml;rde
-          </h3>{" "}
+          </h3>
           <p>
             Im Falle von Verst&ouml;&szlig;en gegen die DSGVO steht den
             Betroffenen ein Beschwerderecht bei einer Aufsichtsbeh&ouml;rde,
@@ -271,7 +271,7 @@ export default function DataProtection({
             unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher
             Rechtsbehelfe.
           </p>
-          <h3>Recht auf Daten&shy;&uuml;bertrag&shy;barkeit</h3>{" "}
+          <h3>Recht auf Daten&shy;&uuml;bertrag&shy;barkeit</h3>
           <p>
             Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung
             oder in Erf&uuml;llung eines Vertrags automatisiert verarbeiten, an
@@ -280,7 +280,7 @@ export default function DataProtection({
             &Uuml;bertragung der Daten an einen anderen Verantwortlichen
             verlangen, erfolgt dies nur, soweit es technisch machbar ist.
           </p>
-          <h3>Auskunft, Berichtigung und L&ouml;schung</h3>{" "}
+          <h3>Auskunft, Berichtigung und L&ouml;schung</h3>
           <p>
             Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen
             jederzeit das Recht auf unentgeltliche Auskunft &uuml;ber Ihre
@@ -290,35 +290,34 @@ export default function DataProtection({
             zu weiteren Fragen zum Thema personenbezogene Daten k&ouml;nnen Sie
             sich jederzeit an uns wenden.
           </p>
-          <h3>Recht auf Einschr&auml;nkung der Verarbeitung</h3>{" "}
+          <h3>Recht auf Einschr&auml;nkung der Verarbeitung</h3>
           <p>
             Sie haben das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer
             personenbezogenen Daten zu verlangen. Hierzu k&ouml;nnen Sie sich
             jederzeit an uns wenden. Das Recht auf Einschr&auml;nkung der
             Verarbeitung besteht in folgenden F&auml;llen:
-          </p>{" "}
+          </p>
           <ul>
-            {" "}
             <li>
               Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten
               personenbezogenen Daten bestreiten, ben&ouml;tigen wir in der
               Regel Zeit, um dies zu &uuml;berpr&uuml;fen. F&uuml;r die Dauer
               der Pr&uuml;fung haben Sie das Recht, die Einschr&auml;nkung der
               Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
-            </li>{" "}
+            </li>
             <li>
               Wenn die Verarbeitung Ihrer personenbezogenen Daten
               unrechtm&auml;&szlig;ig geschah/geschieht, k&ouml;nnen Sie statt
               der L&ouml;schung die Einschr&auml;nkung der Datenverarbeitung
               verlangen.
-            </li>{" "}
+            </li>
             <li>
               Wenn wir Ihre personenbezogenen Daten nicht mehr ben&ouml;tigen,
               Sie sie jedoch zur Aus&uuml;bung, Verteidigung oder Geltendmachung
               von Rechtsanspr&uuml;chen ben&ouml;tigen, haben Sie das Recht,
               statt der L&ouml;schung die Einschr&auml;nkung der Verarbeitung
               Ihrer personenbezogenen Daten zu verlangen.
-            </li>{" "}
+            </li>
             <li>
               Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt
               haben, muss eine Abw&auml;gung zwischen Ihren und unseren
@@ -326,8 +325,8 @@ export default function DataProtection({
               wessen Interessen &uuml;berwiegen, haben Sie das Recht, die
               Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten
               zu verlangen.
-            </li>{" "}
-          </ul>{" "}
+            </li>
+          </ul>
           <p>
             Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten
             eingeschr&auml;nkt haben, d&uuml;rfen diese Daten &ndash; von ihrer
@@ -338,7 +337,7 @@ export default function DataProtection({
             eines wichtigen &ouml;ffentlichen Interesses der Europ&auml;ischen
             Union oder eines Mitgliedstaats verarbeitet werden.
           </p>
-          <h3>SSL- bzw. TLS-Verschl&uuml;sselung</h3>{" "}
+          <h3>SSL- bzw. TLS-Verschl&uuml;sselung</h3>
           <p>
             Diese Seite nutzt aus Sicherheitsgr&uuml;nden und zum Schutz der
             &Uuml;bertragung vertraulicher Inhalte, wie zum Beispiel
@@ -348,13 +347,13 @@ export default function DataProtection({
             Adresszeile des Browsers von &bdquo;http://&ldquo; auf
             &bdquo;https://&ldquo; wechselt und an dem Schloss-Symbol in Ihrer
             Browserzeile.
-          </p>{" "}
+          </p>
           <p>
             Wenn die SSL- bzw. TLS-Verschl&uuml;sselung aktiviert ist,
             k&ouml;nnen die Daten, die Sie an uns &uuml;bermitteln, nicht von
             Dritten mitgelesen werden.
           </p>
-          <h3>Widerspruch gegen Werbe-E-Mails</h3>{" "}
+          <h3>Widerspruch gegen Werbe-E-Mails</h3>
           <p>
             Der Nutzung von im Rahmen der Impressumspflicht
             ver&ouml;ffentlichten Kontaktdaten zur &Uuml;bersendung von nicht
@@ -364,23 +363,22 @@ export default function DataProtection({
             Zusendung von Werbeinformationen, etwa durch Spam-E-Mails, vor.
           </p>
           <h2>4. Datenerfassung auf dieser Website</h2>
-          <h3>Server-Log-Dateien</h3>{" "}
+          <h3>Server-Log-Dateien</h3>
           <p>
             Der Provider der Seiten erhebt und speichert automatisch
             Informationen in so genannten Server-Log-Dateien, die Ihr Browser
             automatisch an uns &uuml;bermittelt. Dies sind:
-          </p>{" "}
+          </p>
           <ul>
-            {" "}
-            <li>Browsertyp und Browserversion</li>{" "}
-            <li>verwendetes Betriebssystem</li> <li>Referrer URL</li>{" "}
-            <li>Hostname des zugreifenden Rechners</li>{" "}
-            <li>Uhrzeit der Serveranfrage</li> <li>IP-Adresse</li>{" "}
-          </ul>{" "}
+            <li>Browsertyp und Browserversion</li>
+            <li>verwendetes Betriebssystem</li> <li>Referrer URL</li>
+            <li>Hostname des zugreifenden Rechners</li>
+            <li>Uhrzeit der Serveranfrage</li> <li>IP-Adresse</li>
+          </ul>
           <p>
             Eine Zusammenf&uuml;hrung dieser Daten mit anderen Datenquellen wird
             nicht vorgenommen.
-          </p>{" "}
+          </p>
           <p>
             Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1
             lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an
@@ -388,14 +386,14 @@ export default function DataProtection({
             Website &ndash; hierzu m&uuml;ssen die Server-Log-Files erfasst
             werden.
           </p>
-          <h3>Kontaktformular</h3>{" "}
+          <h3>Kontaktformular</h3>
           <p>
             Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden
             Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort
             angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und f&uuml;r
             den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben
             wir nicht ohne Ihre Einwilligung weiter.
-          </p>{" "}
+          </p>
           <p>
             Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs.
             1 lit. b DSGVO, sofern Ihre Anfrage mit der Erf&uuml;llung eines
@@ -406,7 +404,7 @@ export default function DataProtection({
             gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer
             Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt
             wurde; die Einwilligung ist jederzeit widerrufbar.
-          </p>{" "}
+          </p>
           <p>
             Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei
             uns, bis Sie uns zur L&ouml;schung auffordern, Ihre Einwilligung zur
@@ -415,14 +413,14 @@ export default function DataProtection({
             Anfrage). Zwingende gesetzliche Bestimmungen &ndash; insbesondere
             Aufbewahrungsfristen &ndash; bleiben unber&uuml;hrt.
           </p>
-          <h3>Anfrage per E-Mail, Telefon oder Telefax</h3>{" "}
+          <h3>Anfrage per E-Mail, Telefon oder Telefax</h3>
           <p>
             Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird
             Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen
             Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei
             uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne
             Ihre Einwilligung weiter.
-          </p>{" "}
+          </p>
           <p>
             Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs.
             1 lit. b DSGVO, sofern Ihre Anfrage mit der Erf&uuml;llung eines
@@ -433,7 +431,7 @@ export default function DataProtection({
             gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer
             Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt
             wurde; die Einwilligung ist jederzeit widerrufbar.
-          </p>{" "}
+          </p>
           <p>
             Die von Ihnen an uns per Kontaktanfragen &uuml;bersandten Daten
             verbleiben bei uns, bis Sie uns zur L&ouml;schung auffordern, Ihre
@@ -444,13 +442,13 @@ export default function DataProtection({
             bleiben unber&uuml;hrt.
           </p>
           <h2>5. Plugins und Tools</h2>
-          <h3>Google reCAPTCHA</h3>{" "}
+          <h3>Google reCAPTCHA</h3>
           <p>
             Wir nutzen &bdquo;Google reCAPTCHA&ldquo; (im Folgenden
             &bdquo;reCAPTCHA&ldquo;) auf dieser Website. Anbieter ist die Google
             Ireland Limited (&bdquo;Google&ldquo;), Gordon House, Barrow Street,
             Dublin 4, Irland.
-          </p>{" "}
+          </p>
           <p>
             Mit reCAPTCHA soll &uuml;berpr&uuml;ft werden, ob die Dateneingabe
             auf dieser Website (z.&nbsp;B. in einem Kontaktformular) durch einen
@@ -462,12 +460,12 @@ export default function DataProtection({
             Verweildauer des Websitebesuchers auf der Website oder vom Nutzer
             get&auml;tigte Mausbewegungen). Die bei der Analyse erfassten Daten
             werden an Google weitergeleitet.
-          </p>{" "}
+          </p>
           <p>
             Die reCAPTCHA-Analysen laufen vollst&auml;ndig im Hintergrund.
             Websitebesucher werden nicht darauf hingewiesen, dass eine Analyse
             stattfindet.
-          </p>{" "}
+          </p>
           <p>
             Die Speicherung und Analyse der Daten erfolgt auf Grundlage von Art.
             6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes
@@ -479,19 +477,19 @@ export default function DataProtection({
             Speicherung von Cookies oder den Zugriff auf Informationen im
             Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im
             Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.
-          </p>{" "}
+          </p>
           <p>
             Weitere Informationen zu Google reCAPTCHA entnehmen Sie den
             Google-Datenschutzbestimmungen und den Google Nutzungsbedingungen
-            unter folgenden Links:{" "}
+            unter folgenden Links:
             <a
               href="https://policies.google.com/privacy?hl=de"
               target="_blank"
               rel="noopener noreferrer"
             >
               https://policies.google.com/privacy?hl=de
-            </a>{" "}
-            und{" "}
+            </a>
+            und
             <a
               href="https://policies.google.com/terms?hl=de"
               target="_blank"
@@ -502,18 +500,20 @@ export default function DataProtection({
             .
           </p>
           <p>
-            Quelle:{" "}
+            Quelle:
             <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
           </p>
           <CloseButton2
+            style={{ backgroundColor: "green", color: "white" }}
             onClick={() => {
               handleDataProtectionClick();
-              handleCheckBox();
+              handleCheckBox(true);
             }}
           >
             Alles gelesen und einverstanden
           </CloseButton2>
           <CloseButton2
+            style={{ backgroundColor: "red", color: "white" }}
             onClick={() => {
               handleDataProtectionClick();
             }}

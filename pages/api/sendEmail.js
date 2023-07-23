@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     );
 
     // Konfiguriere die E-Mail-Daten
-    let mailOptions = {
+    let mailOptions1 = {
       from: "job@lutz-dietterich.de",
       to: email, // Empfänger-E-Mail-Adresse eintragen
       subject: "Neue Nachricht von Lutz Dietterich",
@@ -31,9 +31,19 @@ export default async function handler(req, res) {
       html: emailContent,
     };
 
+    let mailOptions2 = {
+      from: "job@lutz-dietterich.de",
+      to: "lutzdietterich@googlemail.com", // Zweite Empfänger-E-Mail-Adresse
+      subject: "Du hast eine Kontaktanfrage von" + firstName + " erhalten",
+      text: message,
+    };
+
     try {
       // Sende die E-Mail
-      await transporter.sendMail(mailOptions);
+      await transporter.sendMail(mailOptions1);
+
+      await transporter.sendMail(mailOptions2);
+
       res.status(200).json({ message: "E-Mail gesendet" });
     } catch (error) {
       res.status(500).json({ message: "E-Mail konnte nicht gesendet werden" });
