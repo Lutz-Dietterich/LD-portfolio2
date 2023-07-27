@@ -52,7 +52,7 @@ export default function EmailTemplate({ firstName, message }) {
         </p>
       </div>
       <div style={footerStyles}>
-        <p>&copy; 2023 Lutz Dietterich. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2023 Lutz Dietterich.</p>
       </div>
     </div>
   );
