@@ -10,7 +10,7 @@ export default function ContactForm() {
         <h2>Kontakt</h2>
 
         <NodemailerForm />
-        {/* <EmailTemplate /> */}
+        <EmailTemplate />
 
         <StyledAuthor>
           Foto von
