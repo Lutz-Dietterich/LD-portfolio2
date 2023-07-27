@@ -4,15 +4,13 @@ export default function EmailTemplate({ firstName, message }) {
   const containerStyles = {
     maxWidth: "600px",
     margin: "0 auto",
-    backgroundColor: "#000000",
+    backgroundColor: "#e2e6f2",
     borderRadius: "8px",
     padding: "20px",
     boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
   };
 
   const headerStyles = {
-    backgroundColor: "#333",
-    color: "#fff",
     padding: "20px",
     textAlign: "center",
     borderRadius: "8px 8px 0 0",
@@ -20,12 +18,13 @@ export default function EmailTemplate({ firstName, message }) {
 
   const contentStyles = {
     padding: "20px",
-    color: "#fff",
+    fontSize: "20px",
+    color: "#252326",
   };
 
   const footerStyles = {
-    backgroundColor: "#333",
-    color: "#fff",
+    color: "#252326",
+    fontSize: "14px",
     padding: "20px",
     textAlign: "center",
     borderRadius: "0 0 8px 8px",
@@ -34,16 +33,26 @@ export default function EmailTemplate({ firstName, message }) {
   return (
     <div style={containerStyles}>
       <div style={headerStyles}>
-        <h1>Willkommen!</h1>
+        <img
+          src="https://res.cloudinary.com/dnojoo4vt/image/upload/v1690464407/logo_large_hnfzkf.png"
+          alt="Lutz Dietterich - WEB DEVELOPER"
+        />
       </div>
       <div style={contentStyles}>
         <p>Hallo {firstName},</p>
-        <p>Vielen Dank für deine Nachricht:</p>
-        <p>{message}</p>
-        <p>Viele Grüße</p>
+        <p>
+          Vielen Dank für deine Nachricht!
+          <br />
+          Ich werde mich so schnell wie möglich bei dir melden.
+        </p>
+        <p>
+          Viele Grüße
+          <br />
+          Lutz
+        </p>
       </div>
       <div style={footerStyles}>
-        <p>&copy; 2023 Mein Unternehmen. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2023 Lutz Dietterich.</p>
       </div>
     </div>
   );

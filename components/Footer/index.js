@@ -65,7 +65,6 @@ const StyledImpressumButton = styled.button`
   font-size: 1.2rem;
   text-align: center;
   padding: 20px;
-  z-index: 1000;
 
   @media (max-width: 768px) {
     justify-content: center;

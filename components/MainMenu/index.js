@@ -83,7 +83,19 @@ const StyledWrapper = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
+    width: 75%;
+  }
+
+  @media (min-width: 900px) {
+    width: 60%;
+  }
+
+  @media (min-width: 1100px) {
     width: 50%;
+  }
+
+  @media (min-width: 1300px) {
+    width: 40%;
   }
 `;
 
@@ -94,7 +106,7 @@ const MenuIcon = styled.div`
   color: #fff;
   z-index: 1500;
 
-  @media (min-width: 768px) {
+  @media (min-width: 800px) {
     display: none;
   }
 `;
@@ -106,7 +118,7 @@ const StyledNav = styled.nav`
   z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
   top: ${({ isOpen }) => (isOpen ? "0" : "-100vh")};
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     opacity: 0;
     position: absolute;
     left: 0px;
@@ -140,14 +152,10 @@ const StyledNav = styled.nav`
   }
 `;
 
-//TODO: Main Menu wieder ändern wenn portfolio und contact me wieder da sind
-// justify-content: flex-end;
-// gap: 20px;  löschen
-
 const StyledList = styled.ul`
   display: flex;
 
-  justify-content: flex-end;
+  justify-content: space-around;
   gap: 20px;
 
   align-items: center;
