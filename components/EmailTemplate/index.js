@@ -35,9 +35,8 @@ export default function EmailTemplate({ firstName, message }) {
       <div style={headerStyles}>
         <img
           src="https://res.cloudinary.com/dnojoo4vt/image/upload/v1690464407/logo_large_hnfzkf.png"
-          alt="Lutz Dietterich"
+          alt="Lutz Dietterich - WEB DEVELOPER"
         />
-        {/* <h1>Willkommen!</h1> */}
       </div>
       <div style={contentStyles}>
         <p>Hallo {firstName},</p>
