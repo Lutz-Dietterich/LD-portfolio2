@@ -1,38 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Website README - Lutz Dietterich
 
-## Getting Started
+![Lutz Dietterich Logo](public/img/logo_large.png)
 
-First, run the development server:
+## Übersicht
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Willkommen zur offiziellen README-Dokumentation der Website von Lutz Dietterich. Diese Website dient als digitales Portfolio und Kontaktplattform für Lutz Dietterich, einem erfahrenen Softwareentwickler und Webdesigner.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Beschreibung
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Die Website www.lutz-dietterich.de bietet Einblicke in die Arbeiten, Projekte und Fähigkeiten von Lutz Dietterich. Die Seite wurde mit modernen Technologien entwickelt und bietet eine ansprechende und benutzerfreundliche Erfahrung für Besucher.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Features
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. **Portfolio:** Eine Galerie von Projekten, an denen Lutz Dietterich gearbeitet hat, mit detaillierten Beschreibungen und Bildern.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. **Über mich:** Eine kurze Vorstellung und Beschreibung der Fachkenntnisse und Interessen von Lutz Dietterich.
 
-## Learn More
+3. **Kontakt:** Ein Kontaktformular, über das Interessenten direkt mit Lutz Dietterich in Verbindung treten können.
 
-To learn more about Next.js, take a look at the following resources:
+4. **Responsives Design:** Die Website ist für verschiedene Bildschirmgrößen und Geräte optimiert und bietet eine reibungslose Erfahrung auf Desktops, Tablets und Smartphones.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologien
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Die Website www.lutz-dietterich.de wurde mit den folgenden Technologien entwickelt:
 
-## Deploy on Vercel
+- HTML5 und CSS3 für das strukturelle Layout und die Gestaltung.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- JavaScript für die Interaktion und Benutzererfahrung.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- React.js für die dynamische Generierung der Website-Inhalte.
+
+- Nodemailer für die Handhabung von Kontaktformularen und E-Mail-Versand.
+
+- Node.js und Express für den Server und die Routing-Funktionen.
+
+- Nginx als Webserver für das Hosting und die HTTPS-Konfiguration.
+
+## Installation
+
+Die Website ist live und unter www.lutz-dietterich.de erreichbar. Es ist keine zusätzliche Installation erforderlich, um die Seite zu besuchen und zu durchsuchen.
+
+## Lokale Entwicklung
+
+Wenn Sie die Website lokal entwickeln oder verbessern möchten, können Sie das Repository von GitHub klonen und die Entwicklungsumgebung einrichten. Stellen Sie sicher, dass Sie Node.js auf Ihrem System installiert haben.
+
+1. Repository klonen:
