@@ -57,7 +57,13 @@ export default function NodemailerForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ firstName, email, message }),
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          companyName,
+          email,
+          message,
+        }),
       });
 
       if (response.ok) {
