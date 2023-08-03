@@ -1,38 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Website README - Lutz Dietterich
 
-## Getting Started
+![Lutz Dietterich Logo](public/img/logo_large.png)
 
-First, run the development server:
+## Übersicht
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Willkommen zur offiziellen README-Dokumentation der Website von Lutz Dietterich. Diese Website dient als digitales Portfolio und Kontaktplattform für Lutz Dietterich, einem erfahrenen Softwareentwickler und Webdesigner.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Beschreibung
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Die Website www.lutz-dietterich.de bietet Einblicke in die Arbeiten, Projekte und Fähigkeiten von Lutz Dietterich. Die Seite wurde mit modernen Technologien entwickelt und bietet eine ansprechende und benutzerfreundliche Erfahrung für Besucher.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Features
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. **Portfolio:** Eine Galerie von Projekten, an denen Lutz Dietterich gearbeitet hat, mit detaillierten Beschreibungen und Bildern.
+2. **Über mich:** Eine kurze Vorstellung und Beschreibung der Fachkenntnisse und Interessen von Lutz Dietterich.
+3. **Kontakt:** Ein Kontaktformular, über das Interessenten direkt mit Lutz Dietterich in Verbindung treten können.
+4. **Responsives Design:** Die Website ist für verschiedene Bildschirmgrößen und Geräte optimiert und bietet eine reibungslose Erfahrung auf Desktops, Tablets und Smartphones.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technologien
 
-## Learn More
+Die Website www.lutz-dietterich.de wurde mit den folgenden Technologien entwickelt:
 
-To learn more about Next.js, take a look at the following resources:
+- HTML5 und CSS3 für das strukturelle Layout und die Gestaltung.
+- JavaScript für die Interaktion und Benutzererfahrung.
+- React.js für die dynamische Generierung der Website-Inhalte.
+- Nodemailer für die Handhabung von Kontaktformularen und E-Mail-Versand.
+- Node.js und Express für den Server und die Routing-Funktionen.
+- Nginx als Webserver für das Hosting und die HTTPS-Konfiguration.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Die Website ist live und unter www.lutz-dietterich.de erreichbar. Es ist keine zusätzliche Installation erforderlich, um die Seite zu besuchen und zu durchsuchen.
 
-## Deploy on Vercel
+## Mitwirken
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Beiträge und Verbesserungsvorschläge sind jederzeit willkommen! Wenn Sie einen Fehler finden oder zur Verbesserung der Website beitragen möchten, öffnen Sie bitte ein Issue oder ein Pull Request im GitHub-Repository.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Kontakt
+
+Für geschäftliche Anfragen oder Fragen zur Website können Sie Lutz Dietterich über das Kontaktformular auf www.lutz-dietterich.de erreichen oder eine E-Mail an hello@lutz-dietterich.de senden.
+
+## Autor
+
+Diese Website wurde von Lutz Dietterich entwickelt und wird von ihm gewartet.
+
+## Lizenz
+
+Die Website steht unter der MIT-Lizenz. Weitere Informationen finden Sie in der `LICENSE`-Datei im Repository.
+
+Vielen Dank, dass Sie www.lutz-dietterich.de besuchen! Wir hoffen, dass Sie die Seite genießen und die Arbeiten von Lutz Dietterich schätzen.
