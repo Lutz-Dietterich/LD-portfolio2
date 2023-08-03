@@ -38,7 +38,7 @@ Beiträge und Verbesserungsvorschläge sind jederzeit willkommen! Wenn Sie einen
 
 ## Kontakt
 
-Für geschäftliche Anfragen oder Fragen zur Website können Sie Lutz Dietterich über das Kontaktformular auf www.lutz-dietterich.de erreichen oder eine E-Mail an email@lutz-dietterich.de senden.
+Für geschäftliche Anfragen oder Fragen zur Website können Sie Lutz Dietterich über das Kontaktformular auf www.lutz-dietterich.de erreichen oder eine E-Mail an hello@lutz-dietterich.de senden.
 
 ## Autor
 
