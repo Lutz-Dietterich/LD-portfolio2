@@ -1,6 +1,6 @@
 # Website README - Lutz Dietterich
 
-![Lutz Dietterich Logo]!(public/img/logo_large.png)
+![Lutz Dietterich Logo](public/img/logo_large.png)
 
 ## Übersicht
 
