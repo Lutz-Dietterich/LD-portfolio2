@@ -4,7 +4,7 @@ export const sliderData = [
     title: "PawfectMatch App",
     imageUrl:
       "https://res.cloudinary.com/dnojoo4vt/image/upload/v1686326912/Portfolio/pawfectMatch_Teaser_zs6uqz.png",
-    link: "https://pawfect-match.de/",
+    link: "http://pawfect-match.de/",
     linkText: "Jetzt ausprobieren!",
   },
   {
