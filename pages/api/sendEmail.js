@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
     // Erstelle den Nodemailer Transporter für Strato
     let transporter = nodemailer.createTransport({
-      host: "smtp.strato.de",
+      host: "smtp.ionos.de",
       port: 465,
       secure: true, // falls true, dann port: 465
       auth: {
