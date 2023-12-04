@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     const { companyName, firstName, lastName, email, message } = req.body;
 
-    // Erstelle den Nodemailer Transporter für Strato
+    // Erstelle den Nodemailer Transporter
     let transporter = nodemailer.createTransport({
       host: "smtp.ionos.de",
       port: 465,
