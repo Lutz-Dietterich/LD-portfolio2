@@ -38,6 +38,8 @@ export default function ScrollToTopButton() {
 }
 
 const StyledButton = styled.button`
+  max-width: 2rem;
+  max-height: 2rem;
   position: fixed;
   bottom: 70px;
   right: 20px;
