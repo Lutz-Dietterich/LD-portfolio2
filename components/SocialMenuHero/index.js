@@ -32,7 +32,6 @@ export default function SocialMenuHero() {
 }
 
 const StyledNav = styled.nav`
-
   position: absolute;
   top: 74%;
   left: 120px;
@@ -48,13 +47,11 @@ const StyledNav = styled.nav`
   @media (max-width: 912px) {
     top: 69vh;
     left: 85vw;
-
-    @media (min-height: 800px) {
-      top: 75%;
-
-    
   }
 
+  @media (min-height: 800px) {
+    top: 75%;
+  }
 `;
 
 const StyledList = styled.ul`

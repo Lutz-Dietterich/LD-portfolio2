@@ -91,18 +91,19 @@ const StyledRectangle = styled.div`
 
     @media (min-height: 700px) {
       top: 31vh;
+    }
 
-      @media (min-height: 800px) {
-        top: 28vh;
+    @media (min-height: 800px) {
+      top: 28vh;
+    }
 
-        @media (min-height: 900px) {
-          top: 26vh;
+    @media (min-height: 900px) {
+      top: 26vh;
+    }
 
-          @media (min-height: 1000px) {
-            top: 24vh;
-
-
-
+    @media (min-height: 1000px) {
+      top: 24vh;
+    }
   }
 `;
 
