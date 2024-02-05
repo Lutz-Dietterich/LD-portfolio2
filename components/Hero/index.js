@@ -121,7 +121,7 @@ const StyledHeroText = styled.article`
   display: flex;
   flex-direction: column;
   top: 40%;
-  left: 120px;
+  left: 8vw;
   width: 30%;
   height: 10%;
 
@@ -140,7 +140,7 @@ const StyledHeroText = styled.article`
     color: #252326;
     margin: 0;
   }
-  @media (min-width: 1100px) {
+  @media screen and (min-width: 1100px) {
     h1 {
       font-size: 3rem;
     }
@@ -153,8 +153,8 @@ const StyledHeroText = styled.article`
     margin: 0;
   }
 
-  @media (max-width: 1400px) {
-    left: 75px;
+  @media screen and (max-width: 1400px) {
+    left: 5vw;
   }
 
   @media (max-width: 912px) {
@@ -191,8 +191,8 @@ const StyledHeroText = styled.article`
     }
 
     @media (max-height: 1100px) {
-      top: 89%;
-      left: 20%;
+      top: 87%;
+      left: 10%;
     }
 
     @media (max-height: 900px) {

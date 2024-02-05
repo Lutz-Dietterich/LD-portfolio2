@@ -33,34 +33,22 @@ export default function SocialMenuHero() {
 
 const StyledNav = styled.nav`
   position: absolute;
-  top: 74%;
-  left: 120px;
+  bottom: 15vh;
+  left: 5vw;
 
-  @media (max-width: 1400px) {
-    left: 75px;
+  @media screen and (max-width: 1400px) {
+    left: 2vw;
   }
 
-  @media (max-width: 912px) {
-    top: 69vh;
-    left: 85vw;
+  @media screen and (max-width: 912px) {
+    bottom: 6vh;
+    left: auto;
+    right: 5vw;
   }
 
-  @media (max-height: 1100px) {
-    top: 83%;
-  }
-
-  @media (max-height: 900px) {
-    top: 73%;
-    left: 75vw;
-  }
-
-  @media (max-height: 800px) {
-    top: 70%;
-  }
-
-  @media screen and (max-height: 460px) {
-    top: 82vh;
-    left: 70vw;
+  @media screen and (max-height: 560px) {
+    bottom: 0;
+    right: 7vw;
   }
 `;
 
@@ -98,6 +86,10 @@ const StyledListItem = styled.li`
     color: #f7f7f7;
     transform: scale(1.1);
   }
+  @media screen and (max-height: 1100px) {
+    width: 60px;
+    height: 60px;
+  }
 
   @media (max-width: 912px) {
     width: 40px;
@@ -112,6 +104,10 @@ const StyledLink = styled(Link)`
   color: #252326;
   font-size: 3rem;
   line-height: 0;
+
+  @media screen and (max-height: 1100px) {
+    font-size: 3rem;
+  }
 
   @media (max-width: 912px) {
     color: var(--color-secondary);
