@@ -38,7 +38,6 @@ const StyledNav = styled.nav`
   display: flex;
   width: 22%;
   min-width: 300px;
-  z-index: 1000;
 
   @media (max-width: 1400px) {
     left: 75px;

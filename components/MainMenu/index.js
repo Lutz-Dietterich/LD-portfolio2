@@ -79,7 +79,7 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  z-index: 1000;
+  z-index: 1;
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -87,15 +87,15 @@ const StyledWrapper = styled.div`
   }
 
   @media (min-width: 900px) {
-    width: 60%;
+    width: 61%;
   }
 
   @media (min-width: 1100px) {
-    width: 50%;
+    width: 55%;
   }
 
   @media (min-width: 1300px) {
-    width: 40%;
+    width: 45%;
   }
 `;
 

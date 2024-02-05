@@ -553,22 +553,18 @@ const StyledDataProtectionPopup = styled.div`
   justify-content: center;
 
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
   animation: ${fadeIn} 0.5s ease-in-out;
   overflow: auto;
   border-radius: 5px;
   padding: 20px;
-  z-index: 10000;
 `;
 
 const StyledDataProtectionWrapper = styled.div`
   position: absolute;
   margin-bottom: 20px;
-  z-index: 10000;
 
   @media (max-width: 768px) {
     min-width: 100%;
-    z-index: 10000;
     padding: 5px;
   }
 `;
@@ -577,11 +573,11 @@ const StyledDataProtectionContent = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 500px;
-  width: 50%;
+  max-width: 900px;
   align-items: center;
   background-color: white;
   margin: 5% auto 0 auto;
-  padding: 100px;
+  padding: 50px;
   border-radius: 5px;
   color: var(--color-text);
   line-height: 1;
@@ -596,13 +592,15 @@ const StyledDataProtectionContent = styled.div`
     text-align: center;
   }
 
-  @media (max-width: 768px) {
-    min-width: 100%;
-    text-align: center;
-    z-index: 10000;
-    padding: 5px;
+  @media (max-width: 1000px) {
+    width: 90%;
+    padding: 20px;
+  }
 
-    /* margin: 0 10px 10px 10px; */
+  @media (max-width: 768px) {
+    min-width: 95%;
+    text-align: center;
+    padding: 10px;
   }
 
   ::-webkit-scrollbar {

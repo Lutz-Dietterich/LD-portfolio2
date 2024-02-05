@@ -41,7 +41,6 @@ const StyledHeader = styled.header`
   width: 100%;
   height: 20vw;
   max-height: 180px;
-  z-index: 2000;
 
   &:hover {
     cursor: pointer;

@@ -70,7 +70,7 @@ const StyledRectangle = styled.div`
   position: absolute;
   width: 80vw;
   height: 175vh;
-  left: -40vw;
+  left: -43vw;
   top: -50vh;
   z-index: -100;
   min-width: 600px;
@@ -115,7 +115,6 @@ const StyledHeroText = styled.article`
   left: 120px;
   width: 30%;
   height: 10%;
-  z-index: 100;
 
   line-height: 1.2;
 
@@ -158,7 +157,6 @@ const StyledHeroText = styled.article`
     left: 10%;
     width: 80%;
     height: 10%;
-    z-index: 100;
 
     line-height: 1.2;
 
