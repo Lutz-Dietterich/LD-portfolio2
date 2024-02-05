@@ -35,9 +35,6 @@ const StyledNav = styled.nav`
   position: absolute;
   top: 74%;
   left: 120px;
-  display: flex;
-  width: 22%;
-  min-width: 300px;
 
   @media (max-width: 1400px) {
     left: 75px;
@@ -48,22 +45,37 @@ const StyledNav = styled.nav`
     left: 85vw;
   }
 
-  @media (min-height: 800px) {
-    top: 75%;
+  @media (max-height: 1100px) {
+    top: 83%;
+  }
+
+  @media (max-height: 900px) {
+    top: 73%;
+    left: 75vw;
+  }
+
+  @media (max-height: 800px) {
+    top: 70%;
+  }
+
+  @media screen and (max-height: 460px) {
+    top: 82vh;
+    left: 70vw;
   }
 `;
 
 const StyledList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  gap: 20px;
   list-style: none;
-  padding: 0;
-  margin-right: 60px;
-  width: 100%;
 
-  @media (max-width: 912px) {
-    display: flex;
+  @media screen and (max-width: 912px) {
     flex-direction: column;
+    gap: 10px;
+  }
+
+  @media screen and (max-height: 460px) {
+    flex-direction: row;
     gap: 10px;
   }
 `;

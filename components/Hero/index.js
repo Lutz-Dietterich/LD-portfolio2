@@ -89,20 +89,29 @@ const StyledRectangle = styled.div`
     background: rgba(226, 230, 242, 0.85);
     transform: rotate(-99.21deg);
 
-    @media (min-height: 700px) {
-      top: 31vh;
+    @media screen and (max-height: 1000px) {
+      top: 36vh;
     }
 
-    @media (min-height: 800px) {
-      top: 28vh;
-    }
-
-    @media (min-height: 900px) {
+    @media screen and (max-height: 900px) {
       top: 26vh;
     }
 
-    @media (min-height: 1000px) {
-      top: 24vh;
+    @media screen and (max-height: 800px) {
+      top: 28vh;
+    }
+
+    @media screen and (max-height: 700px) {
+      top: 31vh;
+    }
+
+    @media screen and (max-height: 600px) {
+      height: 230vh;
+    }
+
+    @media screen and (max-height: 460px) {
+      height: 260vh;
+      transform: rotate(-83deg);
     }
   }
 `;
@@ -181,8 +190,24 @@ const StyledHeroText = styled.article`
       margin: 0;
     }
 
-    @media (min-height: 760px) {
-      top: 82%;
+    @media (max-height: 1100px) {
+      top: 89%;
+      left: 20%;
+    }
+
+    @media (max-height: 900px) {
+      top: 79%;
+      left: 10%;
+    }
+
+    @media (max-height: 700px) {
+      top: 75%;
+      left: 10%;
+    }
+
+    @media (max-height: 460px) {
+      top: 69%;
+      left: 5%;
     }
   }
 `;
@@ -195,31 +220,43 @@ const StyledHeroPortrait = styled(Image)`
   -webkit-filter: brightness(90%);
     filter: brightness(90%);
 
-  @media (max-height: 1100px) {
-    width: 66vw;
-    height: 62vw;
-  }
+    
+    
+    @media screen and (max-width: 912px) {
+      position: absolute;
+      min-width: 592px;
+      min-height: 585px;
+      margin auto;
+      bottom: 50px;
+      right: -144px;
+      
+      z-index: -105;
+    }
 
-  @media (max-height: 900px) {
-    width: 45vw;
-    height: 42vw;
 
-  }
+    @media screen and (max-height: 1100px) {
+      width:100vw;
+      height: 100vw;
+      bottom: 0;
+    }
 
-  @media (max-height: 560px) {
-    width: 35vw;
-    height: 33vw;
+    @media screen and (max-height: 900px) {
+      width: 55vw;
+      height: 52vw;
+      
+    }
+    
+    @media screen and (max-height: 560px) {
+      width: 35vw;
+      height: 33vw;
+    }
 
-  }
+    @media screen and (max-height: 460px) {
+      min-width: 192px;
+      min-height: 185px;
+      width: 35vw;
+      height: 33vw;
+      right: 10px;
+    }
 
-  @media (max-width: 912px) {
-    position: absolute;
-    min-width: 592px;
-    min-height: 585px;
-    margin auto;
-    bottom: 50px;
-    right: -144px;
-
-    z-index: -105;
-  }
 `;
