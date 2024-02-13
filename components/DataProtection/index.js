@@ -75,6 +75,58 @@ export default function DataProtection({
             Sie sich jederzeit an uns wenden.
           </p>
           <h2>2. Hosting</h2>
+          <p>
+            Unsere Website wird von Vercel, Inc. gehostet. Vercel ist ein
+            Anbieter von Cloud Hosting-Diensten, der unsere
+            Website-Infrastruktur bereitstellt und somit eine schnelle und
+            sichere Zugriffsweise ermöglicht. Die Nutzung von Vercel dient der
+            Zuverlässigkeit und der Verbesserung der Leistung unserer Website.
+          </p>
+          <h2>Datenerfassung und Verarbeitung</h2>
+          <p>
+            Durch den Besuch unserer Website können Informationen über den
+            Zugriff (Datum, Uhrzeit, betrachtete Seite) auf den Servern von
+            Vercel gespeichert werden. Diese Daten gehören nicht zu den
+            personenbezogenen Daten, sondern sind anonymisiert. Sie werden
+            ausschließlich zur Verbesserung unseres Angebotes ausgewertet. Eine
+            Weitergabe an Dritte, zu kommerziellen oder nichtkommerziellen
+            Zwecken, findet nicht statt. Vercel kann jedoch technische Daten
+            erfassen (z.B. Browser-Typ, Betriebssystem, Uhrzeit des
+            Seitenaufrufs) als Teil seiner logistischen Dienstleistungen. Diese
+            Informationen werden nicht verwendet, um den Besucher dieser Website
+            persönlich zu identifizieren.
+          </p>
+          <h2>Datenübermittlung in Drittländer</h2>
+          <p>
+            Vercel Inc. hat seinen Sitz in den USA und die Datenverarbeitung
+            kann auch außerhalb der Europäischen Union oder des Europäischen
+            Wirtschaftsraumes stattfinden. Wir haben mit Vercel
+            Standardvertragsklauseln vereinbart, die ein angemessenes
+            Datenschutzniveau sicherstellen und den Anforderungen der DSGVO
+            entsprechen.
+          </p>
+          <h2>Kontakt und Ihre Rechte</h2>
+          <p>
+            Sie haben das Recht auf Auskunft, Berichtigung, Löschung,
+            Einschränkung der Verarbeitung, ein Widerspruchsrecht gegen die
+            Verarbeitung sowie das Recht auf Datenübertragbarkeit. Bei Fragen
+            zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen
+            Daten, bei Auskünften, Berichtigung, Sperrung oder Löschung von
+            Daten sowie Widerruf erteilter Einwilligungen oder Widerspruch gegen
+            eine bestimmte Datenverwendung wenden Sie sich bitte direkt an uns
+            über die im Impressum angegebenen Kontaktdaten.
+          </p>
+          <h2>Kontaktdaten von Vercel:</h2>
+          <p>Vercel Inc.</p>
+          <p>340 S Lemon Ave #4133</p>
+          <p>Walnut, CA 91789</p>
+          <p>USA</p>
+          <p>
+            Website:{" "}
+            <a href="https://vercel.com" target="_blank">
+              https://vercel.com
+            </a>
+          </p>
           <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
           <h3>IONOS</h3>{" "}
           <p>
