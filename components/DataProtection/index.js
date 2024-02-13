@@ -6,6 +6,7 @@ import { AiOutlineClose } from "react-icons/ai";
 export default function DataProtection({
   handleDataProtectionClick,
   handleCheckBox,
+  handleCheckBoxFalse,
 }) {
   return (
     <StyledDataProtectionPopup>
@@ -82,7 +83,7 @@ export default function DataProtection({
             sichere Zugriffsweise ermöglicht. Die Nutzung von Vercel dient der
             Zuverlässigkeit und der Verbesserung der Leistung unserer Website.
           </p>
-          <h2>Datenerfassung und Verarbeitung</h2>
+          <h3>Datenerfassung und Verarbeitung</h3>
           <p>
             Durch den Besuch unserer Website können Informationen über den
             Zugriff (Datum, Uhrzeit, betrachtete Seite) auf den Servern von
@@ -96,7 +97,7 @@ export default function DataProtection({
             Informationen werden nicht verwendet, um den Besucher dieser Website
             persönlich zu identifizieren.
           </p>
-          <h2>Datenübermittlung in Drittländer</h2>
+          <h3>Datenübermittlung in Drittländer</h3>
           <p>
             Vercel Inc. hat seinen Sitz in den USA und die Datenverarbeitung
             kann auch außerhalb der Europäischen Union oder des Europäischen
@@ -105,7 +106,7 @@ export default function DataProtection({
             Datenschutzniveau sicherstellen und den Anforderungen der DSGVO
             entsprechen.
           </p>
-          <h2>Kontakt und Ihre Rechte</h2>
+          <h3>Kontakt und Ihre Rechte</h3>
           <p>
             Sie haben das Recht auf Auskunft, Berichtigung, Löschung,
             Einschränkung der Verarbeitung, ein Widerspruchsrecht gegen die
@@ -116,7 +117,7 @@ export default function DataProtection({
             eine bestimmte Datenverwendung wenden Sie sich bitte direkt an uns
             über die im Impressum angegebenen Kontaktdaten.
           </p>
-          <h2>Kontaktdaten von Vercel:</h2>
+          <h3>Kontaktdaten von Vercel:</h3>
           <p>Vercel Inc.</p>
           <p>340 S Lemon Ave #4133</p>
           <p>Walnut, CA 91789</p>
@@ -127,7 +128,10 @@ export default function DataProtection({
               https://vercel.com
             </a>
           </p>
-          <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
+          <p>
+            Die Domain ist vom folgendem Anbieter gehostest und wird an Vercel
+            umgeleitet:
+          </p>
           <h3>IONOS</h3>{" "}
           <p>
             Anbieter ist die IONOS SE, Elgendorfer Str. 57, 56410 Montabaur
@@ -520,23 +524,39 @@ gtc/datenschutzerklaerung/"
             Quelle:{" "}
             <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
           </p>
-          <CloseButton2
-            style={{ backgroundColor: "green", color: "white" }}
-            onClick={() => {
-              handleDataProtectionClick();
-              handleCheckBox(true);
-            }}
-          >
-            Alles gelesen und einverstanden
-          </CloseButton2>
-          <CloseButton2
-            style={{ backgroundColor: "red", color: "white" }}
-            onClick={() => {
-              handleDataProtectionClick();
-            }}
-          >
-            Alles gelesen und nicht einverstanden
-          </CloseButton2>
+          <>
+            {handleCheckBox ? (
+              <>
+                <CloseButton2
+                  style={{ backgroundColor: "green", color: "white" }}
+                  onClick={() => {
+                    handleDataProtectionClick();
+                    handleCheckBox(true);
+                  }}
+                >
+                  Alles gelesen und einverstanden
+                </CloseButton2>
+                <CloseButton2
+                  style={{ backgroundColor: "red", color: "white" }}
+                  onClick={() => {
+                    handleDataProtectionClick();
+                    handleCheckBoxFalse(false);
+                  }}
+                >
+                  Alles gelesen und nicht einverstanden
+                </CloseButton2>{" "}
+              </>
+            ) : (
+              <CloseButton2
+                style={{ backgroundColor: "gray", color: "white" }}
+                onClick={() => {
+                  handleDataProtectionClick();
+                }}
+              >
+                Alles verstanden und schließen!
+              </CloseButton2>
+            )}
+          </>
         </StyledDataProtectionContent>
       </StyledDataProtectionWrapper>
     </StyledDataProtectionPopup>
@@ -574,6 +594,7 @@ const StyledDataProtectionPopup = styled.div`
   overflow: auto;
   border-radius: 5px;
   padding: 20px;
+  z-index: 2;
 `;
 
 const StyledDataProtectionWrapper = styled.div`

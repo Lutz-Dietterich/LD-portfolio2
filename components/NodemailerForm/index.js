@@ -87,7 +87,15 @@ export default function NodemailerForm() {
   };
 
   const handleCheckBoxClick = () => {
-    setIsDataProtectionChecked(!isDataProtectionChecked);
+    if (isDataProtectionChecked === false) {
+      setIsDataProtectionChecked(!isDataProtectionChecked);
+    }
+  };
+
+  const handleCheckBoxFalse = () => {
+    if (isDataProtectionChecked === true) {
+      setIsDataProtectionChecked(!isDataProtectionChecked);
+    }
   };
 
   return (
@@ -212,6 +220,7 @@ export default function NodemailerForm() {
           <DataProtection
             handleDataProtectionClick={handleDataProtectionClick}
             handleCheckBox={handleCheckBoxClick}
+            handleCheckBoxFalse={handleCheckBoxFalse}
           />
         )}
       </StyledFormSection>
