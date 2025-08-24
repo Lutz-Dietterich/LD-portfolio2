@@ -216,14 +216,14 @@ const StyledListItem = styled.li`
 const Dropdown = styled.ul`
     position: absolute;
     top: 100%; /* direkt unter "Über mich" */
-    left: 20px;
+    left: 0;
     /*background-color: var(--color-text);*/
     list-style: none;
     font-size: 1rem;
     padding: 5px 0;
     margin: 0;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /*border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
     z-index: 1000;
 `;
 
