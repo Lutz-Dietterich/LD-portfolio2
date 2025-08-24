@@ -9,11 +9,15 @@ import { smoothScroll } from "../../utils/smoothScroll";
 
 export default function MainMenu() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
     const router = useRouter();
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
     useEffect(() => {
         const handleResize = () => {
@@ -38,11 +42,17 @@ export default function MainMenu() {
 
             <StyledNav isOpen={isOpen} className={isOpen ? "open" : ""}>
                 <StyledList className={isOpen ? "open" : ""}>
-                    <StyledListItem>
+                    <StyledListItem onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
                         <StyledLink href="/#about" onClick={(event) => handleClick(event, "#about")}>
                             Über mich
                         </StyledLink>
+                        {isDropdownOpen && (
+                            <Dropdown>
+                                <DropdownItem href="/cv">Lebenslauf</DropdownItem>
+                            </Dropdown>
+                        )}
                     </StyledListItem>
+
                     <StyledListItem>
                         <StyledLink href="/#skills" onClick={(event) => handleClick(event, "#skills")}>
                             Skills
@@ -173,6 +183,7 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledListItem = styled.li`
+    position: relative;
     padding: 5px 10px;
     font-size: 1.2rem;
     font-weight: 700;
@@ -199,5 +210,31 @@ const StyledListItem = styled.li`
             transition: all 0.2s ease-in-out;
             transform: scale(1.1);
         }
+    }
+`;
+
+const Dropdown = styled.ul`
+    position: absolute;
+    top: 100%; /* direkt unter "Über mich" */
+    left: 20px;
+    /*background-color: var(--color-text);*/
+    list-style: none;
+    font-size: 1rem;
+    padding: 5px 0;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+`;
+
+const DropdownItem = styled(Link)`
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: var(--color-primary);
+    &:hover {
+        background-color: var(--color-primary);
+        color: #252326;
     }
 `;
