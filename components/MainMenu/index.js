@@ -2,12 +2,14 @@ import styled from "styled-components";
 import Link from "next/link";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { smoothScroll } from "../../utils/smoothScroll";
 
 export default function MainMenu() {
     const [isOpen, setIsOpen] = useState(false);
+    const router = useRouter();
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -24,8 +26,10 @@ export default function MainMenu() {
     }, []);
 
     const handleClick = (event, targetId) => {
-        event.preventDefault();
-        smoothScroll(targetId);
+        if (router.pathname === "/") {
+            event.preventDefault();
+            smoothScroll(targetId);
+        }
     };
 
     return (
@@ -35,23 +39,23 @@ export default function MainMenu() {
             <StyledNav isOpen={isOpen} className={isOpen ? "open" : ""}>
                 <StyledList className={isOpen ? "open" : ""}>
                     <StyledListItem>
-                        <StyledLink href="#about" onClick={(event) => handleClick(event, "#about")}>
+                        <StyledLink href="/#about" onClick={(event) => handleClick(event, "#about")}>
                             Über mich
                         </StyledLink>
                     </StyledListItem>
                     <StyledListItem>
-                        <StyledLink href="#skills" onClick={(event) => handleClick(event, "#skills")}>
+                        <StyledLink href="/#skills" onClick={(event) => handleClick(event, "#skills")}>
                             Skills
                         </StyledLink>
                     </StyledListItem>
                     <StyledListItem>
-                        <StyledLink href="#portfolio" onClick={(event) => handleClick(event, "#portfolio")}>
+                        <StyledLink href="/#portfolio" onClick={(event) => handleClick(event, "#portfolio")}>
                             Portfolio
                         </StyledLink>
                     </StyledListItem>
 
                     <StyledListItem>
-                        <StyledLink href="#contact" onClick={(event) => handleClick(event, "#contact")}>
+                        <StyledLink href="/#contact" onClick={(event) => handleClick(event, "#contact")}>
                             Kontakt
                         </StyledLink>
                     </StyledListItem>
