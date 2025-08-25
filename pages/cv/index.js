@@ -6,9 +6,9 @@ import Page from "../../components/cv/Page";
 export default function lebenslauf() {
     return (
         <StyledContainer>
-            <CVHeaderWrapper>
+            <StyledCVHeaderWrapper>
                 <Header />
-            </CVHeaderWrapper>
+            </StyledCVHeaderWrapper>
             <StyledMain>
                 <h1>Lebenslauf</h1>
                 <Page></Page>
@@ -27,7 +27,7 @@ const StyledContainer = styled.div`
     flex-direction: column;
     z-index: 1;
 `;
-const CVHeaderWrapper = styled.div`
+const StyledCVHeaderWrapper = styled.div`
     width: 100%;
     height: 150px; /* gleiche Höhe wie auf der Hauptseite */
     background: linear-gradient(135deg, rgba(226, 230, 242, 1) 43%, rgba(102, 126, 234, 1) 56%, rgba(118, 75, 162, 1) 96%);
