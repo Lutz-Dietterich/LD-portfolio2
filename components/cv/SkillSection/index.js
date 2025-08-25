@@ -19,5 +19,5 @@ const StyledTitle = styled.h1`
 
 const StyledSkillsGrid = styled.section`
     display: grid;
-    gap: 12px;
+    gap: 14px;
 `;
