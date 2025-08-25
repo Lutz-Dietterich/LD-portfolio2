@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Page from "../../components/cv/Page";
 
 export default function lebenslauf() {
     return (
@@ -10,6 +11,8 @@ export default function lebenslauf() {
             </CVHeaderWrapper>
             <StyledMain>
                 <h1>Lebenslauf</h1>
+                <Page></Page>
+                <Page></Page>
             </StyledMain>
             <StyledFooterWrapper>
                 <Footer />
@@ -35,9 +38,9 @@ const CVHeaderWrapper = styled.div`
 `;
 
 const StyledMain = styled.main`
-min-height: 1000px;
+    min-height: 1000px;
     flex: 1;
-    background: radial-gradient( 50% 50% at 50% 50%, rgba(226,230,242,0) 22.22%, #e2e5f2 93.58% );
+    background: radial-gradient(50% 50% at 50% 50%, rgba(226, 230, 242, 0) 22.22%, #e2e5f2 93.58%);
 `;
 
 const StyledFooterWrapper = styled.div`
