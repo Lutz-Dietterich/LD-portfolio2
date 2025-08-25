@@ -4,7 +4,9 @@ import Footer from "../../components/Footer";
 import Page from "../../components/cv/CVPage";
 import Sidebar from "../../components/cv/Sidebar";
 import Profile from "../../components/cv/Profile";
-import CVcontact from '../../components/cv/CVcontact';
+import CVcontact from "../../components/cv/CVcontact";
+import SkillSection from "../../components/cv/SkillSection";
+import SkillCard from "../../components/cv/SkillCard";
 
 export default function lebenslauf() {
     return (
@@ -16,12 +18,22 @@ export default function lebenslauf() {
                 <h1>Lebenslauf</h1>
                 <Page>
                     <Sidebar>
-                        <Profile/>
-                        <CVcontact/>
+                        <Profile />
+                        <CVcontact />
+                        <SkillSection title={"Tech Stack"}>
+                            <SkillCard title={"Frontand Development"} />
+                            <SkillCard title={"Frontand Development"} />
+                            <SkillCard title={"Frontand Development"} />
+                        </SkillSection>
+                        <SkillSection title={"Sprachen"}></SkillSection>
                     </Sidebar>
                 </Page>
                 <Page>
-                    <Sidebar></Sidebar>
+                    <Sidebar>
+                        <SkillSection title={"Technische Expertise"}></SkillSection>
+                        <SkillSection title={"Soft Skills"}></SkillSection>
+                        <SkillSection title={"Persönliche Interessen"}></SkillSection>
+                    </Sidebar>
                 </Page>
             </StyledMain>
             <StyledFooterWrapper>
