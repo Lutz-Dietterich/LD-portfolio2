@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import Sidebar from '../Sidebar';
 
-export default function Page() {
+export default function Page( {children} ) {
     return (
         <StyledPage>
             <StyledContainer>
-                <Sidebar></Sidebar>
+                {children}
             </StyledContainer>
         </StyledPage>
     );

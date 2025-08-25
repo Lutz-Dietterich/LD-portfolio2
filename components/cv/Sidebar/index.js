@@ -1,6 +1,10 @@
 import styled from "styled-components";
-export default function Sidebar() {
-    return <StyledSidebar></StyledSidebar>;
+export default function Sidebar({ children }) {
+    return (
+        <>
+            <StyledSidebar> {children} </StyledSidebar>
+        </>
+    );
 }
 
 const StyledSidebar = styled.aside`

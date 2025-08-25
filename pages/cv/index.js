@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Page from "../../components/cv/Page";
+import Sidebar from "../../components/cv/Sidebar";
+import Profile from "../../components/cv/Profile";
 
 export default function lebenslauf() {
     return (
@@ -11,8 +13,14 @@ export default function lebenslauf() {
             </StyledCVHeaderWrapper>
             <StyledMain>
                 <h1>Lebenslauf</h1>
-                <Page></Page>
-                <Page></Page>
+                <Page>
+                    <Sidebar>
+                        <Profile></Profile>
+                    </Sidebar>
+                </Page>
+                <Page>
+                    <Sidebar></Sidebar>
+                </Page>
             </StyledMain>
             <StyledFooterWrapper>
                 <Footer />
