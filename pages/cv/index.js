@@ -3,13 +3,12 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Page from "../../components/cv/CVPage";
 import Sidebar from "../../components/cv/Sidebar";
-import Profile from "../../components/cv/Profile";
-import CVcontact from "../../components/cv/CVcontact";
-import SkillSection from "../../components/cv/SkillSection";
-import SkillCard from "../../components/cv/SkillCard";
-import SkillTagSection from '../../components/cv/SkillTagSection';
+import Profile from "../../components/cv/Sidebar/Profile";
+import CVcontact from "../../components/cv/Sidebar/CVcontact";
+import SkillSection from "../../components/cv/Sidebar/SkillSection";
+import TechStack from "../../components/cv/Sidebar/SkillSection/TechStack";
 
-import { skillTagData } from '../../utils/data/skillTagData';
+import { cvSkillData } from "../../utils/data/cvSkillData";
 
 export default function lebenslauf() {
     return (
@@ -23,14 +22,16 @@ export default function lebenslauf() {
                     <Sidebar>
                         <Profile />
                         <CVcontact />
-                        <SkillSection title={"techStack"}>
-                            {skillTagData[0].techStack.map((category) => (
-                                <SkillCard key={category.id} title={category.title}>
-                                    <SkillTagSection skills={category.skills} />
-                                </SkillCard>
+                        <SkillSection title="Tech Stack">
+                            <TechStack data={cvSkillData.techStack.categories} />
+                        </SkillSection>
+
+                        {/* Sprachen - Titel statisch, Daten dynamisch */}
+                        <SkillSection title="Sprachen">
+                            {cvSkillData.languages.categories.map((category) => (
+                                <div key={category.id}>{category.skills}</div>
                             ))}
                         </SkillSection>
-                        <SkillSection title={"Sprachen"}></SkillSection>
                     </Sidebar>
                 </Page>
                 <Page>
