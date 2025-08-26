@@ -8,7 +8,7 @@ export default function SkillTag({ text }) {
     );
 }
 
-const StyledSkillTag = styled.dev`
+const StyledSkillTag = styled.div`
     background: rgba(255, 255, 255, 0.2);
     padding: 3px 6px;
     border-radius: 10px;

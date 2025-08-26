@@ -7,6 +7,9 @@ import Profile from "../../components/cv/Profile";
 import CVcontact from "../../components/cv/CVcontact";
 import SkillSection from "../../components/cv/SkillSection";
 import SkillCard from "../../components/cv/SkillCard";
+import SkillTagSection from '../../components/cv/SkillTagSection';
+
+import { skillTagData } from '../../utils/data/skillTagData';
 
 export default function lebenslauf() {
     return (
@@ -20,10 +23,12 @@ export default function lebenslauf() {
                     <Sidebar>
                         <Profile />
                         <CVcontact />
-                        <SkillSection title={"Tech Stack"}>
-                            <SkillCard title={"Frontand Development"} />
-                            <SkillCard title={"Frontand Development"} />
-                            <SkillCard title={"Frontand Development"} />
+                        <SkillSection title={"techStack"}>
+                            {skillTagData[0].techStack.map((category) => (
+                                <SkillCard key={category.id} title={category.title}>
+                                    <SkillTagSection skills={category.skills} />
+                                </SkillCard>
+                            ))}
                         </SkillSection>
                         <SkillSection title={"Sprachen"}></SkillSection>
                     </Sidebar>

@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export default function SkillCard({ title, category }) {
+export default function SkillCard({ title, category, children }) {
     return (
         <StyledSkillCard>
             <StyledSkillCardTitle>{title}</StyledSkillCardTitle>
+            {children}
         </StyledSkillCard>
     );
 }
