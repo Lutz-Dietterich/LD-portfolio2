@@ -7,6 +7,7 @@ import Profile from "../../components/cv/Sidebar/Profile";
 import CVcontact from "../../components/cv/Sidebar/CVcontact";
 import SkillSection from "../../components/cv/Sidebar/SkillSection";
 import TechStack from "../../components/cv/Sidebar/SkillSection/TechStack";
+import SkillList from "../../components/cv/Sidebar/SkillSection/SkillList";
 
 import { cvSkillData } from "../../utils/data/cvSkillData";
 
@@ -28,17 +29,15 @@ export default function lebenslauf() {
 
                         {/* Sprachen - Titel statisch, Daten dynamisch */}
                         <SkillSection title="Sprachen">
-                            {cvSkillData.languages.categories.map((category) => (
-                                <div key={category.id}>{category.skills}</div>
-                            ))}
+                            <SkillList data={cvSkillData.languages.skills} />
                         </SkillSection>
                     </Sidebar>
                 </Page>
                 <Page>
                     <Sidebar>
-                        <SkillSection title={"Technische Expertise"}></SkillSection>
-                        <SkillSection title={"Soft Skills"}></SkillSection>
-                        <SkillSection title={"Persönliche Interessen"}></SkillSection>
+                        <SkillSection title={"Technische Expertise"}><SkillList data={cvSkillData.expertise.skills} /></SkillSection>
+                        <SkillSection title={"Soft Skills"}><SkillList data={cvSkillData.softSkills.skills} /></SkillSection>
+                        <SkillSection title={"Persönliche Interessen"}><SkillList data={cvSkillData.interests.skills} /></SkillSection>
                     </Sidebar>
                 </Page>
             </StyledMain>

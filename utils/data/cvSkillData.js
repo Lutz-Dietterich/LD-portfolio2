@@ -9,7 +9,7 @@ export const cvSkillData = {
             },
             {
                 id: "backend",
-                title: "Backend & DevOps",
+                title: "Backend",
                 skills: ["Node.js", "MongoDB", "nginx", "Docker", "Proxmox", "REST API", "Git", "Linux"],
             },
             {
@@ -21,55 +21,45 @@ export const cvSkillData = {
     },
     languages: {
         title: "Sprachen",
-        categories: [
-            {
-                id: "languages",
-                skills: ["🇩🇪 Deutsch - Muttersprache", "🇬🇧 Englisch - Fließend"],
-            },
+        skills: [
+            { flag: "🇩🇪", text: "Deutsch - Muttersprache" },
+            { flag: "🇬🇧", text: "Englisch - Fließend" },
         ],
     },
+
     expertise: {
         title: "Technische Expertise",
-        categories: [
-            {
-                id: "expertise",
-                skills: [
-                    "DevOps & Infrastructure",
-                    "Proxmox Virtualization",
-                    "Docker Containerization",
-                    "Linux Server Administration",
-                    "Hausautomation & IoT",
-                    "CNC Fräsen & CAD Design",
-                    "3D-Druck & Prototyping",
-                    "Nachhaltigkeit & Solartechnik",
-                ],
-            },
+        skills: [
+            { flag: "•", text: "DevOps & Infrastructure" },
+            { flag: "•", text: "Proxmox Virtualization" },
+            { flag: "•", text: "Docker Containerization" },
+            { flag: "•", text: "Linux Server Administration" },
+            { flag: "•", text: "Hausautomation & IoT" },
+            { flag: "•", text: "CNC Fräsen & CAD Design" },
+            { flag: "•", text: "3D-Druck & Prototyping" },
+            { flag: "•", text: "Nachhaltigkeit & Solartechnik" },
         ],
     },
+
     softSkills: {
         title: "Soft Skills",
-        categories: [
-            {
-                id: "soft",
-                skills: [
-                    "Analytisches & strukturiertes Denken",
-                    "Komplexe Problemlösung",
-                    "Selbstständiges Lernen",
-                    "Teamfähigkeit & Kommunikation",
-                    "Projektmanagement",
-                    "Schnelle Auffassungsgabe",
-                    "Empathie & Kundenorientierung",
-                ],
-            },
+        skills: [
+            { flag: "•", text: "Analytisches & strukturiertes Denken" },
+            { flag: "•", text: "Komplexe Problemlösung" },
+            { flag: "•", text: "Selbstständiges Lernen" },
+            { flag: "•", text: "Teamfähigkeit & Kommunikation" },
+            { flag: "•", text: "Projektmanagement" },
+            { flag: "•", text: "Schnelle Auffassungsgabe" },
+            { flag: "•", text: "Empathie & Kundenorientierung" },
         ],
     },
+
     interests: {
         title: "Persönliche Interessen",
-        categories: [
-            {
-                id: "personal",
-                skills: ["Hundetraining (Obedience)", "Outdoor-Aktivitäten", "Maker-Community"],
-            },
+        skills: [
+            { flag: "•", text: "Hundetraining (Obedience)" },
+            { flag: "•", text: "Outdoor-Aktivitäten" },
+            { flag: "•", text: "Maker-Community" },
         ],
     },
 };
