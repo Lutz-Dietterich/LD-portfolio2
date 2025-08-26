@@ -35,9 +35,15 @@ export default function lebenslauf() {
                 </Page>
                 <Page>
                     <Sidebar>
-                        <SkillSection title={"Technische Expertise"}><SkillList data={cvSkillData.expertise.skills} /></SkillSection>
-                        <SkillSection title={"Soft Skills"}><SkillList data={cvSkillData.softSkills.skills} /></SkillSection>
-                        <SkillSection title={"Persönliche Interessen"}><SkillList data={cvSkillData.interests.skills} /></SkillSection>
+                        <SkillSection title={"Technische Expertise"}>
+                            <SkillList data={cvSkillData.expertise.skills} />
+                        </SkillSection>
+                        <SkillSection title={"Soft Skills"}>
+                            <SkillList data={cvSkillData.softSkills.skills} />
+                        </SkillSection>
+                        <SkillSection title={"Persönliche Interessen"}>
+                            <SkillList data={cvSkillData.interests.skills} />
+                        </SkillSection>
                     </Sidebar>
                 </Page>
             </StyledMain>
@@ -62,6 +68,15 @@ const StyledCVHeaderWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+        @media (max-width: 1200px) {
+    background: linear-gradient(135deg, rgba(226, 230, 242, 1) 39%, rgba(102, 126, 234, 1) 50%, rgba(118, 75, 162, 1) 96%);
+    }
+
+
+    @media (max-width: 912px) {
+        background: linear-gradient(135deg, rgba(102, 126, 234, 1) 0%, rgba(118, 75, 162, 1) 96%);
+    }
 `;
 
 const StyledMain = styled.main`
