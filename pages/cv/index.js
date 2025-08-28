@@ -8,6 +8,7 @@ import CVcontact from "../../components/cv/Sidebar/CVcontact";
 import SkillSection from "../../components/cv/Sidebar/SkillSection";
 import TechStack from "../../components/cv/Sidebar/SkillSection/TechStack";
 import SkillList from "../../components/cv/Sidebar/SkillSection/SkillList";
+import ScrollToTopButton from "../../components/ScrollToTopButton";
 import { FaPrint, FaDownload } from "react-icons/fa";
 
 import { useReactToPrint } from "react-to-print";
@@ -68,6 +69,7 @@ export default function Lebenslauf() {
                         </Sidebar>
                     </Page>
                 </StyledPrintArea>
+                <ScrollToTopButton />
             </StyledMain>
             <StyledFooterWrapper>
                 <Footer />
