@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
-export default function Page( {children} ) {
+export default function Page({ children }) {
     return (
         <StyledPage>
-            <StyledContainer>
-                {children}
-            </StyledContainer>
+            <StyledContainer>{children}</StyledContainer>
         </StyledPage>
     );
 }
@@ -19,6 +17,11 @@ const StyledPage = styled.section`
     display: flex;
     page-break-after: always;
     box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.06);
+
+    @media print {
+        margin: 0;
+        padding: 0;
+    }
 `;
 
 const StyledContainer = styled.div`

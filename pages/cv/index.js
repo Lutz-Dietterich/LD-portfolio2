@@ -9,43 +9,52 @@ import SkillSection from "../../components/cv/Sidebar/SkillSection";
 import TechStack from "../../components/cv/Sidebar/SkillSection/TechStack";
 import SkillList from "../../components/cv/Sidebar/SkillSection/SkillList";
 
+import { useReactToPrint } from "react-to-print";
+import { useRef } from "react";
+
 import { cvSkillData } from "../../utils/data/cvSkillData";
 
 export default function Lebenslauf() {
+    const contentRef = useRef(null);
+    const reactToPrintFn = useReactToPrint({ contentRef });
     return (
         <StyledContainer>
             <StyledCVHeaderWrapper>
                 <Header />
             </StyledCVHeaderWrapper>
+
             <StyledMain>
                 <h1>Lebenslauf</h1>
-                <Page>
-                    <Sidebar>
-                        <Profile />
-                        <CVcontact />
-                        <SkillSection title="Tech Stack">
-                            <TechStack data={cvSkillData.techStack.categories} />
-                        </SkillSection>
+                <button onClick={reactToPrintFn}>Print</button>
+                <div ref={contentRef}>
+                    <Page>
+                        <Sidebar>
+                            <Profile />
+                            <CVcontact />
+                            <SkillSection title="Tech Stack">
+                                <TechStack data={cvSkillData.techStack.categories} />
+                            </SkillSection>
 
-                        {/* Sprachen - Titel statisch, Daten dynamisch */}
-                        <SkillSection title="Sprachen">
-                            <SkillList data={cvSkillData.languages.skills} />
-                        </SkillSection>
-                    </Sidebar>
-                </Page>
-                <Page>
-                    <Sidebar>
-                        <SkillSection title={"Technische Expertise"}>
-                            <SkillList data={cvSkillData.expertise.skills} />
-                        </SkillSection>
-                        <SkillSection title={"Soft Skills"}>
-                            <SkillList data={cvSkillData.softSkills.skills} />
-                        </SkillSection>
-                        <SkillSection title={"Persönliche Interessen"}>
-                            <SkillList data={cvSkillData.interests.skills} />
-                        </SkillSection>
-                    </Sidebar>
-                </Page>
+                            {/* Sprachen - Titel statisch, Daten dynamisch */}
+                            <SkillSection title="Sprachen">
+                                <SkillList data={cvSkillData.languages.skills} />
+                            </SkillSection>
+                        </Sidebar>
+                    </Page>
+                    <Page>
+                        <Sidebar>
+                            <SkillSection title={"Technische Expertise"}>
+                                <SkillList data={cvSkillData.expertise.skills} />
+                            </SkillSection>
+                            <SkillSection title={"Soft Skills"}>
+                                <SkillList data={cvSkillData.softSkills.skills} />
+                            </SkillSection>
+                            <SkillSection title={"Persönliche Interessen"}>
+                                <SkillList data={cvSkillData.interests.skills} />
+                            </SkillSection>
+                        </Sidebar>
+                    </Page>
+                </div>
             </StyledMain>
             <StyledFooterWrapper>
                 <Footer />
