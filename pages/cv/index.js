@@ -8,9 +8,11 @@ import CVcontact from "../../components/cv/Sidebar/CVcontact";
 import SkillSection from "../../components/cv/Sidebar/SkillSection";
 import TechStack from "../../components/cv/Sidebar/SkillSection/TechStack";
 import SkillList from "../../components/cv/Sidebar/SkillSection/SkillList";
-import { FaPrint } from "react-icons/fa";
+import { FaPrint, FaDownload } from "react-icons/fa";
 
 import { useReactToPrint } from "react-to-print";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 import { useRef } from "react";
 
 import { cvSkillData } from "../../utils/data/cvSkillData";
@@ -18,6 +20,81 @@ import { cvSkillData } from "../../utils/data/cvSkillData";
 export default function Lebenslauf() {
     const contentRef = useRef(null);
     const reactToPrintFn = useReactToPrint({ contentRef });
+
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0"); // Monate sind 0-basiert
+    const dd = String(today.getDate()).padStart(2, "0");
+    const dateString = `${yyyy}-${mm}-${dd}`;
+
+    const handlePDFDownload = async () => {
+        const element = contentRef.current;
+        const buttonContainer = element?.querySelector("[data-button-container]");
+        if (!element) return;
+
+        try {
+            // Buttons temporär ausblenden
+            if (buttonContainer) {
+                buttonContainer.style.display = "none";
+            }
+
+            // Alle direkten Kinder des StyledPrintArea finden (das sind die Page Komponenten)
+            const pages = Array.from(element.children).filter(
+                (child) => child !== buttonContainer && !child.hasAttribute("data-button-container")
+            );
+
+            if (pages.length === 0) {
+                throw new Error("Keine Seiten gefunden");
+            }
+
+            // PDF im A4 Format erstellen
+            const pdf = new jsPDF("p", "mm", "a4");
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = pdf.internal.pageSize.getHeight();
+
+            // Jede Seite einzeln erfassen
+            for (let i = 0; i < pages.length; i++) {
+                const page = pages[i];
+
+                console.log(`Erfasse Seite ${i + 1}:`, page);
+
+                // Canvas für jede Seite einzeln erstellen
+                const canvas = await html2canvas(page, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: "#ffffff",
+                    logging: true, // Debug-Logging aktivieren
+                    width: page.offsetWidth,
+                    height: page.offsetHeight,
+                });
+
+                const imgData = canvas.toDataURL("image/png");
+                const imgWidth = pdfWidth;
+                const imgHeight = (canvas.height * pdfWidth) / canvas.width;
+
+                // Neue Seite hinzufügen (außer für die erste)
+                if (i > 0) {
+                    pdf.addPage();
+                }
+
+                // Bild zur PDF-Seite hinzufügen - komplett ohne Ränder
+                pdf.addImage(imgData, "PNG", 0, 0, imgWidth, Math.min(imgHeight, pdfHeight));
+            }
+
+            // PDF downloaden
+            pdf.save(`${dateString}_Lebenslauf_Lutz Dietterich.pdf`);
+        } catch (error) {
+            console.error("Fehler beim PDF-Export:", error);
+            alert("Es gab ein Problem beim Erstellen des PDFs. Versuchen Sie es erneut.");
+        } finally {
+            // Buttons wieder einblenden
+            if (buttonContainer) {
+                buttonContainer.style.display = "flex";
+            }
+        }
+    };
+
     return (
         <StyledContainer>
             <StyledCVHeaderWrapper>
@@ -28,9 +105,15 @@ export default function Lebenslauf() {
                 <h1>Lebenslauf</h1>
 
                 <StyledPrintArea ref={contentRef}>
-                    <StyledPrintButton onClick={reactToPrintFn}>
-                        <FaPrint />
-                    </StyledPrintButton>
+                    <StyledButtonContainer data-button-container>
+                        <StyledActionButton onClick={handlePDFDownload} title="Als PDF herunterladen">
+                            <FaDownload />
+                        </StyledActionButton>
+                        <StyledActionButton onClick={reactToPrintFn} title="Drucken">
+                            <FaPrint />
+                        </StyledActionButton>
+                    </StyledButtonContainer>
+
                     <Page>
                         <Sidebar>
                             <Profile />
@@ -72,9 +155,10 @@ const StyledContainer = styled.div`
     flex-direction: column;
     z-index: 1;
 `;
+
 const StyledCVHeaderWrapper = styled.div`
     width: 100%;
-    height: 150px; /* gleiche Höhe wie auf der Hauptseite */
+    height: 150px;
     background: linear-gradient(135deg, rgba(226, 230, 242, 1) 43%, rgba(102, 126, 234, 1) 56%, rgba(118, 75, 162, 1) 96%);
     position: relative;
     display: flex;
@@ -100,10 +184,19 @@ const StyledMain = styled.main`
 `;
 
 const StyledPrintArea = styled.div`
-    position: realtive;
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 210mm;
+`;
+
+const StyledButtonContainer = styled.div`
+    position: absolute;
+    top: -5px;
+    right: 0;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
 `;
 
 const pulse = keyframes`
@@ -112,11 +205,8 @@ const pulse = keyframes`
   100% { transform: scale(1); }
 `;
 
-const StyledPrintButton = styled.button`
-    position: absolute;
-    align-self: flex-end;
-    margin-top: -5px;
-    font-size: 1.8rem;
+const StyledActionButton = styled.button`
+    font-size: 1.4rem;
     border: none;
     background-color: transparent;
     color: #444;
@@ -127,6 +217,7 @@ const StyledPrintButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     &:hover {
         color: #0070f3;
@@ -143,9 +234,9 @@ const StyledPrintButton = styled.button`
 
     /* Tooltip */
     &::after {
-        content: "als PDF ausdrucken";
+        content: attr(title);
         position: absolute;
-        bottom: -36px; /* Position unterhalb des Buttons */
+        bottom: -36px;
         left: 50%;
         transform: translateX(-50%);
         background: #000;
@@ -161,11 +252,11 @@ const StyledPrintButton = styled.button`
 
     &:hover::after {
         opacity: 1;
-        transform: translate(-50%, -2px); /* leicht nach oben animiert */
+        transform: translate(-50%, -2px);
     }
 
     @media print {
-        display: none; // Button beim Drucken ausblenden
+        display: none;
     }
 `;
 
