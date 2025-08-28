@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Page from "../../components/cv/CVPage";
@@ -8,6 +8,7 @@ import CVcontact from "../../components/cv/Sidebar/CVcontact";
 import SkillSection from "../../components/cv/Sidebar/SkillSection";
 import TechStack from "../../components/cv/Sidebar/SkillSection/TechStack";
 import SkillList from "../../components/cv/Sidebar/SkillSection/SkillList";
+import { FaPrint } from "react-icons/fa";
 
 import { useReactToPrint } from "react-to-print";
 import { useRef } from "react";
@@ -25,8 +26,11 @@ export default function Lebenslauf() {
 
             <StyledMain>
                 <h1>Lebenslauf</h1>
-                <button onClick={reactToPrintFn}>Print</button>
-                <div ref={contentRef}>
+
+                <StyledPrintArea ref={contentRef}>
+                    <StyledPrintButton onClick={reactToPrintFn}>
+                        <FaPrint />
+                    </StyledPrintButton>
                     <Page>
                         <Sidebar>
                             <Profile />
@@ -35,7 +39,6 @@ export default function Lebenslauf() {
                                 <TechStack data={cvSkillData.techStack.categories} />
                             </SkillSection>
 
-                            {/* Sprachen - Titel statisch, Daten dynamisch */}
                             <SkillSection title="Sprachen">
                                 <SkillList data={cvSkillData.languages.skills} />
                             </SkillSection>
@@ -54,7 +57,7 @@ export default function Lebenslauf() {
                             </SkillSection>
                         </Sidebar>
                     </Page>
-                </div>
+                </StyledPrintArea>
             </StyledMain>
             <StyledFooterWrapper>
                 <Footer />
@@ -88,9 +91,82 @@ const StyledCVHeaderWrapper = styled.div`
 `;
 
 const StyledMain = styled.main`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-height: 1000px;
     flex: 1;
     background: radial-gradient(50% 50% at 50% 50%, rgba(226, 230, 242, 0) 22.22%, #e2e5f2 93.58%);
+`;
+
+const StyledPrintArea = styled.div`
+    position: realtive;
+    display: flex;
+    flex-direction: column;
+    width: 210mm;
+`;
+
+const pulse = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+`;
+
+const StyledPrintButton = styled.button`
+    position: absolute;
+    align-self: flex-end;
+    margin-top: -5px;
+    font-size: 1.8rem;
+    border: none;
+    background-color: transparent;
+    color: #444;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        color: #0070f3;
+        background: rgba(0, 112, 243, 0.08);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        animation: ${pulse} 0.6s ease;
+    }
+
+    &:active {
+        transform: scale(0.9);
+        box-shadow: none;
+    }
+
+    /* Tooltip */
+    &::after {
+        content: "als PDF ausdrucken";
+        position: absolute;
+        bottom: -36px; /* Position unterhalb des Buttons */
+        left: 50%;
+        transform: translateX(-50%);
+        background: #000;
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 11px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    &:hover::after {
+        opacity: 1;
+        transform: translate(-50%, -2px); /* leicht nach oben animiert */
+    }
+
+    @media print {
+        display: none; // Button beim Drucken ausblenden
+    }
 `;
 
 const StyledFooterWrapper = styled.div`

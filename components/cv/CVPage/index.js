@@ -11,16 +11,18 @@ export default function Page({ children }) {
 const StyledPage = styled.section`
     width: 210mm;
     height: 297mm;
-    margin: 50px auto;
-    margin-bottom: 50px;
+    margin: 50px auto 20px;
     background: white;
     display: flex;
     page-break-after: always;
     box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.06);
 
     @media print {
+        width: 210mm;
+        height: 297mm;
         margin: 0;
         padding: 0;
+        box-shadow: none;
     }
 `;
 
