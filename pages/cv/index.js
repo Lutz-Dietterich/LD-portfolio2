@@ -11,89 +11,16 @@ import SkillList from "../../components/cv/Sidebar/SkillSection/SkillList";
 import { FaPrint, FaDownload } from "react-icons/fa";
 
 import { useReactToPrint } from "react-to-print";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
 import { useRef } from "react";
 
+import { exportToPDF } from "../../utils/exportToPDF";
 import { cvSkillData } from "../../utils/data/cvSkillData";
 
 export default function Lebenslauf() {
     const contentRef = useRef(null);
     const reactToPrintFn = useReactToPrint({ contentRef });
 
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    const mm = String(today.getMonth() + 1).padStart(2, "0"); // Monate sind 0-basiert
-    const dd = String(today.getDate()).padStart(2, "0");
-    const dateString = `${yyyy}-${mm}-${dd}`;
-
-    const handlePDFDownload = async () => {
-        const element = contentRef.current;
-        const buttonContainer = element?.querySelector("[data-button-container]");
-        if (!element) return;
-
-        try {
-            // Buttons temporär ausblenden
-            if (buttonContainer) {
-                buttonContainer.style.display = "none";
-            }
-
-            // Alle direkten Kinder des StyledPrintArea finden (das sind die Page Komponenten)
-            const pages = Array.from(element.children).filter(
-                (child) => child !== buttonContainer && !child.hasAttribute("data-button-container")
-            );
-
-            if (pages.length === 0) {
-                throw new Error("Keine Seiten gefunden");
-            }
-
-            // PDF im A4 Format erstellen
-            const pdf = new jsPDF("p", "mm", "a4");
-            const pdfWidth = pdf.internal.pageSize.getWidth();
-            const pdfHeight = pdf.internal.pageSize.getHeight();
-
-            // Jede Seite einzeln erfassen
-            for (let i = 0; i < pages.length; i++) {
-                const page = pages[i];
-
-                console.log(`Erfasse Seite ${i + 1}:`, page);
-
-                // Canvas für jede Seite einzeln erstellen
-                const canvas = await html2canvas(page, {
-                    scale: 2,
-                    useCORS: true,
-                    allowTaint: true,
-                    backgroundColor: "#ffffff",
-                    logging: true, // Debug-Logging aktivieren
-                    width: page.offsetWidth,
-                    height: page.offsetHeight,
-                });
-
-                const imgData = canvas.toDataURL("image/png");
-                const imgWidth = pdfWidth;
-                const imgHeight = (canvas.height * pdfWidth) / canvas.width;
-
-                // Neue Seite hinzufügen (außer für die erste)
-                if (i > 0) {
-                    pdf.addPage();
-                }
-
-                // Bild zur PDF-Seite hinzufügen - komplett ohne Ränder
-                pdf.addImage(imgData, "PNG", 0, 0, imgWidth, Math.min(imgHeight, pdfHeight));
-            }
-
-            // PDF downloaden
-            pdf.save(`${dateString}_Lebenslauf_Lutz Dietterich.pdf`);
-        } catch (error) {
-            console.error("Fehler beim PDF-Export:", error);
-            alert("Es gab ein Problem beim Erstellen des PDFs. Versuchen Sie es erneut.");
-        } finally {
-            // Buttons wieder einblenden
-            if (buttonContainer) {
-                buttonContainer.style.display = "flex";
-            }
-        }
-    };
+    const handlePDFDownload = () => exportToPDF(contentRef, "Lebenslauf_Lutz Dietterich");
 
     return (
         <StyledContainer>
