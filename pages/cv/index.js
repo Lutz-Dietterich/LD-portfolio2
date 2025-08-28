@@ -11,7 +11,7 @@ import SkillList from "../../components/cv/Sidebar/SkillSection/SkillList";
 
 import { cvSkillData } from "../../utils/data/cvSkillData";
 
-export default function lebenslauf() {
+export default function Lebenslauf() {
     return (
         <StyledContainer>
             <StyledCVHeaderWrapper>
@@ -69,10 +69,9 @@ const StyledCVHeaderWrapper = styled.div`
     justify-content: center;
     align-items: center;
 
-        @media (max-width: 1200px) {
-    background: linear-gradient(135deg, rgba(226, 230, 242, 1) 39%, rgba(102, 126, 234, 1) 50%, rgba(118, 75, 162, 1) 96%);
+    @media (max-width: 1200px) {
+        background: linear-gradient(135deg, rgba(226, 230, 242, 1) 39%, rgba(102, 126, 234, 1) 50%, rgba(118, 75, 162, 1) 96%);
     }
-
 
     @media (max-width: 912px) {
         background: linear-gradient(135deg, rgba(102, 126, 234, 1) 0%, rgba(118, 75, 162, 1) 96%);
