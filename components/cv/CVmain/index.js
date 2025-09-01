@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
-export default function CVmain() {
-    return <StyledCVMainContainer>CVmain</StyledCVMainContainer>;
+import TitleCard from "./TitleCard";
+
+export default function CVmain({children}) {
+    return (
+        <StyledCVMainContainer>
+            {children}
+        </StyledCVMainContainer>
+    );
 }
 
 const StyledCVMainContainer = styled.div`
     padding: 25px 30px;
     overflow: hidden;
+
+
 `;
