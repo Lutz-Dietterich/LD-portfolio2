@@ -10,7 +10,7 @@ export default function TimelineItem({ webdevitem = false, jobTitle, company, da
                 </div>
                 {date && <StyledDate>{date}</StyledDate>}
             </StyledJobHeader>
-            {children || "TimelineItem"}
+            {children}
         </StyledTimelineItem>
     );
 }

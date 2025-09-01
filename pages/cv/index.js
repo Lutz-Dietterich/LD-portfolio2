@@ -9,8 +9,8 @@ import SkillSection from "../../components/cv/Sidebar/SkillSection";
 import TechStack from "../../components/cv/Sidebar/SkillSection/TechStack";
 import SkillList from "../../components/cv/Sidebar/SkillSection/SkillList";
 import ScrollToTopButton from "../../components/ScrollToTopButton";
-import CVmain from "../../components/cv/CVmain";
-import ContentPageOne from '../../components/cv/CVmain/ContentPageOne';
+import ContentPageOne from "../../components/cv/CVmain/ContentPageOne";
+import ContentPageTwo from "../../components/cv/CVmain/ContentPageTwo";
 
 import { FaPrint, FaDownload } from "react-icons/fa";
 
@@ -71,7 +71,7 @@ export default function Lebenslauf() {
                                 <SkillList data={cvSkillData.interests.skills} />
                             </SkillSection>
                         </Sidebar>
-                        <CVmain></CVmain>
+                        <ContentPageTwo />
                     </Page>
                 </StyledPrintArea>
                 <ScrollToTopButton />
