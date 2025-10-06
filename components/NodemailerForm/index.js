@@ -19,6 +19,7 @@ export default function NodemailerForm() {
     const [isDataProtectionChecked, setIsDataProtectionChecked] = useState(false);
     const [captchaToken, setCaptchaToken] = useState("");
     const [submit, setSubmit] = useState("");
+    const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -47,7 +48,6 @@ export default function NodemailerForm() {
         setIsDataProtectionChecked(false); // Checkbox zurücksetzen
     };
 
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setSubmit("");
@@ -73,21 +73,21 @@ export default function NodemailerForm() {
             // 1. Recaptcha-Überprüfung
             const recaptchaResponse = await axios({
                 method: "post",
-                // Pfad korrigiert: Es sollte nur '/api/recaptchaSubmit' sein,
-                // da der Pfad vom Root der Anwendung aus gesehen wird.
                 url: "/api/recaptchaSubmit",
                 data: { gRecaptchaToken },
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
                 },
             });
 
             if (recaptchaResponse?.data?.success === true) {
                 console.log(`Success with score: ${recaptchaResponse?.data?.score}`);
-                setSubmit("ReCaptcha Verified and Form Submitted!");
+                // setSubmit("ReCaptcha Verified!"); // Diese Zeile kann entfernt werden, die nächste Meldung ist wichtiger.
 
-                // 2. E-Mail senden, nur wenn Recaptcha erfolgreich war
-                const emailResponse = await fetch("/api/sendEmail", { // Pfad korrigiert
+                // 2. Anfragedaten an die NEUE API-Route senden (zum Speichern & Bestätigungslink senden)
+                // HIER WIRD DIE VARIABLE KORRIGIERT:
+                const initialResponse = await fetch("/api/storeInquiry", {
+                    // <-- Response in 'initialResponse' gespeichert
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -101,23 +101,24 @@ export default function NodemailerForm() {
                     }),
                 });
 
-                if (emailResponse.ok) {
-                    setIsSent(true);
+                if (initialResponse.ok) {
+                    // <-- Prüft jetzt die korrekte Variable
+                    // Erfolg: Informiere den Benutzer, dass er seine E-Mail prüfen muss
+                    setSubmit(
+                        "Vielen Dank! Wir haben Ihnen einen Bestätigungslink an Ihre E-Mail-Adresse gesendet. Bitte klicken Sie darauf, um Ihre Nachricht final zu übermitteln."
+                    );
                     handleReset(); // Formular zurücksetzen
+                    setShowSuccessPopup(true); // NEU: Pop-up anzeigen
 
-                    setTimeout(() => {
-                        setIsSent(false);
-                    }, 3500);
+                    // Wichtig: isSent bleibt false, da die E-Mail an Lutz erst später gesendet wird.
                 } else {
-                    console.error("E-Mail konnte nicht gesendet werden (Server-Fehler).");
-                    setSubmit("E-Mail-Versand fehlgeschlagen.");
+                    console.error("Fehler bei der Kontaktspeicherung (Server-Fehler).");
+                    setSubmit("Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.");
                 }
-
             } else {
                 console.log(`Failure with score: ${recaptchaResponse?.data?.score}`);
                 setSubmit("Failed to verify recaptcha! You must be a robot!");
             }
-
         } catch (error) {
             console.error("Ein allgemeiner Fehler ist aufgetreten:", error);
             setSubmit("Fehler beim Senden oder der Recaptcha-Prüfung.");
@@ -143,23 +144,26 @@ export default function NodemailerForm() {
         }
     };
 
+    // NEU: Pop-up schließen
+    const closePopup = () => {
+        setShowSuccessPopup(false);
+    };
+
     return (
         <>
             {sendEmail && <StyledLoadingSpinner />}
+            {/* NEU: Pop-up rendern, wenn showSuccessPopup true ist UND die Meldung erfolgreich ist */}
+            {showSuccessPopup && submit.startsWith("Vielen Dank!") && (
+                <StyledModalBackdrop onClick={closePopup}>
+                    <StyledModalContent onClick={(e) => e.stopPropagation()}>
+                        <h2>Bitte Bestätige Deine E-MAIL!</h2>
+                        <p>{submit}</p>
+                        <StyledCloseButton onClick={closePopup}>Schließen</StyledCloseButton>
+                    </StyledModalContent>
+                </StyledModalBackdrop>
+            )}
 
             <StyledFormSection>
-                {isSent && (
-                    <div>
-                        <p>E-Mail wurde gesendet!</p>
-                        <Image src="/img/techny-receiving-a-letter-or-email.gif" width={500} height={500} alt="Checkmark" />
-                        <p style={{ fontSize: "0.8rem" }}>
-                            Illustration by
-                            <a href="https://icons8.com/illustrations/author/627444">Julia G</a>
-                            from <a href="https://icons8.com/illustrations">Ouch!</a>
-                        </p>
-                    </div>
-                )}
-
                 {!isSent && !sendEmail && (
                     <StyledForm onSubmit={handleSubmit}>
                         <StyledFormGroup>
@@ -239,8 +243,10 @@ export default function NodemailerForm() {
                             </label>
                         </StyledFormGroup>
 
-                         <button type="submit" disabled={sendEmail}>Senden</button>
-                        {submit && <p style={{marginTop: '10px'}}>{submit}</p>}
+                        <button type="submit" disabled={sendEmail}>
+                            Senden
+                        </button>
+                        {submit && <p style={{ marginTop: "10px" }}>{submit}</p>}
                     </StyledForm>
                 )}
 
@@ -255,6 +261,65 @@ export default function NodemailerForm() {
         </>
     );
 }
+
+// ------------------------------------
+// NEUE STYLED COMPONENTS FÜR DAS POP-UP
+// ------------------------------------
+
+const StyledModalBackdrop = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+`;
+
+const StyledModalContent = styled.div`
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: var(--color-text); /* Sicherstellen, dass der Text sichtbar ist */
+
+    h2 {
+        color: red;
+        margin-bottom: 15px;
+        font-style: none;
+    }
+
+    p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+`;
+
+const StyledCloseButton = styled.button`
+    padding: 10px 20px;
+    background-color: lightgray;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+
+
+    &:hover {
+        background-color: #0056b3;
+    }
+`;
+
+// ------------------------------------
+// VORHANDENE STYLED COMPONENTS
+// ------------------------------------
 
 const StyledFormSection = styled.section`
     display: flex;

@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1759790969478,
+    "companyName": "Lutz Dietterich",
+    "firstName": "Lutz Dietterich",
+    "lastName": "Dietterich",
+    "email": "lutzdietterich@googlemail.com",
+    "message": "sadfasdf",
+    "verificationToken": "ef8199eafed66f952411a0244bf8d27b9d217a331685f4b6f26eaad5f1819534",
+    "verified": false,
+    "expiresAt": 1759877369476
+  },
+  {
+    "id": 1759792272883,
+    "companyName": "Lutz Dietterich",
+    "firstName": "Lutz Dietterich",
+    "lastName": "Dietterich",
+    "email": "lutzdietterich@googlemail.com",
+    "message": "sadfdfa",
+    "verificationToken": "7b18b1f0a15f725ee934094e7c5f3dcb5c662363d3c219db621c5d34de51efd8",
+    "verified": false,
+    "expiresAt": 1759878672878
+  },
+  {
+    "id": 1759792366783,
+    "companyName": "Lutz Dietterich",
+    "firstName": "Lutz Dietterich",
+    "lastName": "Dietterich",
+    "email": "lutzdietterich@googlemail.com",
+    "message": "dfdasf",
+    "verificationToken": "c6fa632a76be89fc6a7cbda263c38123a1043f86d6177c10e028f73e43d3b153",
+    "verified": false,
+    "expiresAt": 1759878766783
+  },
+  {
+    "id": 1759792411690,
+    "companyName": "Lutz Dietterich",
+    "firstName": "Lutz Dietterich",
+    "lastName": "Dietterich",
+    "email": "lutzdietterich@googlemail.com",
+    "message": "sdfaf",
+    "verificationToken": "cefdcc3ef1763a5c74713d317cca2e302343acd914c758f66fa3517ae307e12d",
+    "verified": false,
+    "expiresAt": 1759878811689
+  },
+  {
+    "id": 1759792601658,
+    "companyName": "Lutz Dietterich",
+    "firstName": "Lutz Dietterich",
+    "lastName": "Dietterich",
+    "email": "lutzdietterich@googlemail.com",
+    "message": "fasdf",
+    "verificationToken": "ff7b8366057e0a1c83854c5712a596b3d8f2e30e8fde24c4450fe99ac751ded5",
+    "verified": false,
+    "expiresAt": 1759879001657
+  },
+  {
+    "id": 1759792659671,
+    "companyName": "Lutz Dietterich",
+    "firstName": "Lutz Dietterich",
+    "lastName": "Dietterich",
+    "email": "lutzdietterich@googlemail.com",
+    "message": "sdf",
+    "verificationToken": "1f8bf0c4fa1f96edf560922a12fbee056d4ec8a4c88084c640a698898fabca68",
+    "verified": false,
+    "expiresAt": 1759879059670
+  }
+]
