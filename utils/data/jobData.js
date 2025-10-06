@@ -139,15 +139,15 @@ export const jobData = [
         responsibilities: [
             {
                 title: "Mission-Critical Systems:",
-                description: "Wartung und Reparatur in Forschungsschiffen, Marineschleifen, U-Booten",
+                description: "Wartung und Reparatur in Forschungsschiffen, Marineschiffen, U-Booten und Rechenzentren",
             },
             {
                 title: "Medizintechnik:",
                 description: "Krankenhaus-Klimaanlagen, Präzisionskühlung für medizinische Geräte",
             },
             {
-                title: "Luxusyachten:",
-                description: "Hochwertige Klimasysteme mit anspruchsvoller Steuerungstechnik",
+                title: "Mega-Luxusyachten:",
+                description: "Hochwertige Klima- und Kühlsysteme mit anspruchsvoller Steuerungstechnik",
             },
             {
                 title: "Industrieanlagen:",
