@@ -2,50 +2,21 @@
 
 import nodemailer from "nodemailer";
 import crypto from "crypto";
-import fs from "fs"; // Import für Dateisystem-Operationen
-import path from "path"; // Import für Pfad-Operationen
+// Importe für MongoDB/Mongoose (sind im Code vorhanden)
+import connectDB from "../../utils/dbConnect";
+import Inquiry from "../../models/Inquiry";
 
-// --- Konfiguration für persistente Speicherung (Datei) ---
-const dataDir = path.join(process.cwd(), 'data');
-const inquiriesFilePath = path.join(dataDir, 'inquiries.json');
-
-// Funktion zum Laden der Anfragen aus der Datei
-function loadInquiries() {
-    try {
-        if (fs.existsSync(inquiriesFilePath)) {
-            const fileContent = fs.readFileSync(inquiriesFilePath, 'utf8');
-            // Stelle sicher, dass der Inhalt nicht leer ist
-            return fileContent ? JSON.parse(fileContent) : [];
-        }
-    } catch (error) {
-        console.error('Fehler beim Laden der Anfragen:', error);
-    }
-    return [];
-}
-
-// Funktion zum Speichern der Anfragen in der Datei
-function saveInquiries(inquiries) {
-    try {
-        // Stelle sicher, dass das 'data'-Verzeichnis existiert
-        if (!fs.existsSync(dataDir)) {
-            fs.mkdirSync(dataDir, { recursive: true });
-        }
-        fs.writeFileSync(inquiriesFilePath, JSON.stringify(inquiries, null, 2));
-    } catch (error) {
-        console.error('Fehler beim Speichern der Anfragen:', error);
-    }
-}
-// -----------------------------------------------------------
-
+// ACHTUNG: Die Imports für 'fs' und 'path' sowie die Funktionen
+// 'loadInquiries' und 'saveInquiries' wurden entfernt, da sie nicht mehr benötigt werden!
 
 // Funktion zur Token-Generierung (z.B. 32 zufällige Bytes in Hex)
 const generateToken = () => crypto.randomBytes(32).toString("hex");
 
 // Ihre SMTP-Konfiguration (Bitte in .env eintragen)
 const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST || "smtp.ionos.de", // Besser aus .env, aber Fallback gesetzt
-    port: process.env.EMAIL_PORT || 465, // Besser aus .env
-    secure: process.env.EMAIL_SECURE === 'true' || true,
+    host: process.env.EMAIL_HOST || "smtp.ionos.de",
+    port: process.env.EMAIL_PORT || 465,
+    secure: process.env.EMAIL_SECURE === "true" || true,
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD,
@@ -53,6 +24,9 @@ const transporter = nodemailer.createTransport({
 });
 
 export default async function handler(req, res) {
+    // 0. Datenbankverbindung herstellen
+    await connectDB();
+
     if (req.method === "POST") {
         const { companyName, firstName, lastName, email, message } = req.body;
 
@@ -60,12 +34,8 @@ export default async function handler(req, res) {
         const verificationToken = generateToken();
         const expiresAt = Date.now() + 24 * 60 * 60 * 1000; // Token ist 24 Stunden gültig
 
-        // 2. Daten speichern (WICHTIG!)
-        // Daten aus der Datei laden
-        const inquiries = loadInquiries();
-
-        const newInquiry = {
-            id: Date.now(),
+        // 2. Neues Anfrage-Dokument erstellen
+        const newInquiry = new Inquiry({
             companyName,
             firstName,
             lastName,
@@ -73,19 +43,16 @@ export default async function handler(req, res) {
             message,
             verificationToken,
             verified: false,
-            expiresAt,
-        };
-
-        inquiries.push(newInquiry);
-        saveInquiries(inquiries); // Das aktualisierte Array in die Datei schreiben
-
-        console.log(`Anfrage gespeichert: ${newInquiry.id}. Aktuelle Anfragen: ${inquiries.length}`);
+            // Speichern als Date-Objekt, wichtig für MongoDB TTL Index (Aufräummechanismus)
+            expiresAt: new Date(expiresAt),
+        });
 
         // 3. Bestätigungslink erstellen
-        const baseUrl = process.env.BASE_URL || "http://localhost:3001"; // localhost:3000 ist der Standard in Next.js
+        // Verwenden Sie den tatsächlichen Standardport für Next.js
+        const baseUrl = process.env.BASE_URL || "http://localhost:3001";
         const verificationLink = `${baseUrl}/api/verifyInquiry?token=${verificationToken}`;
 
-        // 4. Bestätigungs-E-Mail an den ABSENDER versenden
+        // 4. Bestätigungs-E-Mail an den ABSENDER vorbereiten
         let mailOptionsToSender = {
             from: "job@lutz-dietterich.de",
             to: email, // An den Absender!
@@ -103,20 +70,31 @@ export default async function handler(req, res) {
         };
 
         try {
+            // Speichern in der Datenbank
+            await newInquiry.save();
+            console.log(`Anfrage erfolgreich in MongoDB gespeichert (ID: ${newInquiry._id})`);
+
+            // Bestätigungs-E-Mail senden
             await transporter.sendMail(mailOptionsToSender);
+
             // Antwort an das Frontend
             res.status(200).json({
                 message:
                     "Vielen Dank! Ein Bestätigungslink wurde an Ihre E-Mail-Adresse gesendet. Bitte prüfen Sie Ihren Posteingang (und ggf. Spam-Ordner).",
             });
         } catch (error) {
-            console.error("Fehler beim Senden der Bestätigungs-E-Mail:", error);
-            // Optional: Bei einem Fehler die gerade gespeicherte Anfrage wieder entfernen
-            // Inquiries erneut laden, die aktuelle ID suchen und entfernen
+            console.error("Fehler bei der DB-Speicherung oder dem E-Mail-Versand:", error);
 
-            res.status(500).json({ message: "Fehler beim Versenden des Bestätigungslinks. Bitte versuchen Sie es später erneut." });
+            // Optional: Wenn die DB-Speicherung fehlschlägt, versuchen Sie, das ungespeicherte Dokument zu behandeln (hier nicht nötig)
+            // oder wenn der E-Mail-Versand fehlschlägt, löschen Sie das Dokument wieder aus der DB,
+            // um den Benutzer nicht mit einem nutzlosen Token zurückzulassen.
+
+            // Wichtig: Da wir Mongoose verwenden, benötigen wir hier keine manuelle Dateilogik mehr.
+            res.status(500).json({
+                message: "Ein interner Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
+            });
         }
     } else {
-        res.status(404).json({ message: "Seite nicht gefunden" });
+        res.status(405).json({ message: "Methode nicht erlaubt" });
     }
 }
