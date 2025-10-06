@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import ReCAPTCHA from "react-google-recaptcha";
 import LoadingSpinner from "../LoadingSpinner";
-import { CLIENT_STATIC_FILES_RUNTIME_MAIN } from "next/dist/shared/lib/constants";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import axios from "axios";
 
 import DataProtection from "../DataProtection";
 
@@ -18,6 +18,7 @@ export default function NodemailerForm() {
     const [showDataProtection, setShowDataProtection] = useState(false);
     const [isDataProtectionChecked, setIsDataProtectionChecked] = useState(false);
     const [captchaToken, setCaptchaToken] = useState("");
+    const [submit, setSubmit] = useState("");
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -34,51 +35,95 @@ export default function NodemailerForm() {
         }
     };
 
+    const { executeRecaptcha } = useGoogleReCaptcha();
+
+    // Reset-Funktion außerhalb von handleSubmit definieren
+    const handleReset = () => {
+        setCompanyName("");
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setMessage("");
+        setIsDataProtectionChecked(false); // Checkbox zurücksetzen
+    };
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setSubmit("");
 
-        if (!captchaToken) {
+        // Prüfung der Datenschutzerklärung
+        if (!isDataProtectionChecked) {
+            alert("Bitte stimmen Sie der Datenschutzerklärung zu.");
             return;
         }
 
+        if (!executeRecaptcha) {
+            console.error("Recaptcha-Funktion nicht verfügbar.");
+            setSubmit("Recaptcha nicht verfügbar.");
+            return;
+        }
+
+        // Ladespinner anzeigen, da wir gleich die Recaptcha-Prüfung starten
         setSendEmail(true);
 
-        const handleReset = () => {
-            setCompanyName("");
-            setFirstName("");
-            setLastName("");
-            setEmail("");
-            setMessage("");
-        };
+        const gRecaptchaToken = await executeRecaptcha("inquirySubmit");
 
         try {
-            const response = await fetch("../api/sendEmail", {
-                method: "POST",
+            // 1. Recaptcha-Überprüfung
+            const recaptchaResponse = await axios({
+                method: "post",
+                // Pfad korrigiert: Es sollte nur '/api/recaptchaSubmit' sein,
+                // da der Pfad vom Root der Anwendung aus gesehen wird.
+                url: "/api/recaptchaSubmit",
+                data: { gRecaptchaToken },
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    firstName,
-                    lastName,
-                    companyName,
-                    email,
-                    message,
-                }),
             });
 
-            if (response.ok) {
-                setIsSent(true);
-                setSendEmail(false);
+            if (recaptchaResponse?.data?.success === true) {
+                console.log(`Success with score: ${recaptchaResponse?.data?.score}`);
+                setSubmit("ReCaptcha Verified and Form Submitted!");
 
-                setTimeout(() => {
-                    setIsSent(false);
-                }, 3500);
-                handleReset();
+                // 2. E-Mail senden, nur wenn Recaptcha erfolgreich war
+                const emailResponse = await fetch("/api/sendEmail", { // Pfad korrigiert
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        firstName,
+                        lastName,
+                        companyName,
+                        email,
+                        message,
+                    }),
+                });
+
+                if (emailResponse.ok) {
+                    setIsSent(true);
+                    handleReset(); // Formular zurücksetzen
+
+                    setTimeout(() => {
+                        setIsSent(false);
+                    }, 3500);
+                } else {
+                    console.error("E-Mail konnte nicht gesendet werden (Server-Fehler).");
+                    setSubmit("E-Mail-Versand fehlgeschlagen.");
+                }
+
             } else {
-                console.log("E-Mail konnte nicht gesendet werden");
+                console.log(`Failure with score: ${recaptchaResponse?.data?.score}`);
+                setSubmit("Failed to verify recaptcha! You must be a robot!");
             }
+
         } catch (error) {
-            console.log("Fehler beim Senden der E-Mail");
+            console.error("Ein allgemeiner Fehler ist aufgetreten:", error);
+            setSubmit("Fehler beim Senden oder der Recaptcha-Prüfung.");
+        } finally {
+            // Ladespinner am Ende immer ausblenden
+            setSendEmail(false);
         }
     };
 
@@ -193,10 +238,9 @@ export default function NodemailerForm() {
                                 gelesen und bin damit einverstanden.
                             </label>
                         </StyledFormGroup>
-                        <StyledFormGroup>
-                            <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY} onChange={(token) => setCaptchaToken(token)} />
-                        </StyledFormGroup>
-                        <button type="submit">Senden</button>
+
+                         <button type="submit" disabled={sendEmail}>Senden</button>
+                        {submit && <p style={{marginTop: '10px'}}>{submit}</p>}
                     </StyledForm>
                 )}
 
